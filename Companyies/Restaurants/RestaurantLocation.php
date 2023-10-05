@@ -14,6 +14,18 @@ class RestaurantLocation implements FileConvertible{
     private bool $isOpen;
     private bool $hasDriveThru;
 
+    public function __construct( $name, $address, $city, $state, $zipCode, $employees, $isOpen, $hasDriveThru,)
+    {
+        $this->name = $name;
+        $this->address = $address;
+        $this->city = $city;
+        $this->state = $state;
+        $this->zipCode = $zipCode;
+        $this->employees = $employees;
+        $this->isOpen = $isOpen;
+        $this->hasDriveThru = $hasDriveThru;
+    }
+
     public function toString():string{
         return "";
     }
