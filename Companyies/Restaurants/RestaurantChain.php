@@ -1,7 +1,7 @@
 <?php
 
-// todo: Companyの読み込み
-// todo: FileConvetibleの読み込み
+require_once __DIR__ . '/../../FileConverte/FileConvertible.php';
+require_once __DIR__ . '/../Company.php';
 
 class RestaurantChain extends Company implements FileConvertible{
 
