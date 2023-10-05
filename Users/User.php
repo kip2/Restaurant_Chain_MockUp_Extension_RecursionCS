@@ -1,6 +1,6 @@
 <?php
 
-// todo: FileConvertibleの読み込み
+require_once __DIR__ . '/../FileConverte/FileConvertible.php';
 
 class User implements FileConvertible{
     private int $id;
