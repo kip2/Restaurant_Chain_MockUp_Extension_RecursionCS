@@ -1,7 +1,7 @@
 <?php
 
-// todo: userクラスの読み込み
-// todo: FileConvetibleの読み込み
+require_once __DIR__ . '/../User.php';
+require_once __DIR__ . '/../../FileConverte/FileConvertible.php';
 
 class Emloyee extends User implements FileConvertible{
 
