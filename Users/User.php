@@ -20,6 +20,19 @@ class User implements FileConvertible{
     // method
     // --------------------------------------------------
 
+    public function __construct( $id, $firstName, $lastName, $email, $hashedPassword, $phoneNumber, $address, $birthDate, $membershipExpirationDate, $role,){
+        $this->id = $id;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->email = $email;
+        $this->hashedPassword = $hashedPassword;
+        $this->phoneNumber = $phoneNumber;
+        $this->address = $address;
+        $this->birthDate = $birthDate;
+        $this->membershipExpirationDate = $membershipExpirationDate;
+        $this->role = $role;
+    }
+
     // todo: 各メソッドの動作を把握する
     public function login(string $password) {
     }
