@@ -13,7 +13,30 @@ class RestaurantChain extends Company implements FileConvertible{
     private string $parentCompany;
 
     // todo: 親のコンストラクタに明示的に渡すこと
-    public function __construct() {
+    public function __construct(
+        $name,
+        $foundingYear,
+        $description,
+        $website,
+        $phone,
+        $industory,
+        $ceo,
+        $isPubliclyTraded,
+        $country,
+        $founder,
+        $totalEmployees,
+        $chainId,
+        $restaurantLocations,
+        $cuisineType,
+        $numberOfLocations,
+        $parentCompany,
+    ) {
+        parent::__construct( $name, $foundingYear, $description, $website, $phone, $industory, $ceo, $isPubliclyTraded, $country, $founder, $totalEmployees,);
+        $this->chainId = $chainId;
+        $this->restaurantLocations = $restaurantLocations;
+        $this->cuisineType = $cuisineType;
+        $this->numberOfLocations = $numberOfLocations;
+        $this->parentCompany = $parentCompany;
     }
 
     public function toString():string{

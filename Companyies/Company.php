@@ -4,7 +4,7 @@
 
 class Company implements FileConvertible{
     private string $name;
-    private int $foudingYear;
+    private int $foundingYear;
     private string $description;
     private string $website;
     private string $phone;
@@ -14,6 +14,32 @@ class Company implements FileConvertible{
     private string $country;
     private string $founder;
     private int $totalEmployees;
+
+    public function __construct(
+        $name,
+        $foundingYear,
+        $description,
+        $website,
+        $phone,
+        $industory,
+        $ceo,
+        $isPubliclyTraded,
+        $country,
+        $founder,
+        $totalEmployees,
+    ){
+        $this->name = $name;
+        $this->foundingYear = $foundingYear;
+        $this->description = $description;
+        $this->website = $website;
+        $this->phone = $phone;
+        $this->industory = $industory;
+        $this->ceo = $ceo;
+        $this->isPubliclyTraded = $isPubliclyTraded;
+        $this->country = $country;
+        $this->founder = $founder;
+        $this->totalEmployees = $totalEmployees;
+    }
 
     public function toString():string{
         return "";
