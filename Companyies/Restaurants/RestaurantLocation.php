@@ -1,6 +1,6 @@
 <?php
 
-// todo: FileConvetibleの読み込み
+require_once __DIR__ . '/../../FileConverte/FileConvertible.php';
 
 class RestaurantLocation implements FileConvertible{
 
