@@ -1,6 +1,8 @@
 <?php
 
-class User{
+// todo: FileConvertibleの読み込み
+
+class User implements FileConvertible{
     private int $id;
     private string $firstName;
     private string $lastName;
@@ -35,5 +37,20 @@ class User{
     public function hasMembershipExpired() {
 
     }
+
+
+    public function toString():string{
+        return "";
+    }
+    public function toHTML():string{
+        return "";
+    }
+    public function toMarkdown():string{
+        return "";
+    }
+    public function toArray():array{
+        return array();
+    }
+
 
 }

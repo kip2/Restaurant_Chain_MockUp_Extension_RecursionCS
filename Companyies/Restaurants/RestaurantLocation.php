@@ -1,6 +1,8 @@
 <?php
 
-class RestaurantLocation {
+// todo: FileConvetibleの読み込み
+
+class RestaurantLocation implements FileConvertible{
 
     private string $name;
     private string $address;
@@ -12,4 +14,16 @@ class RestaurantLocation {
     private bool $isOpen;
     private bool $hasDriveThru;
 
+    public function toString():string{
+        return "";
+    }
+    public function toHTML():string{
+        return "";
+    }
+    public function toMarkdown():string{
+        return "";
+    }
+    public function toArray():array{
+        return array();
+    }
 }
