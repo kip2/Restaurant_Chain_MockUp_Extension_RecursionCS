@@ -1,6 +1,6 @@
 <?php
 
-// todo: FileConvetibleの読み込み
+require_once __DIR__ . '/../FileConverte/FileConvertible.php';
 
 class Company implements FileConvertible{
     private string $name;
