@@ -22,7 +22,6 @@ class User implements FileConvertible{
 
     // todo: 各メソッドの動作を把握する
     public function login(string $password) {
-
     }
 
     public function updateProfile(string $address, string $phoneNumber) {
@@ -51,6 +50,5 @@ class User implements FileConvertible{
     public function toArray():array{
         return array();
     }
-
 
 }
