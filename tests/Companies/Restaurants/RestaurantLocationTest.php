@@ -27,7 +27,7 @@ class RestaurantLocationTest extends TestCase {
         $printString = "Company Name: {$restaurantLocation->getName()} Address: {$restaurantLocation->getAddress()}, {$restaurantLocation->getCity()}, {$restaurantLocation->getState()}, ZipCode: {$restaurantLocation->getZipCode()} ";
         $printString .= " Open?: " . ($restaurantLocation->getIsOpen()) ? "Yes" : "No";
 
-        $this->assertEquals($printString, $restaurantLocation->print());
+        $this->assertEquals($printString, $restaurantLocation->introduction());
     }
 
     public function testGetter() {

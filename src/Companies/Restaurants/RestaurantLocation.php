@@ -28,9 +28,9 @@ class RestaurantLocation implements FileConvertible{
     }
 
     public function introduction():string {
-        $printString = "Company Name: {$this->getName()} Address: {$this->getAddress()}, {$this->getCity()}, {$this->getState()}, ZipCode: {$this->getZipCode()} ";
-        $printString .= " Open?: " . ($this->getIsOpen()) ? "Yes" : "No";
-        return $printString;
+        $introduction = "Company Name: {$this->getName()} Address: {$this->getAddress()}, {$this->getCity()}, {$this->getState()}, ZipCode: {$this->getZipCode()} ";
+        $introduction .= " Open?: " . ($this->getIsOpen()) ? "Yes" : "No";
+        return $introduction;
     }
 
     // todo: 
