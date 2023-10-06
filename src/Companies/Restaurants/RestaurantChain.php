@@ -6,8 +6,8 @@ require_once __DIR__ . '/../Company.php';
 class RestaurantChain extends Company implements FileConvertible{
 
     private int $chainId;
-    // todo: RestaurantLocationの配列として宣言する必要がある
-    private array $restaurantLocations;
+    /** @var RestaurantLocation[] */
+    private array $restaurantLocations = [];
     private string $cuisineType;
     private int $numberOfLocations;
     private string $parentCompany;

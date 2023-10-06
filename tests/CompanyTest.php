@@ -17,7 +17,8 @@ require_once __DIR__ . '/../src/Companies/Company.php';
 use PHPUnit\Framework\TestCase;
 
 class CompanyTest extends TestCase {
-    public function testGetter() {
+
+    private function mockCompany() {
         $name = "name test";
         $foundingYear = 1;
         $description = "test description";
@@ -43,6 +44,11 @@ class CompanyTest extends TestCase {
             $founder,
             $totalEmployees,
         );
+        return $company;
+    }
+
+    public function testGetter() {
+        $company = $this->mockCompany();
         
         // getter
         $this->assertEquals("name test", $company->getName());

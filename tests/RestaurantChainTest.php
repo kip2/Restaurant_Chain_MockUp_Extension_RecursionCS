@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class RestaurantChainTest extends TestCase {
     
-    public function testGetter() {
+    private function mockRestaurantChainTest() {
         $name = "name test";
         $foundingYear = 1;
         $description = "test description";
@@ -25,7 +25,7 @@ class RestaurantChainTest extends TestCase {
         $parentCompany = "test parent company";
 
 
-        $company = new RestaurantChain(
+        $restaurantChain = new RestaurantChain(
             $name,
             $foundingYear,
             $description,
@@ -43,26 +43,32 @@ class RestaurantChainTest extends TestCase {
             $numberOfLocations,
             $parentCompany
         );
+        return $restaurantChain;
+
+    }
+
+    public function testGetter() {
+        $restaurantChain = $this->mockRestaurantChainTest();
 
         // company getter test
-        $this->assertEquals("name test", $company->getName());
-        $this->assertEquals(1, $company->getFoundingYear());
-        $this->assertEquals("test description", $company->getDescription());
-        $this->assertEquals("http://test.com", $company->getWebsite());
-        $this->assertEquals("090-0000-9999", $company->getPhone());
-        $this->assertEquals("test industory", $company->getIndustory());
-        $this->assertEquals("test CEO", $company->getCeo());
-        $this->assertEquals(True, $company->getIsPubliclyTraded());
-        $this->assertEquals("test country", $company->getCountry());
-        $this->assertEquals("test founder", $company->getFounder());
-        $this->assertEquals(10, $company->getTotalEmployees());
+        $this->assertEquals("name test", $restaurantChain->getName());
+        $this->assertEquals(1, $restaurantChain->getFoundingYear());
+        $this->assertEquals("test description", $restaurantChain->getDescription());
+        $this->assertEquals("http://test.com", $restaurantChain->getWebsite());
+        $this->assertEquals("090-0000-9999", $restaurantChain->getPhone());
+        $this->assertEquals("test industory", $restaurantChain->getIndustory());
+        $this->assertEquals("test CEO", $restaurantChain->getCeo());
+        $this->assertEquals(True, $restaurantChain->getIsPubliclyTraded());
+        $this->assertEquals("test country", $restaurantChain->getCountry());
+        $this->assertEquals("test founder", $restaurantChain->getFounder());
+        $this->assertEquals(10, $restaurantChain->getTotalEmployees());
 
-        // restaurantChain test
-        $this->assertEquals(1, $company->getChainId());
-        $this->assertEquals(array(), $company->getRestaurantLocations());
-        $this->assertEquals("test cuisineType", $company->getCuisineType());
-        $this->assertEquals(1, $company->getNumberOfLocations());
-        $this->assertEquals("test parent company", $company->getParentCompany());
+        // restaurantChain getter test
+        $this->assertEquals(1, $restaurantChain->getChainId());
+        $this->assertEquals(array(), $restaurantChain->getRestaurantLocations());
+        $this->assertEquals("test cuisineType", $restaurantChain->getCuisineType());
+        $this->assertEquals(1, $restaurantChain->getNumberOfLocations());
+        $this->assertEquals("test parent company", $restaurantChain->getParentCompany());
 
     }
 }
