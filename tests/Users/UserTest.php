@@ -99,8 +99,6 @@ class UserTest extends TestCase {
             $user->getRole()
         );
 
-        // echo $user->toString();
-
         $this->assertEquals($userString, $user->toString());
     }
 
