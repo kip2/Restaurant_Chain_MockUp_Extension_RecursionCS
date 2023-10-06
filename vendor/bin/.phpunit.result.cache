@@ -1,0 +1,1 @@
+{"version":1,"defects":{"CompanyTest::testConstruct":7,"CompanyTest::testGetter":7,"RestaurantChainTest::testGetter":7},"times":{"CompanyTest::testConstruct":0.001,"CompanyTest::testGetter":0.003,"RestaurantChainTest::testGetter":0}}

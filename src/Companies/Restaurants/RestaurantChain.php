@@ -50,4 +50,21 @@ class RestaurantChain extends Company implements FileConvertible{
     public function toArray():array{
         return array();
     }
+    
+    // getter
+    public function getChainId():int{
+        return $this->chainId;
+    }
+    public function getRestaurantLocations():array{
+        return $this->restaurantLocations;
+    }
+    public function getCuisineType():string{
+        return $this->cuisineType;
+    }
+    public function getNumberOfLocations():int{
+        return $this->numberOfLocations;
+    }
+    public function getParentCompany():string{
+        return $this->parentCompany;
+    }
 }

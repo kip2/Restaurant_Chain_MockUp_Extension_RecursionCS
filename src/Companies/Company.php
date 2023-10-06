@@ -41,6 +41,7 @@ class Company implements FileConvertible{
         $this->totalEmployees = $totalEmployees;
     }
 
+
     public function toString():string{
         return "";
     }
@@ -53,4 +54,54 @@ class Company implements FileConvertible{
     public function toArray():array{
         return array();
     }
+
+    // getter
+
+    public function getName(): string {
+        return $this->name;
+    }
+    public function getFoundingYear() : int{
+        return $this->foundingYear;
+
+    }
+    public function getDescription() :string {
+        return $this->description;
+    }
+
+    public function getWebsite() :string {
+        return $this->website;
+    }
+
+    
+    public function getPhone() :string {
+        return $this->phone;
+    }
+
+    
+    public function getIndustory() :string {
+        return $this->industory;
+    }
+
+    
+    public function getCeo() :string {
+        return $this->ceo;
+
+    }
+    public function getIsPubliclyTraded() :bool {
+        return $this->isPubliclyTraded;
+
+    }
+    public function getCountry() :string {
+        return $this->country;
+
+    }
+    public function getFounder() :string {
+        return $this->founder;
+
+    }
+    public function getTotalEmployees() :int {
+        return $this->totalEmployees;
+
+    }
+
 }
