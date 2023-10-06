@@ -27,6 +27,14 @@ class RestaurantLocation implements FileConvertible{
         $this->hasDriveThru = $hasDriveThru;
     }
 
+    public function introduction():string {
+        $printString = "Company Name: {$this->getName()} Address: {$this->getAddress()}, {$this->getCity()}, {$this->getState()}, ZipCode: {$this->getZipCode()} ";
+        $printString .= " Open?: " . ($this->getIsOpen()) ? "Yes" : "No";
+        return $printString;
+    }
+
+    // todo: 
+
     public function toString():string{
         return "";
     }
