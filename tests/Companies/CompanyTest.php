@@ -12,7 +12,7 @@
 //     }
 // });
 
-require_once __DIR__ . '/../src/Companies/Company.php';
+require_once __DIR__ . '/../../src/Companies/Company.php';
 
 use PHPUnit\Framework\TestCase;
 

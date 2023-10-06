@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../src/Companies/Restaurants/RestaurantChain.php';
+require_once __DIR__ . '/../../../src/Companies/Restaurants/RestaurantChain.php';
 
 use PHPUnit\Framework\TestCase;
 
