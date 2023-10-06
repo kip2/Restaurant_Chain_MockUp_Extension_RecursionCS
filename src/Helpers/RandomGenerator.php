@@ -1,12 +1,16 @@
 <?php
 
-namespace Helpers;
+// namespace Helpers;
 
-require_once __DIR__ . '/../../../src/Users/User.php';
+require_once __DIR__ . '/../../src/Users/User.php';
+
+require 'vendor/autoload.php';
 
 use Faker\Factory;
 
-class RandomUserGenerator {
+class RandomGenerator {
+
+    // todo: fanction名をクラス名にしておいおい増やす
     public static function user(): User {
         $faker = Factory::create();
 
@@ -37,8 +41,5 @@ class RandomUserGenerator {
     }
 }
 
-$user = RandomUserGenerator::user();
-
-printf($user->toHTML());
 
 ?>
