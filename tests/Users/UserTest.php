@@ -113,6 +113,7 @@ class UserTest extends TestCase {
         $this->assertEquals("test address", $user->getAddress());
         $this->assertEquals(new DateTime("2023-05-15 18:00:00"), $user->getBirthDate());
         $this->assertEquals(new DateTime("2023-05-15 18:00:00"), $user->getMembershipExpirationDate());
+
         $this->assertEquals("test role", $user->getRole());
 
     }
