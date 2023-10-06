@@ -12,7 +12,6 @@ class RestaurantChain extends Company implements FileConvertible{
     private int $numberOfLocations;
     private string $parentCompany;
 
-    // todo: 親のコンストラクタに明示的に渡すこと
     public function __construct(
         $name,
         $foundingYear,
