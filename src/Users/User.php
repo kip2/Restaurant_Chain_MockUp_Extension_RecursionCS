@@ -10,9 +10,7 @@ class User implements FileConvertible{
     private string $hashedPassword;
     private string $phoneNumber;
     private string $address;
-    // todo: DateTimeの依存関係解消
     private DateTime $birthDate;
-    // todo: DateTimeの依存関係解消
     private DateTIme $membershipExpirationDate;
     private string $role;
 
@@ -62,6 +60,40 @@ class User implements FileConvertible{
     }
     public function toArray():array{
         return array();
+    }
+
+
+    // getter
+
+    public function getId():int  {
+        return $this->id;
+    }
+    public function getFirstName():string  {
+        return $this->firstName;
+    }
+    public function getLastName():string  {
+        return $this->lastName;
+    }
+    public function getEmail():string  {
+        return $this->email;
+    }
+    public function getHashedPassword():string  {
+        return $this->hashedPassword;
+    }
+    public function getPhoneNumber():string  {
+        return $this->phoneNumber;
+    }
+    public function getAddress():string  {
+        return $this->address;
+    }
+    public function getBirthDate():DateTime  {
+        return $this->birthDate;
+    }
+    public function getMembershipExpirationDate():DateTIme  {
+        return $this->membershipExpirationDate;
+    }
+    public function getRole():string  {
+        return $this->role;
     }
 
 }
