@@ -7,7 +7,6 @@ class Emloyee extends User implements FileConvertible{
 
     private string $jobTitle;
     private float $salary;
-    // todo: DateTImeの依存解消
     private DateTime $startDate;
     /** @var string[] */
     private array $awards;
@@ -46,5 +45,19 @@ class Emloyee extends User implements FileConvertible{
     }
     public function toArray():array{
         return array();
+    }
+
+    // getter
+    public function getJobTitle() : string {
+        return $this->jobTitle;
+    }
+    public function getSalary() : float {
+        return $this->salary;
+    }
+    public function getStartDate() : DateTime {
+        return $this->startDate;
+    }
+    public function getAwards() : array {
+        return $this->awards;
     }
 }
