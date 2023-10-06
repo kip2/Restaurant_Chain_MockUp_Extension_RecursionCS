@@ -14,9 +14,6 @@ class User implements FileConvertible{
     private DateTIme $membershipExpirationDate;
     private string $role;
 
-    // --------------------------------------------------
-    // method
-    // --------------------------------------------------
 
     public function __construct( $id, $firstName, $lastName, $email, $hashedPassword, $phoneNumber, $address, $birthDate, $membershipExpirationDate, $role,){
         $this->id = $id;
@@ -31,28 +28,66 @@ class User implements FileConvertible{
         $this->role = $role;
     }
 
-    // todo: 各メソッドの動作を把握する
+    /**
+     * $passwordが一致するかを判定する
+     *
+     * @param string $password
+     *
+     * @return bool
+     */
     public function login(string $password) :bool{
         
         return password_verify($password, $this->hashedPassword);
     }
 
+    /**
+     * アドレスと電話番号を更新する
+     *
+     * @param string $address
+     * @param string $phoneNumber
+     *
+     */
     public function updateProfile(string $address, string $phoneNumber) : void{
         $this->address = $address;
         $this->phoneNumber = $phoneNumber;
     }
+
+    /**
+     * メンバーシップの有効期限を更新する
+     *
+     * @param DateTime $expirationDate
+     *
+     */
     public function renewMembership(DateTime $expirationDate) : void{
         $this->membershipExpirationDate = $expirationDate;
     }
+
+    /**
+     * パスワードを変更する
+     *
+     * @param string $newPassword
+     *
+     */
     public function changePassword(string $newPassword) : void{
         $this->hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
     }
+
+    /**
+     * メンバーシップが有効期限内かどうかを判定する
+     *
+     * @return bool
+     */
     public function hasMembershipExpired() :bool{
         $currendDate = new DateTime();
         return $currendDate > $this->membershipExpirationDate;
     }
 
 
+    /**
+      * 紹介用文字列を生成する
+      *
+      * @return string
+      */
     public function toString():string{
         return sprintf(
             "User ID: %d\nName: %s %s\nEmail: %s\nPhone Number: %s\nAddress: %s\nBirth Date: %s\nMembership Expiration Date: %s\nRole: %s\n",
@@ -67,6 +102,12 @@ class User implements FileConvertible{
             $this->role
         );
     }
+
+    /**
+     * HTML用文字列を生成する
+     *
+     * @return string
+     */
     public function toHTML():string{
         return sprintf("<div class='user-card'>
                     <div class='avatar'>SAMPLE</div>
@@ -88,9 +129,26 @@ class User implements FileConvertible{
                 $this->role
             );
     }
+
+    /**
+     * Markdown文字列を生成する
+     *
+     * @return string
+     */
     public function toMarkdown():string{
-        return "";
+        return "## User: {$this->firstName} {$this->lastName}
+                - Email: {$this->email}
+                - Phone Number: {$this->phoneNumber}
+                - Address: {$this->address}
+                - Birth Date: {$this->birthDate->format('Y-m-d')}
+                - Role: {$this->role}";
     }
+
+    /**
+     * 配列を生成する
+     *
+     * @return array
+     */
     public function toArray():array{
     return [
                 'id' => $this->id,
@@ -101,11 +159,9 @@ class User implements FileConvertible{
                 'phoneNumber' => $this->phoneNumber,
                 'address' => $this->address,
                 'birthDate' => $this->birthDate,
-                // 'isActive' => $this->isActive,
                 'role' => $this->role
             ];
     }
-
 
 
     /**

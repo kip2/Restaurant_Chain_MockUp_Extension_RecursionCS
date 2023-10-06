@@ -24,6 +24,38 @@ class UserTest extends TestCase {
         return $user;
     }
 
+    public function testToArray() {
+        $user = $this->mockUser();
+
+        $arr = [
+                    'id' => $user->getId(),
+                    'firstName' => $user->getFirstName(),
+                    'lastName' => $user->getLastName(),
+                    'email' => $user->getEmail(),
+                    'password' => $user->getHashedPassword(),
+                    'phoneNumber' => $user->getPhoneNumber(),
+                    'address' => $user->getAddress(),
+                    'birthDate' => $user->getBirthDate(),
+                    'role' => $user->getRole()
+                ];
+
+        $this->assertEquals($arr, $user->toArray());
+
+    }
+
+    public function testToMarkdown() {
+        $user = $this->mockUser();
+
+        $userMarkdown =  "## User: {$user->getFirstName()} {$user->getLastName()}
+                - Email: {$user->getEmail()}
+                - Phone Number: {$user->getPhoneNumber()}
+                - Address: {$user->getAddress()}
+                - Birth Date: {$user->getBirthDate()->format('Y-m-d')}
+                - Role: {$user->getRole()}";
+        
+        $this->assertEquals($userMarkdown, $user->toMarkdown());
+    }
+
     public function testToHTML() {
         $user = $this->mockUser();
         
