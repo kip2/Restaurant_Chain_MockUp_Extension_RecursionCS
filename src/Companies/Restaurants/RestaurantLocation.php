@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../FileConverter/FileConvertible.php';
+require_once __DIR__ . '/../../Users/Employees/Employee.php';
 
 class RestaurantLocation implements FileConvertible{
 
@@ -9,7 +10,7 @@ class RestaurantLocation implements FileConvertible{
     private string $city;
     private string $state;
     private string $zipCode;
-    // todo: Employeeクラスの配列である宣言に修正する必要ある
+    /** @var Employee[] */
     private array $employees;
     private bool $isOpen;
     private bool $hasDriveThru;

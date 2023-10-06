@@ -9,7 +9,7 @@ class Emloyee extends User implements FileConvertible{
     private float $salary;
     // todo: DateTImeの依存解消
     private DateTime $startDate;
-    // todo: string arrayの宣言方法
+    /** @var string[] */
     private array $awards;
 
     public function __construct(
