@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-require 'vendor/autoload.php';
+require 'vendor/autoload.php'; 
 
 require_once __DIR__ . '/../../../src/Users/Employees/Employee.php';
 
@@ -28,6 +28,7 @@ class EmployeeTest extends TestCase {
 
     }
 
+    
     public function testGetter() {
         $employee = $this->mockEmployee();
         $this->assertEquals("test jobTitle", $employee->getJobTitle());
