@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../FileConverte/FileConvertible.php';
+require_once __DIR__ . '/../../FileConverter/FileConvertible.php';
 
 class RestaurantLocation implements FileConvertible{
 
