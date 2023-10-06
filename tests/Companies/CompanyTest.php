@@ -18,17 +18,18 @@ use PHPUnit\Framework\TestCase;
 
 class CompanyTest extends TestCase {
 
+
     private function mockCompany() {
-        $name = "name test";
+        $name = "company1";
         $foundingYear = 1;
-        $description = "test description";
+        $description = "company1 is a company.";
         $website = "http://test.com";
         $phone = "090-0000-9999";
-        $industory = "test industory";
-        $ceo = "test CEO";
+        $industory = "maker";
+        $ceo = "John Doe";
         $isPubliclyTraded = True;
-        $country = "test country";
-        $founder = "test founder";
+        $country = "country1";
+        $founder = "Gonbee";
         $totalEmployees = 10;
 
         $company = new Company(
@@ -47,20 +48,36 @@ class CompanyTest extends TestCase {
         return $company;
     }
 
+    public function testIntroduction() {
+        $company = $this->mockCompany();
+
+        $introduction = "Company name: {$company->getName()} ";
+        $introduction .= "Founding year: {$company->getFoundingYear()} ";
+        $introduction .= "Description: {$company->getDescription()} ";
+        $introduction .= "Our Website URL: {$company->getWebsite()} ";
+        $introduction .= "Phone Number: {$company->getPhone()} ";
+        $introduction .= "Industory: {$company->getIndustory()} ";
+        $introduction .= "CEO: {$company->getCeo()} ";
+        $introduction .= "Publicly Traded?: " . ($company->getFoundingYear()) ? "Yes" : "No";
+
+        $this->assertEquals($introduction, $company->introduction());
+    }
+
     public function testGetter() {
         $company = $this->mockCompany();
         
         // getter
-        $this->assertEquals("name test", $company->getName());
+        $this->assertEquals("company1", $company->getName());
         $this->assertEquals(1, $company->getFoundingYear());
-        $this->assertEquals("test description", $company->getDescription());
+        $this->assertEquals("company1 is a company.", $company->getDescription());
         $this->assertEquals("http://test.com", $company->getWebsite());
         $this->assertEquals("090-0000-9999", $company->getPhone());
-        $this->assertEquals("test industory", $company->getIndustory());
-        $this->assertEquals("test CEO", $company->getCeo());
+        $this->assertEquals("maker", $company->getIndustory());
+        $this->assertEquals("John Doe", $company->getCeo());
         $this->assertEquals(True, $company->getIsPubliclyTraded());
-        $this->assertEquals("test country", $company->getCountry());
-        $this->assertEquals("test founder", $company->getFounder());
+        $this->assertEquals("country1", $company->getCountry());
+        $this->assertEquals("Gonbee", $company->getFounder());
         $this->assertEquals(10, $company->getTotalEmployees());
     }
+
 }

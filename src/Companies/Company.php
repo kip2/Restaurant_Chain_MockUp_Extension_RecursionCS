@@ -41,6 +41,18 @@ class Company implements FileConvertible{
         $this->totalEmployees = $totalEmployees;
     }
 
+    public function introduction():string {
+        $introduction = "Company name: {$this->getName()} ";
+        $introduction .= "Founding year: {$this->getFoundingYear()} ";
+        $introduction .= "Description: {$this->getDescription()} ";
+        $introduction .= "Our Website URL: {$this->getWebsite()} ";
+        $introduction .= "Phone Number: {$this->getPhone()} ";
+        $introduction .= "Industory: {$this->getIndustory()} ";
+        $introduction .= "CEO: {$this->getCeo()} ";
+        $introduction .= "Publicly Traded?: " . ($this->getFoundingYear()) ? "Yes" : "No";
+        
+        return $introduction;
+    }
 
     public function toString():string{
         return "";
