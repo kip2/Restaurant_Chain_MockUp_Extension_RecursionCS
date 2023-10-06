@@ -1,7 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase;
+require 'vendor/autoload.php';
 
-require_once __DIR__ . '/../../../src/Users/Employees/Emloyee.php';
+require_once __DIR__ . '/../../../src/Users/Employees/Employee.php';
 
 class EmployeeTest extends TestCase {
 
@@ -21,7 +22,7 @@ class EmployeeTest extends TestCase {
         $startDate = new DateTime("2023-05-15 18:00:00");
         $awards = array("test", "test2");
 
-        $employee = new Emloyee( $id, $firstName, $lastName, $email, $hashedPassword, $phoneNumber, $address, $birthDate, $membershipExpirationDate, $role, $jobTitle, $salary, $startDate, $awards);
+        $employee = new Employee( $id, $firstName, $lastName, $email, $hashedPassword, $phoneNumber, $address, $birthDate, $membershipExpirationDate, $role, $jobTitle, $salary, $startDate, $awards);
 
         return $employee;
 

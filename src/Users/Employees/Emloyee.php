@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../User.php';
 require_once __DIR__ . '/../../FileConverter/FileConvertible.php';
 
-class Emloyee extends User implements FileConvertible{
+class Employee extends User implements FileConvertible{
 
     private string $jobTitle;
     private float $salary;
