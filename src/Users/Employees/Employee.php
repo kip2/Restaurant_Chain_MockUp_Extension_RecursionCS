@@ -47,17 +47,100 @@ class Employee extends User implements FileConvertible{
         return array();
     }
 
-    // getter
-    public function getJobTitle() : string {
+
+    /**
+     * Get the value of jobTitle
+     *
+     * @return string
+     */
+    public function getJobTitle(): string
+    {
         return $this->jobTitle;
     }
-    public function getSalary() : float {
+
+    /**
+     * Set the value of jobTitle
+     *
+     * @param string $jobTitle
+     *
+     * @return self
+     */
+    public function setJobTitle(string $jobTitle): self
+    {
+        $this->jobTitle = $jobTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of salary
+     *
+     * @return float
+     */
+    public function getSalary(): float
+    {
         return $this->salary;
     }
-    public function getStartDate() : DateTime {
+
+    /**
+     * Set the value of salary
+     *
+     * @param float $salary
+     *
+     * @return self
+     */
+    public function setSalary(float $salary): self
+    {
+        $this->salary = $salary;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of startDate
+     *
+     * @return DateTime
+     */
+    public function getStartDate(): DateTime
+    {
         return $this->startDate;
     }
-    public function getAwards() : array {
+
+    /**
+     * Set the value of startDate
+     *
+     * @param DateTime $startDate
+     *
+     * @return self
+     */
+    public function setStartDate(DateTime $startDate): self
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of awards
+     *
+     * @return array
+     */
+    public function getAwards(): array
+    {
         return $this->awards;
+    }
+
+    /**
+     * Set the value of awards
+     *
+     * @param array $awards
+     *
+     * @return self
+     */
+    public function setAwards(array $awards): self
+    {
+        $this->awards = $awards;
+
+        return $this;
     }
 }

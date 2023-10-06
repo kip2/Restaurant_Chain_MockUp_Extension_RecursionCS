@@ -55,53 +55,269 @@ class Company implements FileConvertible{
         return array();
     }
 
-    // getter
 
-    public function getName(): string {
+
+    /**
+     * Get the value of name
+     *
+     * @return string
+     */
+    public function getName(): string
+    {
         return $this->name;
     }
-    public function getFoundingYear() : int{
-        return $this->foundingYear;
 
+    /**
+     * Set the value of name
+     *
+     * @param string $name
+     *
+     * @return self
+     */
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
     }
-    public function getDescription() :string {
+
+    /**
+     * Get the value of foundingYear
+     *
+     * @return int
+     */
+    public function getFoundingYear(): int
+    {
+        return $this->foundingYear;
+    }
+
+    /**
+     * Set the value of foundingYear
+     *
+     * @param int $foundingYear
+     *
+     * @return self
+     */
+    public function setFoundingYear(int $foundingYear): self
+    {
+        $this->foundingYear = $foundingYear;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of description
+     *
+     * @return string
+     */
+    public function getDescription(): string
+    {
         return $this->description;
     }
 
-    public function getWebsite() :string {
+    /**
+     * Set the value of description
+     *
+     * @param string $description
+     *
+     * @return self
+     */
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of website
+     *
+     * @return string
+     */
+    public function getWebsite(): string
+    {
         return $this->website;
     }
 
-    
-    public function getPhone() :string {
+    /**
+     * Set the value of website
+     *
+     * @param string $website
+     *
+     * @return self
+     */
+    public function setWebsite(string $website): self
+    {
+        $this->website = $website;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of phone
+     *
+     * @return string
+     */
+    public function getPhone(): string
+    {
         return $this->phone;
     }
 
-    
-    public function getIndustory() :string {
+    /**
+     * Set the value of phone
+     *
+     * @param string $phone
+     *
+     * @return self
+     */
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of industory
+     *
+     * @return string
+     */
+    public function getIndustory(): string
+    {
         return $this->industory;
     }
 
-    
-    public function getCeo() :string {
+    /**
+     * Set the value of industory
+     *
+     * @param string $industory
+     *
+     * @return self
+     */
+    public function setIndustory(string $industory): self
+    {
+        $this->industory = $industory;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of ceo
+     *
+     * @return string
+     */
+    public function getCeo(): string
+    {
         return $this->ceo;
-
     }
-    public function getIsPubliclyTraded() :bool {
+
+    /**
+     * Set the value of ceo
+     *
+     * @param string $ceo
+     *
+     * @return self
+     */
+    public function setCeo(string $ceo): self
+    {
+        $this->ceo = $ceo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of isPubliclyTraded
+     *
+     * @return bool
+     */
+    public function getIsPubliclyTraded(): bool
+    {
         return $this->isPubliclyTraded;
-
     }
-    public function getCountry() :string {
+
+    /**
+     * Set the value of isPubliclyTraded
+     *
+     * @param bool $isPubliclyTraded
+     *
+     * @return self
+     */
+    public function setIsPubliclyTraded(bool $isPubliclyTraded): self
+    {
+        $this->isPubliclyTraded = $isPubliclyTraded;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of country
+     *
+     * @return string
+     */
+    public function getCountry(): string
+    {
         return $this->country;
-
     }
-    public function getFounder() :string {
+
+    /**
+     * Set the value of country
+     *
+     * @param string $country
+     *
+     * @return self
+     */
+    public function setCountry(string $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of founder
+     *
+     * @return string
+     */
+    public function getFounder(): string
+    {
         return $this->founder;
-
     }
-    public function getTotalEmployees() :int {
+
+    /**
+     * Set the value of founder
+     *
+     * @param string $founder
+     *
+     * @return self
+     */
+    public function setFounder(string $founder): self
+    {
+        $this->founder = $founder;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of totalEmployees
+     *
+     * @return int
+     */
+    public function getTotalEmployees(): int
+    {
         return $this->totalEmployees;
-
     }
 
+    /**
+     * Set the value of totalEmployees
+     *
+     * @param int $totalEmployees
+     *
+     * @return self
+     */
+    public function setTotalEmployees(int $totalEmployees): self
+    {
+        $this->totalEmployees = $totalEmployees;
+
+        return $this;
+    }
 }

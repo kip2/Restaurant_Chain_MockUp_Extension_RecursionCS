@@ -63,37 +63,244 @@ class User implements FileConvertible{
     }
 
 
-    // getter
 
-    public function getId():int  {
+    /**
+     * Get the value of id
+     *
+     * @return int
+     */
+    public function getId(): int
+    {
         return $this->id;
     }
-    public function getFirstName():string  {
+
+    /**
+     * Set the value of id
+     *
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of firstName
+     *
+     * @return string
+     */
+    public function getFirstName(): string
+    {
         return $this->firstName;
     }
-    public function getLastName():string  {
+
+    /**
+     * Set the value of firstName
+     *
+     * @param string $firstName
+     *
+     * @return self
+     */
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of lastName
+     *
+     * @return string
+     */
+    public function getLastName(): string
+    {
         return $this->lastName;
     }
-    public function getEmail():string  {
+
+    /**
+     * Set the value of lastName
+     *
+     * @param string $lastName
+     *
+     * @return self
+     */
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of email
+     *
+     * @return string
+     */
+    public function getEmail(): string
+    {
         return $this->email;
     }
-    public function getHashedPassword():string  {
+
+    /**
+     * Set the value of email
+     *
+     * @param string $email
+     *
+     * @return self
+     */
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of hashedPassword
+     *
+     * @return string
+     */
+    public function getHashedPassword(): string
+    {
         return $this->hashedPassword;
     }
-    public function getPhoneNumber():string  {
+
+    /**
+     * Set the value of hashedPassword
+     *
+     * @param string $hashedPassword
+     *
+     * @return self
+     */
+    public function setHashedPassword(string $hashedPassword): self
+    {
+        $this->hashedPassword = $hashedPassword;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of phoneNumber
+     *
+     * @return string
+     */
+    public function getPhoneNumber(): string
+    {
         return $this->phoneNumber;
     }
-    public function getAddress():string  {
+
+    /**
+     * Set the value of phoneNumber
+     *
+     * @param string $phoneNumber
+     *
+     * @return self
+     */
+    public function setPhoneNumber(string $phoneNumber): self
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of address
+     *
+     * @return string
+     */
+    public function getAddress(): string
+    {
         return $this->address;
     }
-    public function getBirthDate():DateTime  {
+
+    /**
+     * Set the value of address
+     *
+     * @param string $address
+     *
+     * @return self
+     */
+    public function setAddress(string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of birthDate
+     *
+     * @return DateTime
+     */
+    public function getBirthDate(): DateTime
+    {
         return $this->birthDate;
     }
-    public function getMembershipExpirationDate():DateTIme  {
+
+    /**
+     * Set the value of birthDate
+     *
+     * @param DateTime $birthDate
+     *
+     * @return self
+     */
+    public function setBirthDate(DateTime $birthDate): self
+    {
+        $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of membershipExpirationDate
+     *
+     * @return DateTIme
+     */
+    public function getMembershipExpirationDate(): DateTIme
+    {
         return $this->membershipExpirationDate;
     }
-    public function getRole():string  {
+
+    /**
+     * Set the value of membershipExpirationDate
+     *
+     * @param DateTIme $membershipExpirationDate
+     *
+     * @return self
+     */
+    public function setMembershipExpirationDate(DateTIme $membershipExpirationDate): self
+    {
+        $this->membershipExpirationDate = $membershipExpirationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of role
+     *
+     * @return string
+     */
+    public function getRole(): string
+    {
         return $this->role;
     }
 
+    /**
+     * Set the value of role
+     *
+     * @param string $role
+     *
+     * @return self
+     */
+    public function setRole(string $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
 }

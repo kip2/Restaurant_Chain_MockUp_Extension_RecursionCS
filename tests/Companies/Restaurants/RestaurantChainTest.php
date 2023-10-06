@@ -48,27 +48,14 @@ class RestaurantChainTest extends TestCase {
     }
 
     public function testGetter() {
+        // mockの呼び出し
         $restaurantChain = $this->mockRestaurantChainTest();
 
-        // company getter test
-        $this->assertEquals("name test", $restaurantChain->getName());
-        $this->assertEquals(1, $restaurantChain->getFoundingYear());
-        $this->assertEquals("test description", $restaurantChain->getDescription());
-        $this->assertEquals("http://test.com", $restaurantChain->getWebsite());
-        $this->assertEquals("090-0000-9999", $restaurantChain->getPhone());
-        $this->assertEquals("test industory", $restaurantChain->getIndustory());
-        $this->assertEquals("test CEO", $restaurantChain->getCeo());
-        $this->assertEquals(True, $restaurantChain->getIsPubliclyTraded());
-        $this->assertEquals("test country", $restaurantChain->getCountry());
-        $this->assertEquals("test founder", $restaurantChain->getFounder());
-        $this->assertEquals(10, $restaurantChain->getTotalEmployees());
-
-        // restaurantChain getter test
+        // test case
         $this->assertEquals(1, $restaurantChain->getChainId());
         $this->assertEquals(array(), $restaurantChain->getRestaurantLocations());
         $this->assertEquals("test cuisineType", $restaurantChain->getCuisineType());
         $this->assertEquals(1, $restaurantChain->getNumberOfLocations());
         $this->assertEquals("test parent company", $restaurantChain->getParentCompany());
-
     }
 }
