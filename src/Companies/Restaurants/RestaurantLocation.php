@@ -39,4 +39,199 @@ class RestaurantLocation implements FileConvertible{
     public function toArray():array{
         return array();
     }
+
+
+    // getter setter
+
+    /**
+     * Get the value of name
+     *
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set the value of name
+     *
+     * @param string $name
+     *
+     * @return self
+     */
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of address
+     *
+     * @return string
+     */
+    public function getAddress(): string
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set the value of address
+     *
+     * @param string $address
+     *
+     * @return self
+     */
+    public function setAddress(string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of city
+     *
+     * @return string
+     */
+    public function getCity(): string
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set the value of city
+     *
+     * @param string $city
+     *
+     * @return self
+     */
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of state
+     *
+     * @return string
+     */
+    public function getState(): string
+    {
+        return $this->state;
+    }
+
+    /**
+     * Set the value of state
+     *
+     * @param string $state
+     *
+     * @return self
+     */
+    public function setState(string $state): self
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of zipCode
+     *
+     * @return string
+     */
+    public function getZipCode(): string
+    {
+        return $this->zipCode;
+    }
+
+    /**
+     * Set the value of zipCode
+     *
+     * @param string $zipCode
+     *
+     * @return self
+     */
+    public function setZipCode(string $zipCode): self
+    {
+        $this->zipCode = $zipCode;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of employees
+     *
+     * @return array
+     */
+    public function getEmployees(): array
+    {
+        return $this->employees;
+    }
+
+    /**
+     * Set the value of employees
+     *
+     * @param array $employees
+     *
+     * @return self
+     */
+    public function setEmployees(array $employees): self
+    {
+        $this->employees = $employees;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of isOpen
+     *
+     * @return bool
+     */
+    public function getIsOpen(): bool
+    {
+        return $this->isOpen;
+    }
+
+    /**
+     * Set the value of isOpen
+     *
+     * @param bool $isOpen
+     *
+     * @return self
+     */
+    public function setIsOpen(bool $isOpen): self
+    {
+        $this->isOpen = $isOpen;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of hasDriveThru
+     *
+     * @return bool
+     */
+    public function getHasDriveThru(): bool
+    {
+        return $this->hasDriveThru;
+    }
+
+    /**
+     * Set the value of hasDriveThru
+     *
+     * @param bool $hasDriveThru
+     *
+     * @return self
+     */
+    public function setHasDriveThru(bool $hasDriveThru): self
+    {
+        $this->hasDriveThru = $hasDriveThru;
+
+        return $this;
+    }
 }
