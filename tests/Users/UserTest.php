@@ -24,6 +24,54 @@ class UserTest extends TestCase {
         return $user;
     }
 
+    public function testToHTML() {
+        $user = $this->mockUser();
+        
+        $userString = sprintf(
+            "<div class='user-card'>
+                    <div class='avatar'>SAMPLE</div>
+                    <h2>%s %s</h2>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>Birth Date: %s</p>
+                    <p>Membership Expiration Date: %s</p>
+                    <p>Role: %s</p>
+                </div>",
+                $user->getFirstName(),
+                $user->getLastName(),
+                $user->getEmail(),
+                $user->getPhoneNumber(),
+                $user->getAddress(),
+                $user->getBirthDate()->format('Y-m-d'),
+                $user->getMembershipExpirationDate()->format('Y-m-d'),
+                $user->getRole()
+            );
+
+        $this->assertEquals($userString, $user->toHTML());
+    }
+
+    public function testToString() {
+        $user = $this->mockUser();
+
+        $userString = sprintf(
+            "User ID: %d\nName: %s %s\nEmail: %s\nPhone Number: %s\nAddress: %s\nBirth Date: %s\nMembership Expiration Date: %s\nRole: %s\n",
+            $user->getId(),
+            $user->getFirstName(),
+            $user->getLastName(),
+            $user->getEmail(),
+            $user->getPhoneNumber(),
+            $user->getAddress(),
+            $user->getBirthDate()->format('Y-m-d'),
+            $user->getMembershipExpirationDate()->format('Y-m-d'),
+            $user->getRole()
+        );
+
+        // echo $user->toString();
+
+        $this->assertEquals($userString, $user->toString());
+    }
+
     public function testGetter() {
         $user = $this->mockUser();
         $this->assertEquals(1, $user->getId());
