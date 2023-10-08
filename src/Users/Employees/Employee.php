@@ -34,17 +34,26 @@ class Employee extends User implements FileConvertible{
         $this->awards = $awards;
     } 
 
+    // todo: まだ
     public function toString():string{
         return "";
     }
+    // todo: まだ
     public function toHTML():string{
         return "";
     }
+    // todo: まだ
     public function toMarkdown():string{
         return "";
     }
+    // todo: まだ
     public function toArray():array{
         return array();
+    }
+
+    public function introduction() : string{
+
+        return "";
     }
 
 
