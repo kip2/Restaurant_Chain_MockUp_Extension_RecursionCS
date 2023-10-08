@@ -16,10 +16,6 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             'PhpParser\\' => 10,
         ),
-        'F' => 
-        array (
-            'Faker\\' => 6,
-        ),
         'D' => 
         array (
             'DeepCopy\\' => 9,
@@ -30,10 +26,6 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
-        ),
-        'Faker\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'DeepCopy\\' => 
         array (

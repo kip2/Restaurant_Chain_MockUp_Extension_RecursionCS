@@ -3,11 +3,14 @@
 // namespace Helpers;
 
 require_once __DIR__ . '/../../src/Users/User.php';
+require_once __DIR__ . '/../../src/Users/Employees/Employee.php';
 
 require 'vendor/autoload.php';
 
 use Faker\Factory;
 
+$employee = RandomGenerator::employee();
+// echo $employee->introduction();
 
 class RandomGenerator {
 
@@ -23,7 +26,58 @@ class RandomGenerator {
     public static function employee(): Employee {
         $faker = Factory::create();
 
-        // randomな賞
+        // random jobTitle
+        $JOBTITLE = [
+            "Restaurant Manager",
+            "Executive Chef",
+            "Sous Chef",
+            "Line Cook",
+            "Pastry Chef",
+            "Dishwasher",
+            "Server",
+            "Host/Hostess",
+            "Bartender",
+            "Busser",
+            "Barista",
+            "Sommelier",
+            "Fast Food Cashier",
+            "Drive-Thru Operator",
+            "Food Runner",
+            "Head Waiter",
+            "Kitchen Porter",
+            "Prep Cook",
+            "Maitre d'Hotel",
+            "Baker"
+        ];
+
+        return new Employee(
+            $faker->randomNumber(),
+            $faker->firstName(),
+            $faker->lastName(),
+            $faker->email,
+            $faker->password,
+            $faker->phoneNumber,
+            $faker->address,
+            $faker->dateTimeThisCentury,
+            $faker->dateTimeBetween('-10 years', '+20 years'),
+            $faker->randomElement(['admin', 'user', 'editor']),
+
+            // jobtitle
+            // $faker->jobTitle,
+            $faker->randomElement($JOBTITLE),
+            // salary
+            $faker->randomFloat(2, 10, 100),
+            // startDate
+            $faker->dateTimeBetween('-30 years', 'now'),
+            // awards
+            // $faker->randomElement($AWARDS)
+            array("test1", "test2")
+            // self::awards()
+        ) ;
+    }
+
+    public static function awards():array {
+        // random awards
         $AWARDS = [
             "Best Innovative Company",
             "Employee's Choice Award",
@@ -42,27 +96,25 @@ class RandomGenerator {
             "Excellence in Leadership"
         ];
 
-        return new Employee(
-            $faker->randomNumber(),
-            $faker->firstName(),
-            $faker->lastName(),
-            $faker->email,
-            $faker->password,
-            $faker->phoneNumber,
-            $faker->address,
-            $faker->dateTimeThisCentury,
-            $faker->dateTimeBetween('-10 years', '+20 years'),
-            $faker->randomElement(['admin', 'user', 'editor']),
+        // faker
+        $faker = Factory::create();
 
-            // jobtitle
-            $faker->jobTitle,
-            // salary
-            $faker->randomFloat(2, 10, 100),
-            // startDate
-            $faker->dateTimeBetween('-30 years', 'now'),
-            // awards
-            $faker->randomElement($AWARDS)
-        );
+        // randomNumber
+        $max = rand(1, 10);
+        $min = 1;
+
+        $awards = [];
+
+        // もし0なら受賞歴なし
+        // if ($max == 0 ){ return $awards;}
+
+        $numOfAwards = $faker->numberBetween($min, $max);
+
+        for ($i = 0; $i < $numOfAwards; $i++) {
+            $awards[] = $faker->randomElement($AWARDS);
+        }
+
+        return $awards;
     }
 
     /**
@@ -74,7 +126,7 @@ class RandomGenerator {
      */
     public static function employees(int $min, int $max):array {
         $faker = Factory::create();
-        $employee = [];
+        $employees = [];
         $numOfEmployees = $faker->numberBetween($min, $max);
 
         for ($i = 0; $i < $numOfEmployees; $i++) {

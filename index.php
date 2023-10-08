@@ -10,11 +10,23 @@ spl_autoload_register(function ($class) {
     }
 });
 
+require_once __DIR__ . "/src/Helpers/RandomGenerator.php";
+
 // todo: 各クラスの呼び出し
 // todo: viewの作成
 // todo: 
 
 // echo "Hello!";
+
+// $employee = RandomGenerator::employee();
+// echo $employee->introduction();
+
+// $award = RandomGenerator::awards();
+// echo $award[0];
+
+$user = RandomGenerator::user();
+echo $user->toString();
+
 
 ?>
 
