@@ -24,6 +24,13 @@ class UserTest extends TestCase {
         return $user;
     }
 
+    public function testRenewMembership() {
+        $user = $this->mockUser();
+
+        $user->renewMembership(new DateTime("2023-12-31 18:00:00"));
+        $this->assertEquals(new DateTime("2023-12-31 18:00:00"), $user->getMembershipExpirationDate());
+    }
+
     public function testHasMembershipExpired() {
         $user = $this->mockUser();
 
