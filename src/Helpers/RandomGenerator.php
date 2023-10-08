@@ -59,7 +59,7 @@ class RandomGenerator {
             $company->getFounder(),
             $company->getTotalEmployees(),
             rand(1,65536),
-            self::restaurantLocations(1,10),
+            self::restaurantLocations($company->getTotalEmployees(), $company->getTotalEmployees()),
             $faker->randomElement($DISHES),
             rand(1,10),
             $faker->company
@@ -69,7 +69,14 @@ class RandomGenerator {
     public static function restaurantChains(int $min, int $max): array{
         $faker = Factory::create();
         $chains = [];
-        $numOfChains = $faker->numberBetween($min, $max);
+
+        // 同じ数字だったら、1つだけ生成するように設定
+        if ($min == $max) {
+            $numOfChains = 1;
+        // それ以外は数の範囲で生成するように設定
+        } else {
+            $numOfChains = $faker->numberBetween($min, $max);
+        }
 
         for ($i = 0; $i < $numOfChains; $i++) {
             $chains[] = self::restaurantChain();
