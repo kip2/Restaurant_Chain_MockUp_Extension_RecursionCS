@@ -20,12 +20,13 @@ class User implements FileConvertible{
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
-        $this->hashedPassword = $hashedPassword;
+        // $this->hashedPassword = $this->changePassword($hashedPassword);
         $this->phoneNumber = $phoneNumber;
         $this->address = $address;
         $this->birthDate = $birthDate;
         $this->membershipExpirationDate = $membershipExpirationDate;
         $this->role = $role;
+        $this->changePassword($hashedPassword);
     }
 
     /**
@@ -79,7 +80,7 @@ class User implements FileConvertible{
      */
     public function hasMembershipExpired() :bool{
         $currendDate = new DateTime();
-        return $currendDate > $this->membershipExpirationDate;
+        return $currendDate < $this->membershipExpirationDate;
     }
 
 

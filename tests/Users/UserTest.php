@@ -24,6 +24,22 @@ class UserTest extends TestCase {
         return $user;
     }
 
+    public function testHasMembershipExpired() {
+        $user = $this->mockUser();
+
+        // 期限切れ(現在、2023-10-08)
+        $this->assertFalse($user->hasMembershipExpired());
+
+        // 期限内
+        $user->setMembershipExpirationDate(new DateTime("2023-12-31 18:00:00"));
+        $this->assertTrue($user->hasMembershipExpired());
+    }
+
+    public function testLogin() {
+        $user = $this->mockUser();
+        $this->assertTrue($user->login("test password"));
+    }
+
     public function testToArray() {
         $user = $this->mockUser();
 
@@ -108,7 +124,7 @@ class UserTest extends TestCase {
         $this->assertEquals("test firstName", $user->getFirstName());
         $this->assertEquals("test lastName", $user->getLastName());
         $this->assertEquals("test@example.com", $user->getEmail());
-        $this->assertEquals("test password", $user->getHashedPassword());
+        $this->assertTrue($user->login("test password"));
         $this->assertEquals("090-0000-9999", $user->getPhoneNumber());
         $this->assertEquals("test address", $user->getAddress());
         $this->assertEquals(new DateTime("2023-05-15 18:00:00"), $user->getBirthDate());
