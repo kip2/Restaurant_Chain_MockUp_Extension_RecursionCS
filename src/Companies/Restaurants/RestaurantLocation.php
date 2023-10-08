@@ -5,14 +5,21 @@ require_once __DIR__ . '/../../Users/Employees/Employee.php';
 
 class RestaurantLocation implements FileConvertible{
 
+    // 場所の名前
     private string $name;
+    // 住所
     private string $address;
+    // 市区町村
     private string $city;
+    // 州
     private string $state;
+    // 郵便番号
     private string $zipCode;
     /** @var Employee[] */
     private array $employees;
+    // 現在開いているか
     private bool $isOpen;
+    // ドライブスルー可能か
     private bool $hasDriveThru;
 
     public function __construct( $name, $address, $city, $state, $zipCode, $employees, $isOpen, $hasDriveThru,)
@@ -28,8 +35,9 @@ class RestaurantLocation implements FileConvertible{
     }
 
     public function introduction():string {
-        $introduction = "Company Name: {$this->getName()} Address: {$this->getAddress()}, {$this->getCity()}, {$this->getState()}, ZipCode: {$this->getZipCode()} ";
-        $introduction .= " Open?: " . ($this->getIsOpen()) ? "Yes" : "No";
+        $introduction = " Address: {$this->getName()}, {$this->getAddress()}, {$this->getCity()}, {$this->getState()},  ZipCode: {$this->getZipCode()}, ";
+        $introduction .= " Open?: " ;
+        $introduction .= ($this->getIsOpen()) ? "Yes" : "No";
         return $introduction;
     }
 

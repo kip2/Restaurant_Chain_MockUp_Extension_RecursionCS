@@ -5,6 +5,7 @@
 require_once __DIR__ . '/../../src/Users/User.php';
 require_once __DIR__ . '/../../src/Users/Employees/Employee.php';
 require_once __DIR__ . '/../../src/Companies/Company.php';
+require_once __DIR__ . '/../../src/Companies/Restaurants/RestaurantLocation.php';
 
 require 'vendor/autoload.php';
 
@@ -16,6 +17,36 @@ $employee = RandomGenerator::employee();
 class RandomGenerator {
 
     // todo: fanction名をクラス名にしておいおい増やす
+
+
+
+    // ---------- restaurant location -----------------
+    public static function restaurantLocation(): RestaurantLocation {
+        $faker = Factory::create();
+
+        return new RestaurantLocation(
+            $faker->secondaryAddress,
+            $faker->streetName,
+            $faker->city,
+            $faker->state,
+            $faker->postcode,
+            self::companies(1,10),
+            $faker->boolean,
+            $faker->boolean
+        );
+    }
+
+    public static function restaurantLocations(int $min, int $max): array{
+        $faker = Factory::create();
+        $locations = [];
+        $numOfLocations = $faker->numberBetween($min, $max);
+
+        for ($i = 0; $i < $numOfLocations; $i++) {
+            $locations[] = self::restaurantLocation();
+        }
+        
+        return $locations;
+    }
 
     // ---------- company -----------------
     public static function company(): Company {
