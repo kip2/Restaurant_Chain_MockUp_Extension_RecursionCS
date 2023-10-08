@@ -67,7 +67,8 @@ class Company implements FileConvertible{
         $introduction .= "CEO: {$this->getCeo()}, ";
         $introduction .= "Publicly Traded?: ";
         $introduction .= ($this->getIsPubliclyTraded()) ? "Yes" : "No";
-        
+        $introduction .= "\n";
+
         return $introduction;
     }
 

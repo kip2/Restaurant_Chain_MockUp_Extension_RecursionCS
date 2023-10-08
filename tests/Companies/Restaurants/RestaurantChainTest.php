@@ -70,6 +70,7 @@ class RestaurantChainTest extends TestCase {
         $companyIntroduction .= "CEO: {$chain->getCeo()}, ";
         $companyIntroduction .= "Publicly Traded?: " ;
         $companyIntroduction .= ($chain->getFoundingYear()) ? "Yes" : "No";
+        $companyIntroduction .= "\n";
 
         $this->assertEquals($companyIntroduction, $chain->introduction());
     }

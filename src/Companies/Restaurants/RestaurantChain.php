@@ -56,11 +56,16 @@ class RestaurantChain extends Company implements FileConvertible{
         $introduction = parent::introduction();
 
         // $introduction .= sprintf("Chain ID: {$this->getChainId()}, ");
-
+        // $introduction .= sprintf("Locations: {$this->printRestaurantLocations()}, ");
 
         return $introduction;
     }
 
+    /**
+     * restaurantLocationを全て文章化する
+     *
+     * @return string
+     */
     public function printRestaurantLocations() :string{
         $locations = "";
         foreach ($this->getRestaurantLocations() as $location) {

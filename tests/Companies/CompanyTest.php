@@ -60,6 +60,7 @@ class CompanyTest extends TestCase {
         $introduction .= "CEO: {$company->getCeo()}, ";
         $introduction .= "Publicly Traded?: " ;
         $introduction .= ($company->getFoundingYear()) ? "Yes" : "No";
+        $introduction .= "\n";
 
         $this->assertEquals($introduction, $company->introduction());
     }
