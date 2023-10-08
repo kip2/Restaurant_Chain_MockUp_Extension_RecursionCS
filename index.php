@@ -18,10 +18,13 @@ require_once __DIR__ . "/src/Helpers/RandomGenerator.php";
 
 // echo "Hello!";
 
-$restaurantLocation = RandomGenerator::restaurantLocation();
-$locations = RandomGenerator::restaurantLocations(1,5);
+$chain = RandomGenerator::restaurantChain();
+$chains = RandomGenerator::restaurantChains(1, 10);
 
-echo $restaurantLocation->introduction();
+// $restaurantLocation = RandomGenerator::restaurantLocation();
+// $locations = RandomGenerator::restaurantLocations(1,5);
+
+// echo $restaurantLocation->introduction();
 
 // $company = RandomGenerator::company();
 // echo $company->introduction();
@@ -40,3 +43,33 @@ echo $restaurantLocation->introduction();
 
 
 ?>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title> Restaurant Chain Moclup </title>
+    </head>
+    <body>
+        <!-- todo: 中央に寄せる必要がある -->
+        <h1>Restaurant Chain List</h1>
+        <div>
+            <!-- todo: borderで囲う -->
+            <h2>Restaurant Chain HOGEHOGE, FUGAFUGA</h2>
+            <div>
+                <p>restaurant name and folding infomation </p>
+                <div>
+                    <p>company information</p>
+                    <div>
+                        <p>employees:</p>
+                        <div>
+                            <p>employee1</p>
+                            <p>employee2</p>
+                            <p>employee3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

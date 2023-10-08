@@ -50,6 +50,8 @@ class RestaurantChain extends Company implements FileConvertible{
     public function toArray():array{
         return array();
     }
+
+
     
 
     /**

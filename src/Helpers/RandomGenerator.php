@@ -6,6 +6,7 @@ require_once __DIR__ . '/../../src/Users/User.php';
 require_once __DIR__ . '/../../src/Users/Employees/Employee.php';
 require_once __DIR__ . '/../../src/Companies/Company.php';
 require_once __DIR__ . '/../../src/Companies/Restaurants/RestaurantLocation.php';
+require_once __DIR__ . '/../../src/Companies/Restaurants/RestaurantChain.php';
 
 require 'vendor/autoload.php';
 
@@ -17,6 +18,65 @@ $employee = RandomGenerator::employee();
 class RandomGenerator {
 
     // todo: fanction名をクラス名にしておいおい増やす
+    // ---------- restaurant chain -----------------
+    public static function restaurantChain(): RestaurantChain {
+        $faker = Factory::create();
+    $DISHES = [
+        "Sushi",
+        "Pizza",
+        "Hamburger",
+        "Pasta",
+        "Fried Chicken",
+        "Ramen",
+        "Taco",
+        "Steak",
+        "Dim Sum",
+        "Falafel",
+        "Paella",
+        "Curry",
+        "Pho",
+        "Biryani",
+        "Fish and Chips",
+        "Tofu Stir Fry",
+        "Gyros",
+        "Peking Duck",
+        "Tamales",
+        "Tom Yum Soup"
+    ];
+
+    $company = self::company();
+
+        return new RestaurantChain(
+            $company->getName(),
+            $company->getFoundingYear(),
+            $company->getDescription(),
+            $company->getWebsite(),
+            $company->getPhone(),
+            $company->getIndustory(),
+            $company->getCeo(),
+            $company->getIsPubliclyTraded(),
+            $company->getCountry(),
+            $company->getFounder(),
+            $company->getTotalEmployees(),
+            rand(1,65536),
+            self::restaurantLocations(1,10),
+            $faker->randomElement($DISHES),
+            rand(1,10),
+            $faker->company
+        );
+    }
+
+    public static function restaurantChains(int $min, int $max): array{
+        $faker = Factory::create();
+        $chains = [];
+        $numOfChains = $faker->numberBetween($min, $max);
+
+        for ($i = 0; $i < $numOfChains; $i++) {
+            $chains[] = self::restaurantChain();
+        }
+        
+        return $chains;
+    }
 
 
 
