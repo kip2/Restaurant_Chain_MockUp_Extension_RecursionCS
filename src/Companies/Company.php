@@ -41,6 +41,11 @@ class Company implements FileConvertible{
         $this->totalEmployees = $totalEmployees;
     }
 
+    /**
+     * 自己紹介用の文章を生成
+     *
+     * @return string
+     */
     public function introduction():string {
         $introduction = "Company name: {$this->getName()}, ";
         $introduction .= "Founding year: {$this->getFoundingYear()}, ";

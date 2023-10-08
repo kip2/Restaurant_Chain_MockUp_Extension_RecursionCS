@@ -43,7 +43,6 @@ class RandomGenerator {
 
         return new Company(
             $faker->name(),
-            // $faker->dateTimeThisCentury,
             rand(1900, 2023),
             $faker->sentence($nbWords = 6, $variableNbWords = true),
             $faker->url,

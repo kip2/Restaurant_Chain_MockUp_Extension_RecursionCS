@@ -20,6 +20,9 @@ require_once __DIR__ . "/src/Helpers/RandomGenerator.php";
 
 $company = RandomGenerator::company();
 echo $company->introduction();
+$companies = RandomGenerator::companies(1, 5);
+
+
 
 // $employee = RandomGenerator::employee();
 // echo $employee->introduction();
