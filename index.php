@@ -18,8 +18,12 @@ require_once __DIR__ . "/src/Helpers/RandomGenerator.php";
 
 // echo "Hello!";
 
+$restaurantLocation = RandomGenerator::restaurantLocation();
 $chain = RandomGenerator::restaurantChain();
-$chains = RandomGenerator::restaurantChains(1, 10);
+// $chains = RandomGenerator::restaurantChains(1, 10);
+
+$chain->addLocation($restaurantLocation);
+
 
 // $restaurantLocation = RandomGenerator::restaurantLocation();
 // $locations = RandomGenerator::restaurantLocations(1,5);

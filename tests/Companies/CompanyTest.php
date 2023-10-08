@@ -51,14 +51,15 @@ class CompanyTest extends TestCase {
     public function testIntroduction() {
         $company = $this->mockCompany();
 
-        $introduction = "Company name: {$company->getName()} ";
-        $introduction .= "Founding year: {$company->getFoundingYear()} ";
-        $introduction .= "Description: {$company->getDescription()} ";
-        $introduction .= "Our Website URL: {$company->getWebsite()} ";
-        $introduction .= "Phone Number: {$company->getPhone()} ";
-        $introduction .= "Industory: {$company->getIndustory()} ";
-        $introduction .= "CEO: {$company->getCeo()} ";
-        $introduction .= "Publicly Traded?: " . ($company->getFoundingYear()) ? "Yes" : "No";
+        $introduction = "Company name: {$company->getName()}, ";
+        $introduction .= "Founding year: {$company->getFoundingYear()}, ";
+        $introduction .= "Description: {$company->getDescription()}, ";
+        $introduction .= "Our Website URL: {$company->getWebsite()}, ";
+        $introduction .= "Phone Number: {$company->getPhone()}, ";
+        $introduction .= "Industory: {$company->getIndustory()}, ";
+        $introduction .= "CEO: {$company->getCeo()}, ";
+        $introduction .= "Publicly Traded?: " ;
+        $introduction .= ($company->getFoundingYear()) ? "Yes" : "No";
 
         $this->assertEquals($introduction, $company->introduction());
     }

@@ -24,8 +24,9 @@ class RestaurantLocationTest extends TestCase {
     public function testIntroduction() {
         $restaurantLocation = $this->mockRestaurantLocation();
 
-        $printString = "Company Name: {$restaurantLocation->getName()} Address: {$restaurantLocation->getAddress()}, {$restaurantLocation->getCity()}, {$restaurantLocation->getState()}, ZipCode: {$restaurantLocation->getZipCode()} ";
-        $printString .= " Open?: " . ($restaurantLocation->getIsOpen()) ? "Yes" : "No";
+        $printString = " Address: {$restaurantLocation->getName()}, {$restaurantLocation->getAddress()}, {$restaurantLocation->getCity()}, {$restaurantLocation->getState()},  ZipCode: {$restaurantLocation->getZipCode()}, ";
+        $printString .= " Open?: " ;
+        $printString .= ($restaurantLocation->getIsOpen()) ? "Yes" : "No";
 
         $this->assertEquals($printString, $restaurantLocation->introduction());
     }
