@@ -28,6 +28,7 @@ class User implements FileConvertible{
         $this->role = $role;
     }
 
+
     /**
      * $passwordが一致するかを判定する
      *

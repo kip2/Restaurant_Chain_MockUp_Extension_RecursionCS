@@ -11,6 +11,11 @@ use Faker\Factory;
 class RandomGenerator {
 
     // todo: fanction名をクラス名にしておいおい増やす
+    /**
+     * ランダムな値を持ったユーザを生成する
+     *
+     * @return User
+     */
     public static function user(): User {
         $faker = Factory::create();
 
@@ -28,6 +33,13 @@ class RandomGenerator {
         );
     }
 
+    /**
+     * ランダムな値を持ったユーザーの配列を生成する
+     *
+     * @param integer $min
+     * @param integer $max
+     * @return array
+     */
     public static function users(int $min, int $max): array {
         $faker = Factory::create();
         $users = [];
