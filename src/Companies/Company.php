@@ -42,14 +42,15 @@ class Company implements FileConvertible{
     }
 
     public function introduction():string {
-        $introduction = "Company name: {$this->getName()} ";
-        $introduction .= "Founding year: {$this->getFoundingYear()} ";
-        $introduction .= "Description: {$this->getDescription()} ";
-        $introduction .= "Our Website URL: {$this->getWebsite()} ";
-        $introduction .= "Phone Number: {$this->getPhone()} ";
-        $introduction .= "Industory: {$this->getIndustory()} ";
-        $introduction .= "CEO: {$this->getCeo()} ";
-        $introduction .= "Publicly Traded?: " . ($this->getFoundingYear()) ? "Yes" : "No";
+        $introduction = "Company name: {$this->getName()}, ";
+        $introduction .= "Founding year: {$this->getFoundingYear()}, ";
+        $introduction .= "Description: {$this->getDescription()}, ";
+        $introduction .= "Our Website URL: {$this->getWebsite()}, ";
+        $introduction .= "Phone Number: {$this->getPhone()}, ";
+        $introduction .= "Industory: {$this->getIndustory()}, ";
+        $introduction .= "CEO: {$this->getCeo()}, ";
+        $introduction .= "Publicly Traded?: ";
+        $introduction .= ($this->getIsPubliclyTraded()) ? "Yes" : "No";
         
         return $introduction;
     }

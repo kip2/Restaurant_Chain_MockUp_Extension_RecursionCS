@@ -18,8 +18,11 @@ require_once __DIR__ . "/src/Helpers/RandomGenerator.php";
 
 // echo "Hello!";
 
-$employee = RandomGenerator::employee();
-echo $employee->introduction();
+$company = RandomGenerator::company();
+echo $company->introduction();
+
+// $employee = RandomGenerator::employee();
+// echo $employee->introduction();
 
 // $award = RandomGenerator::awards();
 // echo $award[0];

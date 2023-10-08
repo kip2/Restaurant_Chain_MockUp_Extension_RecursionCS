@@ -4,6 +4,7 @@
 
 require_once __DIR__ . '/../../src/Users/User.php';
 require_once __DIR__ . '/../../src/Users/Employees/Employee.php';
+require_once __DIR__ . '/../../src/Companies/Company.php';
 
 require 'vendor/autoload.php';
 
@@ -17,7 +18,56 @@ class RandomGenerator {
     // todo: fanction名をクラス名にしておいおい増やす
 
     // ---------- company -----------------
+    public static function company(): Company {
+        $faker = Factory::create();
 
+        $INDUSTORY = [
+            "Fast Food Restaurants",
+            "Casual Dining Restaurants",
+            "Fine Dining Restaurants",
+            "Cafes & Coffee Shops",
+            "Buffets and All-You-Can-Eat Restaurants",
+            "Food Trucks & Mobile Vending",
+            "Pizzerias",
+            "Ethnic and Specialty Restaurants",
+            "Seafood Restaurants",
+            "Vegetarian and Vegan Restaurants",
+            "Bakeries",
+            "Delis and Sandwich Shops",
+            "Ice Cream and Frozen Yogurt Shops",
+            "Juice Bars and Smoothie Shops",
+            "Pubs and Bars",
+            "Catering Services",
+            "Takeaway and Delivery Services"
+        ];
+
+        return new Company(
+            $faker->name(),
+            // $faker->dateTimeThisCentury,
+            rand(1900, 2023),
+            $faker->sentence($nbWords = 6, $variableNbWords = true),
+            $faker->url,
+            $faker->phoneNumber,
+            $faker->randomElement($INDUSTORY),
+            $faker->name(),
+            $faker->boolean,
+            $faker->country,
+            $faker->name(),
+            rand(5,30)
+        );
+    }
+    
+    public static function companies(int $min, int $max): array {
+        $faker = Factory::create();
+        $companies = [];
+        $numOfCompanies = $faker->numberBetween($min, $max);
+
+        for ($i = 0; $i < $numOfCompanies; $i++) {
+            $companies[] = self::company();
+        }
+
+        return $companies;
+    }
 
     // ---------- employee -----------------
 
