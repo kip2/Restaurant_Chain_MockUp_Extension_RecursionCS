@@ -70,13 +70,19 @@ class RandomGenerator {
             // startDate
             $faker->dateTimeBetween('-30 years', 'now'),
             // awards
-            // $faker->randomElement($AWARDS)
-            array("test1", "test2")
-            // self::awards()
+            self::awards()
         ) ;
     }
 
-    public static function awards():array {
+
+    /**
+     * employeeのawards生成用メソッド
+     * 文字列の配列を返す
+     * 受賞歴なしなら"No awarads received"の文字列が入っただけの配列を返す
+     *
+     * @return array
+     */
+    private static function awards():array {
         // random awards
         $AWARDS = [
             "Best Innovative Company",
@@ -106,10 +112,12 @@ class RandomGenerator {
         $awards = [];
 
         // もし0なら受賞歴なし
-        // if ($max == 0 ){ return $awards;}
+        if ($max == 0 ){ 
+            $awards[] = "No awards received";
+            return $awards;
+        }
 
         $numOfAwards = $faker->numberBetween($min, $max);
-
         for ($i = 0; $i < $numOfAwards; $i++) {
             $awards[] = $faker->randomElement($AWARDS);
         }
