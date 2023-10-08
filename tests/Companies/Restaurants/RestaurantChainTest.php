@@ -1,8 +1,10 @@
 <?php
 
 require_once __DIR__ . '/../../../src/Companies/Restaurants/RestaurantChain.php';
+require_once __DIR__ . '/../../../src/Helpers/RandomGenerator.php';
 
 use PHPUnit\Framework\TestCase;
+use function PHPUnit\Framework\assertEquals;
 
 class RestaurantChainTest extends TestCase {
     
@@ -44,7 +46,15 @@ class RestaurantChainTest extends TestCase {
             $parentCompany
         );
         return $restaurantChain;
+    }
 
+    public function testAddLocation() {
+        $chain = RandomGenerator::restaurantChain();
+        $location = RandomGenerator::restaurantLocation();
+        $chain->addLocation($location);
+
+        $locations = $chain->getRestaurantLocations();
+        $this->assertEquals($location, end($locations));
     }
 
     public function testGetter() {

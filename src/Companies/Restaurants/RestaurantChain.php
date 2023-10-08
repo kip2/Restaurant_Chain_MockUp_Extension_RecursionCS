@@ -52,6 +52,9 @@ class RestaurantChain extends Company implements FileConvertible{
     }
 
 
+    public function addLocation(RestaurantLocation $location):void {
+        array_push($this->restaurantLocations, $location);
+    }
     
 
     /**
