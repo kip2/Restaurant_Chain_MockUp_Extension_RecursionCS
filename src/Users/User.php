@@ -20,13 +20,12 @@ class User implements FileConvertible{
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
-        // $this->hashedPassword = $this->changePassword($hashedPassword);
+        $this->changePassword($hashedPassword);
         $this->phoneNumber = $phoneNumber;
         $this->address = $address;
         $this->birthDate = $birthDate;
         $this->membershipExpirationDate = $membershipExpirationDate;
         $this->role = $role;
-        $this->changePassword($hashedPassword);
     }
 
     /**
