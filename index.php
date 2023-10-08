@@ -23,6 +23,7 @@ $chain = RandomGenerator::restaurantChain();
 // $chains = RandomGenerator::restaurantChains(1, 10);
 
 $chain->addLocation($restaurantLocation);
+echo $chain->introduction();
 
 
 // $restaurantLocation = RandomGenerator::restaurantLocation();

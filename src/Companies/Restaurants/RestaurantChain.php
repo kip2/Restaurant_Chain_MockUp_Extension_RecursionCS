@@ -52,11 +52,20 @@ class RestaurantChain extends Company implements FileConvertible{
     }
 
 
+    /**
+     * 紹介用文章を生成
+     *
+     * @return string
+     */
     public function introduction():string {
         $introduction = parent::introduction();
 
-        // $introduction .= sprintf("Chain ID: {$this->getChainId()}, ");
-        // $introduction .= sprintf("Locations: {$this->printRestaurantLocations()}, ");
+        $introduction .= sprintf("Chain ID: {$this->getChainId()}, ");
+        $introduction .= sprintf("Locations: {$this->printRestaurantLocations()}, ");
+        $introduction .= sprintf("Cuisine type: {$this->getCuisineType()}, ");
+        $introduction .= sprintf("Number of Location: {$this->getNumberOfLocations()}, ");
+        $introduction .= sprintf("Parent company: {$this->getParentCompany()}");
+        $introduction .= sprintf("\n");
 
         return $introduction;
     }
