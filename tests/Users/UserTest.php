@@ -24,6 +24,14 @@ class UserTest extends TestCase {
         return $user;
     }
 
+    public function testUpdateProfile() {
+        $user = $this->mockUser();
+
+        $user->updateProfile("change address", "0120-000-000");
+        $this->assertEquals("change address", $user->getAddress());
+        $this->assertEquals("0120-000-000", $user->getPhoneNumber());
+    }
+
     public function testRenewMembership() {
         $user = $this->mockUser();
 
