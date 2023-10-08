@@ -34,10 +34,16 @@ class RestaurantLocation implements FileConvertible{
         $this->hasDriveThru = $hasDriveThru;
     }
 
+    /**
+     * locationについての説明文を生成
+     *
+     * @return string
+     */
     public function introduction():string {
         $introduction = " Address: {$this->getName()}, {$this->getAddress()}, {$this->getCity()}, {$this->getState()},  ZipCode: {$this->getZipCode()}, ";
         $introduction .= " Open?: " ;
         $introduction .= ($this->getIsOpen()) ? "Yes" : "No";
+        $introduction .= "\n";
         return $introduction;
     }
 

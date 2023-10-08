@@ -3,16 +3,27 @@
 require_once __DIR__ . '/../FileConverter/FileConvertible.php';
 
 class Company implements FileConvertible{
+    // 会社の名前
     private string $name;
+    // 設立年
     private int $foundingYear;
+    // 会社についての説明
     private string $description;
+    // websiteのURL
     private string $website;
+    // 電話番号
     private string $phone;
+    // 業種
     private string $industory;
+    // CEOの名前
     private string $ceo;
+    // 公開取引されているか
     private bool $isPubliclyTraded;
+    // 国
     private string $country;
+    // 創設者
     private string $founder;
+    // 従業員数
     private int $totalEmployees;
 
     public function __construct(

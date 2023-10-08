@@ -52,6 +52,29 @@ class RestaurantChain extends Company implements FileConvertible{
     }
 
 
+    public function introduction():string {
+        $introduction = parent::introduction();
+
+        // $introduction .= sprintf("Chain ID: {$this->getChainId()}, ");
+
+
+        return $introduction;
+    }
+
+    public function printRestaurantLocations() :string{
+        $locations = "";
+        foreach ($this->getRestaurantLocations() as $location) {
+            $locations .= $location->introduction();
+        }
+        return $locations;
+    }
+
+    /**
+     * RestaurantLocationを追加する
+     *
+     * @param RestaurantLocation $location
+     * @return void
+     */
     public function addLocation(RestaurantLocation $location):void {
         array_push($this->restaurantLocations, $location);
     }
