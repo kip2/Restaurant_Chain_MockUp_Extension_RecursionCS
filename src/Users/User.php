@@ -83,6 +83,21 @@ class User implements FileConvertible{
         return $currendDate < $this->membershipExpirationDate;
     }
 
+    public function introduction():string {
+        return sprintf(
+            "User ID: %d Name: %s %s Email: %s Phone Number: %s Address: %s Birth Date: %s Membership Expiration Date: %s Role: %s \n",
+            $this->id,
+            $this->firstName,
+            $this->lastName,
+            $this->email,
+            $this->phoneNumber,
+            $this->address,
+            $this->birthDate->format('Y-m-d'),
+            $this->membershipExpirationDate->format('Y-m-d'),
+            $this->role
+        );
+
+    }
 
     /**
       * 紹介用文字列を生成する

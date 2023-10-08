@@ -16,6 +16,9 @@ class RandomGenerator {
 
     // todo: fanction名をクラス名にしておいおい増やす
 
+    // ---------- company -----------------
+
+
     // ---------- employee -----------------
 
     /**
@@ -49,6 +52,9 @@ class RandomGenerator {
             "Maitre d'Hotel",
             "Baker"
         ];
+
+        // user
+        // $user = self::user();
 
         return new Employee(
             $faker->randomNumber(),

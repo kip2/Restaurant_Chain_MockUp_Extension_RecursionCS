@@ -51,9 +51,15 @@ class Employee extends User implements FileConvertible{
         return array();
     }
 
+    /**
+     * 自己紹介用の文を生成する
+     *
+     * @return string
+     */
     public function introduction() : string{
-
-        return "";
+        $employeeString = parent::introduction();
+        $employeeString .= sprintf("jobTitle: %s salary: %.2f startDate: %s awards: %s", $this->getJobTitle(), $this->getSalary(), $this->getStartDate()->format('Y-m-d'), implode(", ", $this->getAwards()));
+        return $employeeString;
     }
 
 
