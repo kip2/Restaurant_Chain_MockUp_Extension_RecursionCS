@@ -24,6 +24,14 @@ class UserTest extends TestCase {
         return $user;
     }
 
+    public function testChangePassword() {
+        $user = $this->mockUser();
+
+        $user->changePassword("change password");
+
+        $this->assertTrue($user->login("change password"));
+    }
+
     public function testUpdateProfile() {
         $user = $this->mockUser();
 
