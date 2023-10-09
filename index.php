@@ -34,10 +34,16 @@ $restaurantChain = RandomGenerator::restaurantChains(3,5);
                             <h3 class="pl-20">Restaurant Chain information</h3>
                         <div>
                         <div class="border-line bg-white">
-                            <div class="pl-20">
+                            <div class="pl-20 d-flex flex-column">
                                 <?php foreach ($chain->getRestaurantLocations() as $location): ?>
-                                    <h3><?php echo $location->getName() ?></h3>
-                                    <p><?php echo $location->shortIntroduction() ?></p>
+                                    <h3 class="bg-blue "><?php echo $location->getName() ?></h3>
+                                    <div class="pt-0">
+                                        <p class="pl-20 pt-0"><?php echo $location->shortIntroduction() ?></p>
+                                        <h4>Employee:</h4>
+                                        <?php foreach ($location->getEmployees() as $employee): ?>
+                                            <p class="employee border-line"><?php echo $employee->introduction() ?></p>
+                                        <?php endforeach; ?>
+                                    </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>

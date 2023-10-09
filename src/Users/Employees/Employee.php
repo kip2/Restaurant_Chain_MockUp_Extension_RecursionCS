@@ -57,8 +57,8 @@ class Employee extends User implements FileConvertible{
      * @return string
      */
     public function introduction() : string{
-        $employeeString = parent::introduction();
-        $employeeString .= sprintf("jobTitle: %s salary: %.2f startDate: %s awards: %s", $this->getJobTitle(), $this->getSalary(), $this->getStartDate()->format('Y-m-d'), implode(", ", $this->getAwards()));
+        // $employeeString = parent::introduction();
+        $employeeString = sprintf("ID:%d, jobTitle: %s, salary: %.2f, startDate: %s, awards: %s", $this->getId(), $this->getJobTitle(), $this->getSalary(), $this->getStartDate()->format('Y-m-d'), implode(", ", $this->getAwards()));
         return $employeeString;
     }
 

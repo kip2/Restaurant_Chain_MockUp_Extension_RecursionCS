@@ -27,6 +27,25 @@
     padding: 5px;
 }
 
+/* .p-clear {
+    padding: 0px;
+} */
+.full-flex {
+    flex: 1;
+}
+
+.employee {
+    padding: 0px;
+}
+
+.p-horizontal-20 {
+    padding: 0px, 20px;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
 .pl-20 {
     padding-left: 20px;
 }
@@ -37,4 +56,16 @@
 
 .bg-white {
     background-color: white;
+}
+
+.bg-blue {
+    background-color: rgb(150, 218, 241);
+}
+
+.m-20 {
+    margin: 20px;
+}
+
+.pt-0 {
+    padding-top: 0px;
 }

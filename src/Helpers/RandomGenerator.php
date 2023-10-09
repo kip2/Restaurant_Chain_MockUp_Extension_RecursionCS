@@ -97,7 +97,7 @@ class RandomGenerator {
             $faker->city,
             $faker->state,
             $faker->postcode,
-            self::companies(1,10),
+            self::employees(1,5),
             $faker->boolean,
             $faker->boolean
         );
@@ -150,7 +150,7 @@ class RandomGenerator {
             $faker->boolean,
             $faker->country,
             $faker->name(),
-            rand(5,30)
+            rand(1,3)
         );
     }
     
@@ -259,7 +259,7 @@ class RandomGenerator {
         $faker = Factory::create();
 
         // randomNumber
-        $max = rand(1, 10);
+        $max = rand(1, 5);
         $min = 1;
 
         $awards = [];
