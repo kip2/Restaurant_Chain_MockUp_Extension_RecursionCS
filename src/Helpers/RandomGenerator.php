@@ -17,7 +17,6 @@ $employee = RandomGenerator::employee();
 
 class RandomGenerator {
 
-    // todo: fanction名をクラス名にしておいおい増やす
     // ---------- restaurant chain -----------------
     public static function restaurantChain(): RestaurantChain {
         $faker = Factory::create();
@@ -44,6 +43,7 @@ class RandomGenerator {
         "Tom Yum Soup"
     ];
 
+    // company部分の作成
     $company = self::company();
 
         return new RestaurantChain(
