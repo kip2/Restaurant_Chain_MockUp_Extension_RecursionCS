@@ -92,8 +92,8 @@ class RandomGenerator {
         $faker = Factory::create();
 
         return new RestaurantLocation(
-            $faker->secondaryAddress,
-            $faker->streetName,
+            $faker->company,
+            sprintf("%s %s", $faker->streetName , $faker->secondaryAddress),
             $faker->city,
             $faker->state,
             $faker->postcode,

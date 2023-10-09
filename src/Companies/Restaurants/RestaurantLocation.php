@@ -34,6 +34,16 @@ class RestaurantLocation implements FileConvertible{
         $this->hasDriveThru = $hasDriveThru;
     }
 
+
+    public function shortIntroduction():string {
+        return sprintf("Address: %s ZipCode: %s", $this->printAddress(), $this->getZipCode());
+    }
+
+    public function printAddress():string {
+        return sprintf("%s, %s, %s", $this->getAddress(), $this->getCity(), $this->getState());
+    
+    }
+
     /**
      * locationについての説明文を生成
      *

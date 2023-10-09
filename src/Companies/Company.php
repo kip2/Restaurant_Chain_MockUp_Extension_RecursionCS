@@ -52,6 +52,10 @@ class Company implements FileConvertible{
         $this->totalEmployees = $totalEmployees;
     }
 
+    public function introductionName():string {
+        return sprintf("Company Name:%s", $this->getName());
+    }
+
     /**
      * 自己紹介用の文章を生成
      *
@@ -84,7 +88,6 @@ class Company implements FileConvertible{
     public function toArray():array{
         return array();
     }
-
 
 
     /**
