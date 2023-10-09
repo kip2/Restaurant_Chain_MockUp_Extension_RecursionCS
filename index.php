@@ -28,13 +28,19 @@ $restaurantChain = RandomGenerator::restaurantChains(3,5);
         <div class="vh-100">
             <?php foreach ($restaurantChain as $chain): ?>
                 <div class="justify-content-center">
-                    <h1>Restaurant Chain <?php echo $chain->getName() ?></h1>
-                    <div>
-                        <h2>Restaurant Chain information</h2>
+                    <h1 class="text-center">Restaurant Chain <?php echo $chain->getName() ?></h1>
+                    <div class="p-10">
+                        <div class="border-line bg-gray">
+                            <h3 class="pl-20">Restaurant Chain information</h3>
                         <div>
-                            <?php foreach ($chain->getRestaurantLocations() as $location): ?>
-                                <h3><?php echo $location->getName() ?></h3>
-                            <?php endforeach; ?>
+                        <div class="border-line bg-white">
+                            <div class="pl-20">
+                                <?php foreach ($chain->getRestaurantLocations() as $location): ?>
+                                    <h3><?php echo $chain->getName() ?></h3>
+                                    <p><?php echo $chain->introductionName() . " ";
+                                        echo $location->shortIntroduction() ?></p>
+                                <?php endforeach; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
