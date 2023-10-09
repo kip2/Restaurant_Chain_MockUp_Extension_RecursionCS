@@ -39,9 +39,9 @@
     margin-top: 10px;
 }
 
-/* .employee {
-    padding: 0px;
-} */
+.mb-10 {
+    margin-bottom: 10px;
+}
 
 .p-horizontal-20 {
     padding: 0px, 20px;
@@ -57,6 +57,14 @@
 
 .pr-20 {
     padding-right: 20px;
+}
+
+.pl-10 {
+    padding-left: 10px;
+}
+
+.pr-10 {
+    padding-right: 10px;
 }
 
 .bg-gray {
@@ -108,10 +116,6 @@
     font-size: 20px;
 }
 
-.tri {
-    transform: rotate(90deg);
-}
-
 .accordion-header {
     cursor: pointer;
     display: flex;
@@ -121,6 +125,7 @@
 .triangle {
     transition: transform 0.3s;
     margin-right: 10px;
+    transform: rotate(90deg);
 }
 
 .accordion-content {
@@ -130,9 +135,9 @@
 }
 
 .accordion.open .triangle {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
 }
 
 .accordion.open .accordion-content {
-    max-height: 300px; /* この値は調整することができます */
+    max-height: 300px; 
 }
