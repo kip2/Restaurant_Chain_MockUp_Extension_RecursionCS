@@ -36,9 +36,8 @@ $restaurantChain = RandomGenerator::restaurantChains(3,5);
                         <div class="border-line bg-white">
                             <div class="pl-20">
                                 <?php foreach ($chain->getRestaurantLocations() as $location): ?>
-                                    <h3><?php echo $chain->getName() ?></h3>
-                                    <p><?php echo $chain->introductionName() . " ";
-                                        echo $location->shortIntroduction() ?></p>
+                                    <h3><?php echo $location->getName() ?></h3>
+                                    <p><?php echo $location->shortIntroduction() ?></p>
                                 <?php endforeach; ?>
                             </div>
                         </div>

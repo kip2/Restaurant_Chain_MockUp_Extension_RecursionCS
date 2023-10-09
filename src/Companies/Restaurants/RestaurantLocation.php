@@ -35,13 +35,13 @@ class RestaurantLocation implements FileConvertible{
     }
 
 
+    /**
+     * 会社の簡単な紹介
+     *
+     * @return string
+     */
     public function shortIntroduction():string {
-        return sprintf("Address: %s ZipCode: %s", $this->printAddress(), $this->getZipCode());
-    }
-
-    public function printAddress():string {
-        return sprintf("%s, %s, %s", $this->getAddress(), $this->getCity(), $this->getState());
-    
+        return sprintf("Company Name:%s Address: %s ZipCode: %s", $this->getName(), sprintf("%s, %s, %s", $this->getAddress(), $this->getCity(), $this->getState()), $this->getZipCode());
     }
 
     /**
