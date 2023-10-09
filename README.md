@@ -3,7 +3,9 @@
 # 概要
 
 RecursionCS バックエンドプロジェクトの課題です。
+
 モックアップページのランダム生成を目的としています。
+
 練習用としての側面が強いです。
 
 # 見方
@@ -12,12 +14,30 @@ RecursionCS バックエンドプロジェクトの課題です。
 
 phpを環境にインストールしてください。
 
-一例としてmacとlinuxを載せておきます。
+一例としてmacとUbuntuを載せておきます。
+
+### mac
+
+```shell
+brew update
+brew install php
+```
+
+### Linux
+
+### Ubuntu/Debian系
+
+```shell
+sudo apt update
+sudo apt install php php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear
+```
 
 ## ビルトインサーバをたてる
 
 phpのビルトインサーバをたてて下さい。
+
 ポート番号は環境に合わせて任意のものを入力して下さい。
+
 例: 8000, 8080, etc...
 
 ```shell
@@ -29,7 +49,10 @@ php -S localhost:<port番号>
 ブラウザを開き、以下のURLを入力してアクセス
 
 ```plane
-http://localhost:8000
+http://localhost:<port番号>
+
+# あるいは
+localhost:<port番号>
 ```
 
 ## ページの更新
