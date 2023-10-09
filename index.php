@@ -27,20 +27,25 @@ $restaurantChain = RandomGenerator::restaurantChains(3,5);
             <?php foreach ($restaurantChain as $chain): ?>
                 <div class="justify-content-center">
                     <h1 class="text-center">Restaurant Chain <?php echo $chain->getName() ?></h1>
-                    <div class="p-10">
+                    <div class="p-5">
                         <div class="border-line bg-gray">
                             <h3 class="pl-20">Restaurant Chain information</h3>
                         <div>
-                        <div class="border-line bg-white">
-                            <div class="pl-20 d-flex flex-column">
+                        <div class="border-line bg-white p-10">
+                            <div class="pl-20 pr-20 d-flex flex-column">
                                 <?php foreach ($chain->getRestaurantLocations() as $location): ?>
-                                    <h3 class="bg-blue text-blue pl-10"><?php echo $location->getName() ?></h3>
-                                    <div class="pt-0">
-                                        <p class="pl-20 pt-0"><?php echo $location->shortIntroduction() ?></p>
-                                        <h4>Employee:</h4>
-                                        <?php foreach ($location->getEmployees() as $employee): ?>
-                                            <p class="employee border-line"><?php echo $employee->introduction() ?></p>
-                                        <?php endforeach; ?>
+                                    <div class="p-10">
+                                        <div class="justify-content-between d-flex p-10 bg-blue text-blue mt-10">
+                                            <h3 class="bg-blue text-blue m-0"><?php echo $location->getName() ?></h3>
+                                            <div class="flex-between font-20 tri"> ＞ </div>
+                                        </div>
+                                        <div class="pt-0">
+                                            <p class="pl-20 pt-0 border-none m-0"><?php echo $location->shortIntroduction() ?></p>
+                                            <h4 class="border-none">Employee:</h4>
+                                            <?php foreach ($location->getEmployees() as $employee): ?>
+                                                <p class="employee border-line m-0 p-10"><?php echo $employee->introduction() ?></p>
+                                            <?php endforeach; ?>
+                                        </div>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -49,6 +54,15 @@ $restaurantChain = RandomGenerator::restaurantChains(3,5);
                 </div>
             <?php endforeach; ?>
         </div>
+        <div class="accordion">
+    <div class="accordion-header">
+        <div class="triangle">&#9654;</div>
+        タイトル
+    </div>
+    <div class="accordion-content">
+        ここにコンテンツを入れます。
+    </div>
+</div>
 
         <!-- jsvascriptの呼び出し -->
         <script src="js/script.js"></script>

@@ -23,20 +23,25 @@
     border: 1px solid rgb(97, 97, 97);
 }
 
-.p-10 {
+.p-5 {
     padding: 5px;
 }
 
-/* .p-clear {
-    padding: 0px;
-} */
+.p-10{
+    padding: 10px;
+}
+
 .full-flex {
     flex: 1;
 }
 
-.employee {
-    padding: 0px;
+.mt-10 {
+    margin-top: 10px;
 }
+
+/* .employee {
+    padding: 0px;
+} */
 
 .p-horizontal-20 {
     padding: 0px, 20px;
@@ -50,8 +55,12 @@
     padding-left: 20px;
 }
 
+.pr-20 {
+    padding-right: 20px;
+}
+
 .bg-gray {
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(229, 227, 227);
 }
 
 .bg-white {
@@ -59,7 +68,11 @@
 }
 
 .bg-blue {
-    background-color: rgb(150, 218, 241);
+    background-color: rgb(199, 227, 236);
+}
+
+.text-blue {
+    color:rgb(4, 99, 131);
 }
 
 .m-20 {
@@ -68,4 +81,58 @@
 
 .pt-0 {
     padding-top: 0px;
+}
+
+.pl-10 {
+    padding-left:10px;
+}
+.p {
+    border-top: none;
+    border-bottom: none;
+}
+
+.m-0 {
+    margin: 0px;
+}
+
+.border-none {
+    border-top: none;
+    border-bottom: none;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.tri {
+    transform: rotate(90deg);
+}
+
+.accordion-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.triangle {
+    transition: transform 0.3s;
+    margin-right: 10px;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+}
+
+.accordion.open .triangle {
+    transform: rotate(90deg);
+}
+
+.accordion.open .accordion-content {
+    max-height: 300px; /* この値は調整することができます */
 }
