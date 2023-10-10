@@ -69,8 +69,15 @@ class RestaurantChainTest extends TestCase {
         $companyIntroduction .= "Industory: {$chain->getIndustory()}, ";
         $companyIntroduction .= "CEO: {$chain->getCeo()}, ";
         $companyIntroduction .= "Publicly Traded?: " ;
-        $companyIntroduction .= ($chain->getFoundingYear()) ? "Yes" : "No";
+        $companyIntroduction .= ($chain->getIsPubliclyTraded()) ? "Yes" : "No";
         $companyIntroduction .= "\n";
+
+        $companyIntroduction .= sprintf("Chain ID: {$chain->getChainId()}, ");
+        $companyIntroduction .= sprintf("Locations: {$chain->printRestaurantLocations()}, ");
+        $companyIntroduction .= sprintf("Cuisine type: {$chain->getCuisineType()}, ");
+        $companyIntroduction .= sprintf("Number of Location: {$chain->getNumberOfLocations()}, ");
+        $companyIntroduction .= sprintf("Parent company: {$chain->getParentCompany()}");
+        $companyIntroduction .= sprintf("\n");
 
         $this->assertEquals($companyIntroduction, $chain->introduction());
     }

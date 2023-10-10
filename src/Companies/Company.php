@@ -52,6 +52,11 @@ class Company implements FileConvertible{
         $this->totalEmployees = $totalEmployees;
     }
 
+    /**
+     * 会社名の紹介文を生成
+     *
+     * @return string
+     */
     public function introductionName():string {
         return sprintf("Company Name:%s", $this->getName());
     }
