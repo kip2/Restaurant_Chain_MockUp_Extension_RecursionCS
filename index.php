@@ -34,9 +34,9 @@ $restaurantChain = RandomGenerator::restaurantChains(3,5);
                             <div class="pl-10 pr-10 d-flex flex-column">
                                 <?php foreach ($chain->getRestaurantLocations() as $location): ?>
                                     <div class="p-10 accordion">
-                                        <div class="justify-content-between d-flex p-10 bg-blue text-blue mt-10">
+                                        <div class="justify-content-between d-flex p-10 bg-blue text-blue mt-10 accordion-header">
                                             <h3 class="bg-blue text-blue m-0"><?php echo $location->getName() ?></h3>
-                                            <div class="flex-between font-20 accordion-header triangle"> ＞ </div>
+                                            <div class="flex-between font-20  triangle"> ＞ </div>
                                         </div>
                                         <div class="pt-0 accordion-content">
                                             <p class="pl-20 pt-0 border-none mt-10"><?php echo $location->shortIntroduction() ?></p>
