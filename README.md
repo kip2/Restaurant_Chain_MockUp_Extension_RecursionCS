@@ -8,13 +8,19 @@ RecursionCS バックエンドプロジェクトの課題です
 
 練習用としての側面が強いです
 
+# 動作確認
+
+以下のURLにアクセスしてみて下さい
+
+https://restaurant-chain-mockup.onrender.com
+
 ## 見本
 
 ![見本](doc/img/image.png)
 
 ---
 
-# 試し方 
+# ローカル環境での試し方 
 
 ## phpのインストール
 
@@ -40,13 +46,14 @@ sudo apt install php php-cli php-fpm php-json php-common php-mysql php-zip php-g
 
 ## ビルトインサーバをたてる
 
-phpのビルトインサーバをたてて下さい
+./appディレクトリ内で、phpのビルトインサーバをたてて下さい
 
 ポート番号は環境に合わせて任意のものを入力して下さい
 
 例: 8000, 8080, etc...
 
 ```shell
+cd app
 php -S localhost:<port番号>
 ```
 
@@ -71,3 +78,4 @@ localhost:<port番号>
 
 - 個人的な挑戦として、テストコードを書いています
 - 拙いところ等あれば指摘もらえると嬉しいです
+- dockerファイル化しデプロイしてみました
