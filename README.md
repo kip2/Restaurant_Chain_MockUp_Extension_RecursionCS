@@ -16,7 +16,7 @@ https://restaurant-chain-mockup.onrender.com
 
 ## 見本
 
-![見本](doc/img/image.png)
+![見本](app/doc/img/image.png)
 
 ---
 
