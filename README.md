@@ -14,6 +14,8 @@ RecursionCS バックエンドプロジェクトの課題です
 
 https://restaurant-chain-mockup.onrender.com
 
+※重いのでアクセスに時間かかります。
+
 ## 見本
 
 ![見本](app/doc/img/image.png)
