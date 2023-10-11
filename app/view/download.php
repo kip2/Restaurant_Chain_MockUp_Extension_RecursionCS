@@ -8,7 +8,6 @@ $count = (int)$count;
 $users = RandomGenerator::users($count, $count);
 
 // validation
-// todo: typeは使ってないけどどこにある?...
 if (is_null($count) || is_null($format)) {
     exit("Missing parameters.");
 }
@@ -22,7 +21,6 @@ if (!in_array($format, $allowdTypes)) {
     exit('Invalied type. Must be one of: ' . implode(', ' , $allowdFormats));
 }
 
-
 match ($format) {
     "markdown" => toMarkdown($users),
     "json" => toJson($users),
@@ -30,6 +28,7 @@ match ($format) {
     default => toHTML($users) 
 };
 // ----- main.end ------
+
 
 // ------ function ------
 

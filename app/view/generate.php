@@ -5,11 +5,40 @@
     <title>Generate Users</title>
 </head>
 <body>
+    
     <form action="src/download.php" method="post">
-        <label for="count">Input Number of Users: </label>
-        <input type="number" id="count" name="count" min="1" max="100" value="5">
+        <!-- total users -->
+        <label for="users">Input Number of Users: </label>
+        <input type="number" id="users" name="users" min="1" max="100" value="5" required>
         <br/>
 
+        <!-- employees of chain  -->
+        <label for="employees">Input Number of Employees: </label>
+        <input type="number" id="employees" name="employees" min="1" max="100" value="5" required>
+        <br/>
+
+        <!-- range of employee's salary -->
+        <label for="salary">Select Range of Employee's Salary: </label>
+        <label for="minSalary">Minimum Salary: </label>
+        <input type="number" id="minSalary" name="minSalary" min="0" required> 
+        <label for="maxSalary">Maximum Salary: </label>
+        <input type="number" id="maxSalary" name="maxSalary" min="0" required> 
+
+        <br/>
+        <!-- total locations -->
+        <label for="locations">Input Number of locations: </label>
+        <input type="number" id="locations" name="locations" min="1" max="100" value="5" required>
+        <br/>
+
+        <!-- range of zip code -->
+        <label for="zipCode">Select Range of Zip Code: </label>
+        <label for="minZipCode">Minimum Zip Code: </label>
+        <input type="number" id="minZipCode" name="minZipCode" min="0" required> 
+        <label for="maxZipCode">Maximum Zip Code: </label>
+        <input type="number" id="maxZipCode" name="maxZipCode" min="0" required> 
+
+        <br/>
+        <!-- file format select -->
         <label for="format">Select Download Format: </label>
         <select name="format">
             <option value="html">HTML</option>
@@ -19,8 +48,23 @@
         </select>
         <br/>
 
+        <!-- submit button -->
         <button type="submit">Generate</button>
     </form>
+
+    <script>
+        const minSalaryInput = document.getElementById("minSalary");
+        const maxSalaryInput = document.getElementById("maxSalary");
+
+        minSalaryInput.addEventListener("input", function() {
+            const minValue = parseInt(minSalaryInput.value, 10);
+            maxSalaryInput.min = isNaN(minValue) ? "" : minValue;
+        })
+        // maxSalaryInput.addEventListener("input", function() {
+        //     const maxValue = parseInt(maxSalaryInput.value, 10);
+        //     minSalaryInput.max = isNaN(maxValue) ? "" : maxValue;
+        // })
+    </script> 
 
 </body>
 </html>
