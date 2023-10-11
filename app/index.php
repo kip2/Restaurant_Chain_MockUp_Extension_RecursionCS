@@ -1,6 +1,6 @@
+
 <?php
-header('Location: view/generate.php');
+    header('Location: view/generate.php');
 
-exit();
-
+    exit();
 ?>
