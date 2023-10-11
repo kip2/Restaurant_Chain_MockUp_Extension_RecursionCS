@@ -7,6 +7,7 @@ const maxSalaryInput = document.getElementById("maxSalary");
 minSalaryInput.addEventListener("input", function() {
     const minValue = parseInt(minSalaryInput.value, 10);
     maxSalaryInput.min = isNaN(minValue) ? "" : minValue;
+    maxSalaryInput.value = isNaN(minValue) ? "" : minValue;
 })
 
 // maxSalaryInput.addEventListener("input", function() {
