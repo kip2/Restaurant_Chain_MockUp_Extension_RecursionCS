@@ -52,19 +52,7 @@
         <button type="submit">Generate</button>
     </form>
 
-    <script>
-        const minSalaryInput = document.getElementById("minSalary");
-        const maxSalaryInput = document.getElementById("maxSalary");
-
-        minSalaryInput.addEventListener("input", function() {
-            const minValue = parseInt(minSalaryInput.value, 10);
-            maxSalaryInput.min = isNaN(minValue) ? "" : minValue;
-        })
-        // maxSalaryInput.addEventListener("input", function() {
-        //     const maxValue = parseInt(maxSalaryInput.value, 10);
-        //     minSalaryInput.max = isNaN(maxValue) ? "" : maxValue;
-        // })
-    </script> 
+    <script src="../js/generate.js"></script>
 
 </body>
 </html>
