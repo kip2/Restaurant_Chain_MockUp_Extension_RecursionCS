@@ -47,18 +47,19 @@ class Employee extends User implements FileConvertible{
         Start Date: %s\n
         awards: %s\n
         ",
-            $this->id,
-            $this->firstName,
-            $this->lastName,
-            $this->email,
-            $this->phoneNumber,
-            $this->address,
-            $this->birthDate->format('Y-m-d'),
-            $this->role,
-            $this->jobTitle,
-            $this->salary,
-            $this->startDate->format('Y-m-d'),
-            $this->jobTitle,
+            $this->getId(),
+            $this->getFirstName(),
+            $this->getLastName(),
+            $this->getEmail(),
+            $this->getPhoneNumber(),
+            $this->getAddress(),
+            $this->getBirthDate()->format('Y-m-d'),
+            $this->getRole(),
+            $this->getJobTitle(),
+            $this->getSalary(),
+            $this->getStartDate()->format('Y-m-d'),
+            $this->getJobTitle(),
+            $this->toStringAwards()
         );
     }
 
@@ -74,6 +75,11 @@ class Employee extends User implements FileConvertible{
         return array();
     }
 
+    /**
+     * awardsを文字列に変換
+     *
+     * @return string
+     */
     public function toStringAwards():string {
         $result = "";
         $lenAwards = count($this->getAwards());

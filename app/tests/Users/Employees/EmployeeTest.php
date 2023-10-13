@@ -3,6 +3,7 @@ use PHPUnit\Framework\TestCase;
 require 'vendor/autoload.php'; 
 
 require_once __DIR__ . '/../../../src/Users/Employees/Employee.php';
+require_once __DIR__ . '/../../../src/Helpers/RandomGenerator.php';
 
 class EmployeeTest extends TestCase {
 
@@ -28,13 +29,44 @@ class EmployeeTest extends TestCase {
 
     }
 
+    public function testToString() {
+        $employee = RandomGenerator::employee();
+
+        $answer = sprintf("Employee ID: %d\n
+        Name: %s %s\n
+        Email: %s\n
+        Phone Number: %s\n
+        Address: %s\n
+        Birth Date: %s\n
+        Role: %s\n
+        Job Titile: %s\n
+        Salary: %.2f\n
+        Start Date: %s\n
+        awards: %s\n
+        ",
+            $employee->getId(),
+            $employee->getFirstName(),
+            $employee->getLastName(),
+            $employee->getEmail(),
+            $employee->getPhoneNumber(),
+            $employee->getAddress(),
+            $employee->getBirthDate()->format('Y-m-d'),
+            $employee->getRole(),
+            $employee->getJobTitle(),
+            $employee->getSalary(),
+            $employee->getStartDate()->format('Y-m-d'),
+            $employee->getJobTitle(),
+            $employee->toStringAwards()
+        );
+
+        $this->assertEquals($answer, $employee->toString());
+    }
+
     public function testToStringAwards() {
         $mock = $this->mockEmployee();
 
         $this->assertEquals("test, test2.\n", $mock->toStringAwards());
     }
-
-
     
     public function testGetter() {
         $employee = $this->mockEmployee();
