@@ -19,6 +19,10 @@ $maxSalary = $_POST['maxSalary'] ?? 10;
 $minZipCode = $_POST['minZipCode'] ?? 5;
 $maxZipCode = $_POST['maxZipCode'] ?? 10;
 
+// tmp direcotry
+$dirPath = "tmp";
+
+
 // validation
 if (is_null($count) || is_null($format)) {
     exit("Missing parameters.");
@@ -73,4 +77,17 @@ function toHTML($users) {
             echo $user->toMarkdown();
         }
 }
+
+/**
+ * dirPathで指定されたディレクトリを作成する
+ *
+ * @param string $dirPath
+ * @return void
+ */
+function makeDirectory(string $dirPath) {
+    if (!file_exists($dirPath)) {
+        mkdir($dirPath, 0777, true);
+    }
+}
+
 ?>
