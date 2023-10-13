@@ -32,13 +32,14 @@
 
         <!-- range of zip code -->
         <!-- todo: 独自メソッド定義の必要あり？ -->
-        <label for="zipCode">Select Range of Zip Code: </label>
+        <!-- <label for="zipCode">Select Range of Zip Code: </label>
         <label for="minZipCode">Minimum Zip Code: </label>
         <input type="number" id="minZipCode" name="minZipCode" min="0" required> 
         <label for="maxZipCode">Maximum Zip Code: </label>
         <input type="number" id="maxZipCode" name="maxZipCode" min="0" required> 
 
-        <br/>
+        <br/> -->
+
         <!-- file format select -->
         <label for="format">Select Download Format: </label>
         <select name="format">
