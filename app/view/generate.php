@@ -20,14 +20,14 @@
         <!-- range of employee's salary -->
         <label for="salary">Select Range of Employee's Salary: </label>
         <label for="minSalary">Minimum Salary: </label>
-        <input type="number" id="minSalary" name="minSalary" min="0" required> 
+        <input type="number" id="minSalary" name="minSalary" min="1" max="9999" required> 
         <label for="maxSalary">Maximum Salary: </label>
-        <input type="number" id="maxSalary" name="maxSalary" min="0" required> 
+        <input type="number" id="maxSalary" name="maxSalary" min="1" max="9999" required> 
 
         <br/>
         <!-- total locations -->
         <label for="locations">Input Number of locations: </label>
-        <input type="number" id="numberOfLocations" name="numberOfLocations" min="1" max="100" value="5" required>
+        <input type="number" id="numberOfLocations" name="numberOfLocations" min="1" max="10" value="5" required>
         <br/>
 
         <!-- range of zip code -->
