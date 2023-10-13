@@ -161,20 +161,6 @@ class User implements FileConvertible{
     }
 
     /**
-     * JSON形式の文字列を生成する
-     *
-     * @return string
-     */
-    public function toJSON(): string {
-        return "{'User': {$this->firstName} {$this->lastName},
-                'Email': {$this->email},
-                'Phone Number': {$this->phoneNumber},
-                'Address': {$this->address},
-                'Birth Date': {$this->birthDate->format("Y-m-d")},
-                'Role': {$this->role}}";
-    }
-
-    /**
      * 配列を生成する
      *
      * @return array
