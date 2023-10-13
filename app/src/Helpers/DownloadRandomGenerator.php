@@ -8,11 +8,11 @@ require_once __DIR__ . '/../../src/Companies/Company.php';
 require_once __DIR__ . '/../../src/Companies/Restaurants/RestaurantLocation.php';
 require_once __DIR__ . '/../../src/Companies/Restaurants/RestaurantChain.php';
 
-require 'vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Faker\Factory;
 
-$employee = RandomGenerator::employee();
+// $employee = RandomGenerator::employee();
 // echo $employee->introduction();
 
 class RandomGenerator {

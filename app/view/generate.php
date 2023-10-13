@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Generate Users</title>
+    <title>Generate Restaurant Chains</title>
 </head>
 <body>
     
-    <form action="src/download.php" method="post">
+    <form action="download.php" method="post">
         <!-- total users -->
-        <label for="users">Input Number of Users: </label>
-        <input type="number" id="numberOfUsers" name="numberOfUsers" min="1" max="100" value="5" required>
+        <label for="users">Input Number of Restaurant Chains: </label>
+        <input type="number" id="numberOfChains" name="numberOfChains" min="1" max="100" value="5" required>
         <br/>
 
         <!-- employees of chain  -->
@@ -44,7 +44,7 @@
         <label for="format">Select Download Format: </label>
         <select name="format">
             <option value="html">HTML</option>
-            <option value="markdown">Markdown</option>
+            <option value="md">Markdown</option>
             <option value="json">JSON</option>
             <option value="txt">Text</option>
         </select>

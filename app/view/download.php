@@ -1,5 +1,8 @@
 <?php
 
+// require_once __DIR__ . "/../src/Helpers/DonwloadRandomGenerator.php";
+require_once __DIR__ . "/../src/Helpers/DownloadRandomGenerator.php";
+
 // ----- main.start ------
 // $users = RandomGenerator::users($count, $count);
 
@@ -62,8 +65,8 @@ if (!is_numeric($maxSalary) || $maxSalary < 1 || $maxSalary <= $minSalary || $ma
 
 // is in allowed formats?
 $allowedFormats = ['json', 'txt', 'html', 'md'];
-if (!in_array($format, $allowdTypes)) {
-    exit('Invalied type. Must be one of: ' . implode(', ' , $allowdFormats));
+if (!in_array($format, $allowedFormats)) {
+    exit('Invalied type. Must be one of: ' . implode(', ' , $allowedFormats));
 }
 
 
@@ -71,9 +74,11 @@ if (!in_array($format, $allowdTypes)) {
 // $users = RandomGenerator::users($count, $count);
 $restaurantChains = RandomGenerator::downloadRestaurantChains($numberOfChains, $numberOfEmployees, $numberOfLocations, $minSalary, $maxSalary);
 
+echo "test ok!";
+
 // formatによって処理を分岐
 match ($format) {
-    "markdown" => toMarkdown($restaurantChains),
+    "md" => toMarkdown($restaurantChains),
     "json" => toJson($restaurantChains),
     "txt" => toText($restaurantChains),
     default => toHTML($restaurantChains) 
@@ -86,7 +91,7 @@ match ($format) {
 // markdown形式でダウンロード処理
 function toMarkdown($restaurantChains) {
         header('Content-Type: text/markdown');
-        header('Content-Disposition: attachment; filename="users.md"');
+        header('Content-Disposition: attachment; filename="restaurant_chains.md"');
         foreach ($restaurantChains as $user) {
             echo $user->toMarkdown();
         }
@@ -95,7 +100,7 @@ function toMarkdown($restaurantChains) {
 // JSON形式でダウンロード処理
 function toJson($restaurantChains) {
         header('Content-Type: application/json');
-        header('Content-Disposition: attachment; filename="users.json"');
+        header('Content-Disposition: attachment; filename="restaurant_chains.json"');
         $userArray = array_map(fn($user) => $user->toArray(), $restaurantChains);
         echo json_encode($userArray);
 }
@@ -103,7 +108,7 @@ function toJson($restaurantChains) {
 // text形式でダウンロード処理
 function toText($restaurantChains) {
     header('Content-Type: text/plain');
-    header('Content-Disposition: attachment; filename="users.txt"');
+    header('Content-Disposition: attachment; filename="restaurant_chains.txt"');
     foreach ($restaurantChains as $user) {
         echo $user->toString();
     }
