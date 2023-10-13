@@ -29,6 +29,71 @@ class EmployeeTest extends TestCase {
 
     }
 
+    public function testToMarkDown() {
+
+        $employee = RandomGenerator::employee();
+
+        $answer =  sprintf("## Employee: %s %s
+                    - Email: %s
+                    - Phone Number: %s
+                    - Address: %s
+                    - Birth Date: %s
+                    - Role: %s
+                    - Job Titile: %s
+                    - Salary: %.2f
+                    - Start Date: %s
+                    - Awards: %s ",
+                $employee->getFirstName(),
+                $employee->getLastName(),
+                $employee->getEmail(),
+                $employee->getPhoneNumber(),
+                $employee->getAddress(),
+                $employee->getBirthDate()->format('Y-m-d'),
+                $employee->getRole(),
+                $employee->getJobTitle(),
+                $employee->getSalary(),
+                $employee->getStartDate()->format('Y-m-d'),
+                $employee->getJobTitle(),
+                $employee->toStringAwards()
+            );
+
+        $this->assertEquals($answer, $employee->toMarkdown());
+    }
+
+    public function testToHTML() {
+        $employee = RandomGenerator::employee();
+
+        $answer = sprintf("<div class='employee-card'>
+                    <div class='avatar'>Employee ID:%d</div>
+                    <h2>%s %s</h2>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>Birth Date: %s</p>
+                    <p>Role: %s</p>
+                    <p>Job Titile: %s</p>
+                    <p>Salary: %.2f</p>
+                    <p>Start Date: %s</p>
+                    <p>Awards: %s</p>
+                </div>",
+                $employee->getId(),
+                $employee->getFirstName(),
+                $employee->getLastName(),
+                $employee->getEmail(),
+                $employee->getPhoneNumber(),
+                $employee->getAddress(),
+                $employee->getBirthDate()->format('Y-m-d'),
+                $employee->getRole(),
+                $employee->getJobTitle(),
+                $employee->getSalary(),
+                $employee->getStartDate()->format('Y-m-d'),
+                $employee->getJobTitle(),
+                $employee->toStringAwards()
+            );
+
+        $this->assertEquals($answer, $employee->toHTML());
+    }
+
     public function testToString() {
         $employee = RandomGenerator::employee();
 

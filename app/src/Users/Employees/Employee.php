@@ -34,6 +34,11 @@ class Employee extends User implements FileConvertible{
         $this->awards = $awards;
     } 
 
+    /**
+     * 出力用文字列を生成する
+     *
+     * @return string
+     */
     public function toString():string{
         return sprintf("Employee ID: %d\n
         Name: %s %s\n
@@ -64,11 +69,59 @@ class Employee extends User implements FileConvertible{
     }
 
     public function toHTML():string{
-        return "";
+        return sprintf("<div class='employee-card'>
+                    <div class='avatar'>Employee ID:%d</div>
+                    <h2>%s %s</h2>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>Birth Date: %s</p>
+                    <p>Role: %s</p>
+                    <p>Job Titile: %s</p>
+                    <p>Salary: %.2f</p>
+                    <p>Start Date: %s</p>
+                    <p>Awards: %s</p>
+                </div>",
+                $this->getId(),
+                $this->getFirstName(),
+                $this->getLastName(),
+                $this->getEmail(),
+                $this->getPhoneNumber(),
+                $this->getAddress(),
+                $this->getBirthDate()->format('Y-m-d'),
+                $this->getRole(),
+                $this->getJobTitle(),
+                $this->getSalary(),
+                $this->getStartDate()->format('Y-m-d'),
+                $this->getJobTitle(),
+                $this->toStringAwards()
+            );
     }
 
     public function toMarkdown():string{
-        return "";
+        return sprintf("## Employee: %s %s
+                    - Email: %s
+                    - Phone Number: %s
+                    - Address: %s
+                    - Birth Date: %s
+                    - Role: %s
+                    - Job Titile: %s
+                    - Salary: %.2f
+                    - Start Date: %s
+                    - Awards: %s ",
+                $this->getFirstName(),
+                $this->getLastName(),
+                $this->getEmail(),
+                $this->getPhoneNumber(),
+                $this->getAddress(),
+                $this->getBirthDate()->format('Y-m-d'),
+                $this->getRole(),
+                $this->getJobTitle(),
+                $this->getSalary(),
+                $this->getStartDate()->format('Y-m-d'),
+                $this->getJobTitle(),
+                $this->toStringAwards()
+            );
     }
 
     public function toArray():array{
