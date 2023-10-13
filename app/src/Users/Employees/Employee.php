@@ -76,10 +76,11 @@ class Employee extends User implements FileConvertible{
 
     public function toStringAwards():string {
         $result = "";
-        foreach ($this->getAwards() as $award) {
+        $lenAwards = count($this->getAwards());
+        foreach ($this->getAwards() as $index => $award) {
             $result .= $award;
 
-            if ($award < count($award) - 1) {
+            if ($index < $lenAwards - 1) {
                 $result .= ", ";
             } else {
                 $result .= ".\n";

@@ -28,6 +28,11 @@ class EmployeeTest extends TestCase {
 
     }
 
+    public function testToStringAwards() {
+        $mock = $this->mockEmployee();
+
+        $this->assertEquals("test, test2.\n", $mock->toStringAwards());
+    }
 
 
     
