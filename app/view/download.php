@@ -1,11 +1,23 @@
 <?php
 
 // ----- main.start ------
-$count = $_POST['count'] ?? 5;
-$format = $_POST['format'] ?? 'html';
+// $count = $_POST['count'] ?? 5;
+// $format = $_POST['format'] ?? 'html';
 
-$count = (int)$count;
-$users = RandomGenerator::users($count, $count);
+// $count = (int)$count;
+// $users = RandomGenerator::users($count, $count);
+
+$numberOfUsers = $_POST['numberOfUsers'] ?? 5;
+$numberOfEmployees = $_POST['numberOfEmployees'] ?? 5;
+$numberOfLocations = $_POST['numberOfLocations'] ?? 5;
+
+// salary
+$minSalary = $_POST['minSalary'] ?? 5;
+$maxSalary = $_POST['maxSalary'] ?? 10;
+
+// zipcode
+$minZipCode = $_POST['minZipCode'] ?? 5;
+$maxZipCode = $_POST['maxZipCode'] ?? 10;
 
 // validation
 if (is_null($count) || is_null($format)) {
@@ -16,7 +28,7 @@ if (!is_numeric($count) || $count < 1 || $count > 100) {
     exit("Invalid count. Must be a number between 1 and 100.");
 }
 
-$allowedFormats = ['josn', 'txt', 'html', 'md'];
+$allowedFormats = ['json', 'txt', 'html', 'md'];
 if (!in_array($format, $allowdTypes)) {
     exit('Invalied type. Must be one of: ' . implode(', ' , $allowdFormats));
 }

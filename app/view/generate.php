@@ -9,12 +9,12 @@
     <form action="src/download.php" method="post">
         <!-- total users -->
         <label for="users">Input Number of Users: </label>
-        <input type="number" id="users" name="users" min="1" max="100" value="5" required>
+        <input type="number" id="numberOfUsers" name="numberOfUsers" min="1" max="100" value="5" required>
         <br/>
 
         <!-- employees of chain  -->
         <label for="employees">Input Number of Employees: </label>
-        <input type="number" id="employees" name="employees" min="1" max="100" value="5" required>
+        <input type="number" id="numberOfEmployees" name="numberOfEmployees" min="1" max="100" value="5" required>
         <br/>
 
         <!-- range of employee's salary -->
@@ -27,10 +27,11 @@
         <br/>
         <!-- total locations -->
         <label for="locations">Input Number of locations: </label>
-        <input type="number" id="locations" name="locations" min="1" max="100" value="5" required>
+        <input type="number" id="numberOfLocations" name="numberOfLocations" min="1" max="100" value="5" required>
         <br/>
 
         <!-- range of zip code -->
+        <!-- todo: 独自メソッド定義の必要あり？ -->
         <label for="zipCode">Select Range of Zip Code: </label>
         <label for="minZipCode">Minimum Zip Code: </label>
         <input type="number" id="minZipCode" name="minZipCode" min="0" required> 
