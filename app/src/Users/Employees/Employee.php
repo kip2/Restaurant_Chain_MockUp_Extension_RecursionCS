@@ -34,21 +34,58 @@ class Employee extends User implements FileConvertible{
         $this->awards = $awards;
     } 
 
-    // todo: まだ
     public function toString():string{
-        return "";
+        return sprintf("Employee ID: %d\n
+        Name: %s %s\n
+        Email: %s\n
+        Phone Number: %s\n
+        Address: %s\n
+        Birth Date: %s\n
+        Role: %s\n
+        Job Titile: %s\n
+        Salary: %.2f\n
+        Start Date: %s\n
+        awards: %s\n
+        ",
+            $this->id,
+            $this->firstName,
+            $this->lastName,
+            $this->email,
+            $this->phoneNumber,
+            $this->address,
+            $this->birthDate->format('Y-m-d'),
+            $this->role,
+            $this->jobTitle,
+            $this->salary,
+            $this->startDate->format('Y-m-d'),
+            $this->jobTitle,
+        );
     }
-    // todo: まだ
+
     public function toHTML():string{
         return "";
     }
-    // todo: まだ
+
     public function toMarkdown():string{
         return "";
     }
-    // todo: まだ
+
     public function toArray():array{
         return array();
+    }
+
+    public function toStringAwards():string {
+        $result = "";
+        foreach ($this->getAwards() as $award) {
+            $result .= $award;
+
+            if ($award < count($award) - 1) {
+                $result .= ", ";
+            } else {
+                $result .= ".\n";
+            }
+        }
+        return $result;
     }
 
     /**
