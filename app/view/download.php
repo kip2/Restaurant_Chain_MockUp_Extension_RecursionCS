@@ -64,30 +64,18 @@ function toJson($users) {
 }
 
 function toText($users) {
-    header('Content-Type: text/markdown');
-    header('Content-Disposition: attachment; filename="users.md"');
+    header('Content-Type: text/plain');
+    header('Content-Disposition: attachment; filename="users.txt"');
     foreach ($users as $user) {
-        echo $user->toMarkdown();
+        echo $user->toString();
     }
 }
 
 function toHTML($users) {
-        header('Content-Disposition: attachment; filename="users.md"');
+        header('Content-Type: text/html');
         foreach ($users as $user) {
-            echo $user->toMarkdown();
+            echo $user->toHTML();
         }
-}
-
-/**
- * dirPathで指定されたディレクトリを作成する
- *
- * @param string $dirPath
- * @return void
- */
-function makeDirectory(string $dirPath) {
-    if (!file_exists($dirPath)) {
-        mkdir($dirPath, 0777, true);
-    }
 }
 
 ?>
