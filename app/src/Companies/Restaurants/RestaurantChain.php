@@ -44,22 +44,7 @@ class RestaurantChain extends Company implements FileConvertible{
      * @return string
      */
     public function toString():string{
-        return sprintf("Restaurant Chain Name: %s\n
-        Founding Year: %d\n
-        Description: %s\n
-        WebSite: %s\n
-        Phone Number: %s\n
-        Industory: %s\n
-        CEO: %s\n
-        Publicly Traded: %s\n
-        Country: %s\n
-        Founder: %s\n
-        Total Employees: %d\n
-        Chain ID: %d\n
-        Restaurant Locations: %s\n
-        Cuisine Type: %s\n
-        Number Of Locations: %d\n
-        Parent Company: %s\n
+        return sprintf("Restaurant Chain Name: %s\nFounding Year: %d\nDescription: %s\nWebSite: %s\nPhone Number: %s\nIndustory: %s\nCEO: %s\nPublicly Traded: %s\nCountry: %s\nFounder: %s\nTotal Employees: %d\nChain ID: %d\nRestaurant Locations: \n%s\nCuisine Type: %s\nNumber Of Locations: %d\nParent Company: %s\n
         ",
             $this->getName(),
             $this->getFoundingYear(),
