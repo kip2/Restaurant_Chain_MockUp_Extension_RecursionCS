@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../../src/Companies/Restaurants/RestaurantLocation.php';
+require_once __DIR__ . '/../../../src/Helpers/RandomGenerator.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -19,6 +20,23 @@ class RestaurantLocationTest extends TestCase {
         $restaurantLocation = new RestaurantLocation( $name, $address, $city, $state, $zipCode, $employees, $isOpen, $hasDriveThru);
 
         return $restaurantLocation;
+    }
+
+    public function testToArray() {
+        $location = RandomGenerator::restaurantLocation();
+
+        $answer = [
+            "name" => $location->getName(),
+            "address" => $location->getAddress(),
+            "city" => $location->getCity(),
+            "state" => $location->getState(),
+            "zipCode" => $location->getZipCode(),
+            "employees" => $location->getEmployees(),
+            "isOpen" => $location->getIsOpen(),
+            "hasDriveThru" => $location->getHasDriveThru()
+        ];
+
+        $this->assertEquals($answer, $location->toArray());
     }
 
     public function testIntroduction() {

@@ -57,8 +57,6 @@ class RestaurantLocation implements FileConvertible{
         return $introduction;
     }
 
-    // todo: 
-
     public function toString():string{
         return "";
     }
@@ -69,7 +67,16 @@ class RestaurantLocation implements FileConvertible{
         return "";
     }
     public function toArray():array{
-        return array();
+        return [
+            "name" => $this->getName(),
+            "address" => $this->getAddress(),
+            "city" => $this->getCity(),
+            "state" => $this->getState(),
+            "zipCode" => $this->getZipCode(),
+            "employees" => $this->getEmployees(),
+            "isOpen" => $this->getIsOpen(),
+            "hasDriveThru" => $this->getHasDriveThru()
+        ];
     }
 
 
