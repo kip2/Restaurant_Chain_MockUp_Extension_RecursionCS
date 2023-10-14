@@ -3,7 +3,7 @@
 // require_once __DIR__ . "/../src/Helpers/DonwloadRandomGenerator.php";
 require_once __DIR__ . "/../src/Helpers/DownloadRandomGenerator.php";
 
-// ----- main.start ------
+// ----- @@main.start ------
 // $users = RandomGenerator::users($count, $count);
 
 // format
@@ -29,7 +29,7 @@ $maxSalary = (int)$maxSalary;
 // $minZipCode = $_POST['minZipCode'] ?? 5;
 // $maxZipCode = $_POST['maxZipCode'] ?? 10;
 
-// ----- validations -----
+// ----- @@validations.start -----
 // is null?
 if (is_null($numberOfChains)
     || is_null($numberOfEmployees)
@@ -68,13 +68,14 @@ $allowedFormats = ['json', 'txt', 'html', 'md'];
 if (!in_array($format, $allowedFormats)) {
     exit('Invalied type. Must be one of: ' . implode(', ' , $allowedFormats));
 }
+// ----- @@validations.end -----
 
 
 // random generate
 // $users = RandomGenerator::users($count, $count);
 $restaurantChains = RandomGenerator::downloadRestaurantChains($numberOfChains, $numberOfEmployees, $numberOfLocations, $minSalary, $maxSalary);
 
-echo "test ok!";
+// echo "test ok!";
 
 // formatによって処理を分岐
 match ($format) {
@@ -83,10 +84,10 @@ match ($format) {
     "txt" => toText($restaurantChains),
     default => toHTML($restaurantChains) 
 };
-// ----- main.end ------
+// ----- @@main.end ------
 
 
-// ------ function ------
+// ------ @@function.start ------
 
 // markdown形式でダウンロード処理
 function toMarkdown($restaurantChains) {
@@ -121,4 +122,5 @@ function toHTML($restaurantChains) {
             echo $user->toHTML();
         }
 }
+// ------ @@function.end ------
 ?>

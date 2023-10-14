@@ -6,28 +6,29 @@
 </head>
 <body>
     
+    <h1>Randome Restaurant Chain Generator</h1>
     <form action="download.php" method="post">
         <!-- total users -->
         <label for="users">Input Number of Restaurant Chains: </label>
-        <input type="number" id="numberOfChains" name="numberOfChains" min="1" max="100" value="5" required>
+        <input type="number" id="numberOfChains" name="numberOfChains" min="1" max="100" value="2" required>
         <br/>
 
         <!-- employees of chain  -->
         <label for="employees">Input Number of Employees: </label>
-        <input type="number" id="numberOfEmployees" name="numberOfEmployees" min="1" max="100" value="5" required>
+        <input type="number" id="numberOfEmployees" name="numberOfEmployees" min="1" max="100" value="2" required>
         <br/>
 
         <!-- range of employee's salary -->
         <label for="salary">Select Range of Employee's Salary: </label>
         <label for="minSalary">Minimum Salary: </label>
-        <input type="number" id="minSalary" name="minSalary" min="1" max="9999" required> 
+        <input type="number" id="minSalary" name="minSalary" min="1" max="9999" value="1" required> 
         <label for="maxSalary">Maximum Salary: </label>
-        <input type="number" id="maxSalary" name="maxSalary" min="1" max="9999" required> 
+        <input type="number" id="maxSalary" name="maxSalary" min="1" max="9999"  value="10" required> 
 
         <br/>
         <!-- total locations -->
         <label for="locations">Input Number of locations: </label>
-        <input type="number" id="numberOfLocations" name="numberOfLocations" min="1" max="10" value="5" required>
+        <input type="number" id="numberOfLocations" name="numberOfLocations" min="1" max="10" value="2" required>
         <br/>
 
         <!-- range of zip code -->
