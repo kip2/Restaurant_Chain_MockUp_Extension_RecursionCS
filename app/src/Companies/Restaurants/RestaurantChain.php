@@ -39,8 +39,46 @@ class RestaurantChain extends Company implements FileConvertible{
     }
 
     public function toString():string{
-        return "";
+        return sprintf("Restaurant Chain Name: %s\n
+        Founding Year: %d\n
+        Description: %s\n
+        WebSite: %s\n
+        Phone Number: %s\n
+        Industory: %s\n
+        CEO: %s\n
+        Publicly Traded: %s\n
+        Country: %s\n
+        Founder: %s\n
+        Total Employees: %d\n
+        Chain ID: %d\n
+        Restaurant Locations: %s\n
+        Start Date: %s\n
+        awards: %s\n
+        ",
+            $this->getName(),
+            $this->getFoundingYear(),
+            $this->getDescription(),
+            $this->getWebsite(),
+            $this->getPhone(),
+            $this->getIndustory(),
+            $this->getCeo(),
+            $this->getIsPubliclyTraded() ? "Yes" : "No",
+            $this->getCountry(),
+            $this->getFounder(),
+            $this->getTotalEmployees(),
+            $this->getChainId(),
+            $this->locationsToMarkdown(),
+            $this->getCuisineType(),
+            $this->getNumberOfLocations(),
+            $this->getParentCompany()
+        );
     }
+
+    /**
+     * HTMLファイルに変換する
+     *
+     * @return string
+     */
     public function toHTML():string{
         return sprintf("<div class='reataurant-chain-card'>
                     <h2>%s</h2>
@@ -72,11 +110,23 @@ class RestaurantChain extends Company implements FileConvertible{
             $this->getFounder(),
             $this->getTotalEmployees(),
             $this->getChainId(),
-            $this->locationsToMarkdown(),
+            $this->locationsToHTML(),
             $this->getCuisineType(),
             $this->getNumberOfLocations(),
             $this->getParentCompany()
         );
+    }
+    /**
+     * restaurantLocationsをHTMLに変換する
+     *
+     * @return string
+     */
+    public function locationsToHTML() :string{
+        $result = "";
+        foreach($this->getRestaurantLocations() as $location) {
+            $result .= $location->toHTML() . "\n";
+        }
+        return $result;
     }
     
     /**

@@ -48,6 +48,17 @@ class RestaurantChainTest extends TestCase {
         return $restaurantChain;
     }
 
+
+    public function testLocationsToHTML() {
+        $chain = RandomGenerator::restaurantChain();
+
+        $answer = "";
+        foreach($chain->getRestaurantLocations() as $location) {
+            $answer .= $location->toHTML() . "\n";
+        }
+        $this->assertEquals($answer , $chain->locationsToHTML());
+    }
+
     public function testToHTML() {
         $chain = RandomGenerator::restaurantChain();
 
@@ -81,7 +92,7 @@ class RestaurantChainTest extends TestCase {
             $chain->getFounder(),
             $chain->getTotalEmployees(),
             $chain->getChainId(),
-            $chain->locationsToMarkdown(),
+            $chain->locationsToHTML(),
             $chain->getCuisineType(),
             $chain->getNumberOfLocations(),
             $chain->getParentCompany()
