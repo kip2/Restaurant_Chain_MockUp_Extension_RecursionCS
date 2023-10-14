@@ -42,7 +42,41 @@ class RestaurantChain extends Company implements FileConvertible{
         return "";
     }
     public function toHTML():string{
-        return "";
+        return sprintf("<div class='reataurant-chain-card'>
+                    <h2>%s</h2>
+                    <p>%d</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>CEO: %s</p>
+                    <p>Publicly Traded: %s</p>
+                    <p>Country: %s</p>
+                    <p>Founder: %s</p>
+                    <p>Total Employees: %d</p>
+                    <p>Restaurant Chain ID: %d</p>
+                    <div>%s</div>
+                    <p>Cuisine Type: %s</p>
+                    <p>Number Of Locations: %d</p>
+                    <p>Parent Company: %s</p>
+                </div>",
+            $this->getName(),
+            $this->getFoundingYear(),
+            $this->getDescription(),
+            $this->getWebsite(),
+            $this->getPhone(),
+            $this->getIndustory(),
+            $this->getCeo(),
+            $this->getIsPubliclyTraded() ? "Yes" : "No",
+            $this->getCountry(),
+            $this->getFounder(),
+            $this->getTotalEmployees(),
+            $this->getChainId(),
+            $this->locationsToMarkdown(),
+            $this->getCuisineType(),
+            $this->getNumberOfLocations(),
+            $this->getParentCompany()
+        );
     }
     
     /**
