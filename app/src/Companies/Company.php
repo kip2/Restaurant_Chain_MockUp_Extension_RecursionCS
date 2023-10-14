@@ -88,8 +88,36 @@ class Company implements FileConvertible{
         return "";
     }
     public function toMarkdown():string{
-        return "";
+        return sprintf("## Company: %s,
+                    - Founding Year: %d,
+                    - Description: %s,
+                    - Website: %s,
+                    - Phone Number: %s,
+                    - Industory: %s,
+                    - CEO: %s,
+                    - Is pubcicly traded?: %s,
+                    - Country: %s,
+                    - Founder: %s,
+                    - Total Employees: %d",
+            $this->getName(),
+            $this->getFoundingYear(),
+            $this->getDescription(),
+            $this->getWebsite(),
+            $this->getPhone(),
+            $this->getIndustory(),
+            $this->getCeo(),
+            $this->getIsPubliclyTraded() ? "Yes" : "No",
+            $this->getCountry(),
+            $this->getFounder(),
+            $this->getTotalEmployees()
+        );
     }
+
+    /**
+     * ダウンロード用配列を生成する
+     *
+     * @return array
+     */
     public function toArray():array{
         return [
             "companyName" => $this->getName(),

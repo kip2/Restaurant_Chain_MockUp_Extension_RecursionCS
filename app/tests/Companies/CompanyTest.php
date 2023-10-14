@@ -48,6 +48,35 @@ class CompanyTest extends TestCase {
         );
         return $company;
     }
+    public function testToMarkdown() {
+        $company = RandomGenerator::company();
+
+        $answer =  sprintf("## Company: %s,
+                    - Founding Year: %d,
+                    - Description: %s,
+                    - Website: %s,
+                    - Phone Number: %s,
+                    - Industory: %s,
+                    - CEO: %s,
+                    - Is pubcicly traded?: %s,
+                    - Country: %s,
+                    - Founder: %s,
+                    - Total Employees: %d",
+            $company->getName(),
+            $company->getFoundingYear(),
+            $company->getDescription(),
+            $company->getWebsite(),
+            $company->getPhone(),
+            $company->getIndustory(),
+            $company->getCeo(),
+            $company->getIsPubliclyTraded() ? "Yes" : "No",
+            $company->getCountry(),
+            $company->getFounder(),
+            $company->getTotalEmployees()
+        );
+
+        $this->assertEquals($answer, $company->toMarkdown());
+    }
 
     public function testToArray() {
         $company = RandomGenerator::company();
