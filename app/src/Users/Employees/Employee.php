@@ -68,6 +68,11 @@ class Employee extends User implements FileConvertible{
         );
     }
 
+    /**
+     * HTML形式の文字列を生成する
+     *
+     * @return string
+     */
     public function toHTML():string{
         return sprintf("<div class='employee-card'>
                     <div class='avatar'>Employee ID:%d</div>
@@ -98,6 +103,11 @@ class Employee extends User implements FileConvertible{
             );
     }
 
+    /**
+     * Markdown形式の文字列に変換
+     *
+     * @return string
+     */
     public function toMarkdown():string{
         return sprintf("## Employee: %s %s
                     - Email: %s
@@ -124,8 +134,28 @@ class Employee extends User implements FileConvertible{
             );
     }
 
+
+    /**
+     * JSON変換用の配列に変換する
+     *
+     * @return array
+     */
     public function toArray():array{
-        return array();
+        return [
+            "id" => $this->getId(),
+            "firstName" => $this->getFirstName(),
+            "lastName" => $this->getLastName(),
+            "email" => $this->getEmail(),
+            "password" => $this->getHashedPassword(),
+            "phoneNumber" => $this->getPhoneNumber(),
+            "address" => $this->getAddress(),
+            "birthDate" => $this->getBirthDate(),
+            "role" => $this->getRole(),
+            "jobTitle" => $this->getJobTitle(),
+            "salary" => $this->getSalary(),
+            "startDate" => $this->getStartDate(),
+            "awards" => $this->toStringAwards(),
+        ];
     }
 
     /**

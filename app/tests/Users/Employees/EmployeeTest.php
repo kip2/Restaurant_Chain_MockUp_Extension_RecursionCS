@@ -29,6 +29,28 @@ class EmployeeTest extends TestCase {
 
     }
 
+    public function testToArray() {
+        $employee = RandomGenerator::employee();
+
+        $answer =  [
+            "id" => $employee->getId(),
+            "firstName" => $employee->getFirstName(),
+            "lastName" => $employee->getLastName(),
+            "email" => $employee->getEmail(),
+            "password" => $employee->getHashedPassword(),
+            "phoneNumber" => $employee->getPhoneNumber(),
+            "address" => $employee->getAddress(),
+            "birthDate" => $employee->getBirthDate(),
+            "role" => $employee->getRole(),
+            "jobTitle" => $employee->getJobTitle(),
+            "salary" => $employee->getSalary(),
+            "startDate" => $employee->getStartDate(),
+            "awards" => $employee->toStringAwards(),
+        ];
+
+        $this->assertEquals($answer, $employee->toArray());
+    }
+
     public function testToMarkDown() {
 
         $employee = RandomGenerator::employee();

@@ -15,7 +15,7 @@ class User implements FileConvertible{
     private string $role;
 
 
-    public function __construct( $id, $firstName, $lastName, $email, $hashedPassword, $phoneNumber, $address, $birthDate, $membershipExpirationDate, $role,){
+    public function __construct( $id, $firstName, $lastName, $email, $hashedPassword, $phoneNumber, $address, $birthDate, $membershipExpirationDate, $role){
         $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
