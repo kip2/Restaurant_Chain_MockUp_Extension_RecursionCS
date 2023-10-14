@@ -22,6 +22,40 @@ class RestaurantLocationTest extends TestCase {
         return $restaurantLocation;
     }
 
+    public function testToString () {
+        $location = RandomGenerator::restaurantLocation();
+
+        $answer = sprintf("Location: %s\n
+            Address: %s\n
+            City: %s\n
+            State: %s\n
+            ZipCode: %s\n
+            Employees: %s\n
+            Open?: %s\n
+            DriveThru?: %s\n
+            ",
+                $location->getName(),
+                $location->getAddress(),
+                $location->getCity(),
+                $location->getState(),
+                $location->getZipCode(),
+                $location->employeesToString(),
+                $location->getIsOpen() ? "Yes" : "No",
+                $location->getHasDriveThru() ? "Yes" : "No"
+        );
+
+        $this->assertEquals($answer, $location->toString());
+    }
+
+    public function testEmployeesToString () {
+        $location = RandomGenerator::restaurantLocation();
+        $answer = "";
+        foreach($location->getEmployees() as $employee) {
+            $answer .= $employee->toString() . "\n";
+        }
+        $this->assertEquals($answer, $location->employeesToString());
+    }
+
     public function testToHTML() {
         $location = RandomGenerator::restaurantLocation();
 

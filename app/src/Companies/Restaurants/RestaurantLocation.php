@@ -57,10 +57,45 @@ class RestaurantLocation implements FileConvertible{
         return $introduction;
     }
 
+    /**
+     * ダウンロード用txt形式に変換する
+     *
+     * @return string
+     */
     public function toString():string{
-        return "";
+        return sprintf("Location: %s\n
+            Address: %s\n
+            City: %s\n
+            State: %s\n
+            ZipCode: %s\n
+            Employees: %s\n
+            Open?: %s\n
+            DriveThru?: %s\n
+            ",
+                $this->getName(),
+                $this->getAddress(),
+                $this->getCity(),
+                $this->getState(),
+                $this->getZipCode(),
+                $this->employeesToString(),
+                $this->getIsOpen() ? "Yes" : "No",
+                $this->getHasDriveThru() ? "Yes" : "No"
+        );
     }
     
+    /**
+     * employeesをテキスト形式に変換する
+     *
+     * @return string
+     */
+    public function employeesToString(): string {
+        $result = "";
+        foreach($this->getEmployees() as $employee) {
+            $result .= $employee->toString() . "\n";
+        }
+        return $result;
+    }
+
     /**
      * HTML形式に変換
      *
