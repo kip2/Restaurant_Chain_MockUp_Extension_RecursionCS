@@ -44,6 +44,12 @@ class RestaurantChain extends Company implements FileConvertible{
     public function toHTML():string{
         return "";
     }
+    
+    /**
+     * ダウンロード用markdownを生成する
+     *
+     * @return string
+     */
     public function toMarkdown():string{
         return sprintf("## Restaurant Chain : %s
                     - Founding Year: %d
@@ -73,8 +79,7 @@ class RestaurantChain extends Company implements FileConvertible{
             $this->getFounder(),
             $this->getTotalEmployees(),
             $this->getChainId(),
-            // todo: 全てを取得する
-            $this->getRestaurantLocations(),
+            $this->locationsToMarkdown(),
             $this->getCuisineType(),
             $this->getNumberOfLocations(),
             $this->getParentCompany()

@@ -48,6 +48,46 @@ class RestaurantChainTest extends TestCase {
         return $restaurantChain;
     }
 
+    public function testToMarkdow() {
+        $chain = RandomGenerator::restaurantChain();
+
+        $answer = sprintf("## Restaurant Chain : %s
+                    - Founding Year: %d
+                    - Description: %s
+                    - Website: %s
+                    - Phone Number: %s
+                    - Industory: %s
+                    - CEO: %s
+                    - Pubcicly Traded: %s
+                    - Country: %s
+                    - Founder: %s 
+                    - Total Employee: %d 
+                    - Chain Id: %d 
+                    - Restaurant Locations: %s 
+                    - Cuisine Type: %s 
+                    - Number Of Locatsons: %d 
+                    - Parent Company: %s ",
+            $chain->getName(),
+            $chain->getFoundingYear(),
+            $chain->getDescription(),
+            $chain->getWebsite(),
+            $chain->getPhone(),
+            $chain->getIndustory(),
+            $chain->getCeo(),
+            $chain->getIsPubliclyTraded() ? "Yes" : "No",
+            $chain->getCountry(),
+            $chain->getFounder(),
+            $chain->getTotalEmployees(),
+            $chain->getChainId(),
+            $chain->locationsToMarkdown(),
+            $chain->getCuisineType(),
+            $chain->getNumberOfLocations(),
+            $chain->getParentCompany()
+        );
+
+        $this->assertEquals($answer , $chain->toMarkdown());
+    }
+
     public function testLocationsToMarkdown() {
         $chain = RandomGenerator::restaurantChain();
 
