@@ -63,9 +63,42 @@ class RestaurantLocation implements FileConvertible{
     public function toHTML():string{
         return "";
     }
+
     public function toMarkdown():string{
-        return "";
+        return sprintf("## Name: %s
+                    - Address: %s
+                    - City: %s
+                    - State: %s
+                    - Zip Code: %s
+                    - Employees: %s
+                    - Open?: %s
+                    - Drive Thru?: %s",
+            $this->getName(),
+            $this->getAddress(),
+            $this->getCity(),
+            $this->getState(),
+            $this->getZipCode(),
+            // todo: employeesのMarkDownを全てに適用する
+            // $this->getEmployees(),
+            $this->employeesToMarkdown(),
+            $this->getIsOpen() ? "Yes" : "No",
+            $this->getHasDriveThru() ? "Yes" : "No"
+        );
     }
+
+    public function employeesToMarkdown():string {
+        $result = "";
+        foreach($this->getEmployees() as $employee) {
+            $result .= $employee->toMarkdown() . "\n";
+        }
+        return $result;
+    }
+
+    /**
+     * JSONダウンロード用の配列を生成
+     *
+     * @return array
+     */
     public function toArray():array{
         return [
             "name" => $this->getName(),

@@ -22,6 +22,17 @@ class RestaurantLocationTest extends TestCase {
         return $restaurantLocation;
     }
 
+    public function testEmployeesToMarkdown() {
+        $location = RandomGenerator::restaurantLocation();
+
+        $answer = "";
+        foreach($location->getEmployees() as $employee) {
+            $answer .= $employee->toMarkdown() . "\n";
+        }
+
+        $this->assertEquals($answer, $location->employeesToMarkdown());
+    }
+
     public function testToArray() {
         $location = RandomGenerator::restaurantLocation();
 
