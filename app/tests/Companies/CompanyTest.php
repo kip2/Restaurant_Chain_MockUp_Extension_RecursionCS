@@ -13,6 +13,7 @@
 // });
 
 require_once __DIR__ . '/../../src/Companies/Company.php';
+require_once __DIR__ . '/../../src/Helpers/RandomGenerator.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -46,6 +47,26 @@ class CompanyTest extends TestCase {
             $totalEmployees,
         );
         return $company;
+    }
+
+    public function testToArray() {
+        $company = RandomGenerator::company();
+
+        $answer = [
+            "companyName" => $company->getName(),
+            "foundingYear" => $company->getFoundingYear(),
+            "description" => $company->getDescription(),
+            "website" => $company->getWebsite(),
+            "phoneNumber" => $company->getPhone(),
+            "industory" => $company->getIndustory(),
+            "CEO" => $company->getCeo(),
+            "pubciclyTraded" => $company->getIsPubliclyTraded() ? "Yes" : "No",
+            "country" => $company->getCountry(),
+            "founder" => $company->getFounder(),
+            "totalEmployee" => $company->getTotalEmployees()
+        ];
+
+        $this->assertEquals($answer, $company->toArray());
     }
 
     public function testIntroduction() {

@@ -91,7 +91,19 @@ class Company implements FileConvertible{
         return "";
     }
     public function toArray():array{
-        return array();
+        return [
+            "companyName" => $this->getName(),
+            "foundingYear" => $this->getFoundingYear(),
+            "description" => $this->getDescription(),
+            "website" => $this->getWebsite(),
+            "phoneNumber" => $this->getPhone(),
+            "industory" => $this->getIndustory(),
+            "CEO" => $this->getCeo(),
+            "pubciclyTraded" => $this->getIsPubliclyTraded() ? "Yes" : "No",
+            "country" => $this->getCountry(),
+            "founder" => $this->getFounder(),
+            "totalEmployee" => $this->getTotalEmployees()
+        ];
     }
 
 
