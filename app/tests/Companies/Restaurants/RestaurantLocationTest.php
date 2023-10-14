@@ -22,7 +22,31 @@ class RestaurantLocationTest extends TestCase {
         return $restaurantLocation;
     }
 
-    
+    public function testToHTML() {
+        $location = RandomGenerator::restaurantLocation();
+
+        $answer = sprintf("<div class='location-card'>
+                    <h2>Location: %s</h2>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>Zip Code: %s</p>
+                    <div>%s</div>
+                    <p>Open?: %s</p>
+                    <p>Drive Thru?: %s</p>
+                </div>",
+                $location->getName(),
+                $location->getAddress(),
+                $location->getCity(),
+                $location->getState(),
+                $location->getZipCode(),
+                $location->employeesToHTML(),
+                $location->getIsOpen() ? "Yes" : "No",
+                $location->getHasDriveThru() ? "Yes" : "No"
+            );
+
+        $this->assertEquals($answer, $location->toHTML());
+    }
 
     public function testEmployeesToHTML() {
         $location = RandomGenerator::restaurantLocation();
