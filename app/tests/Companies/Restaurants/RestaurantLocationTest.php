@@ -22,8 +22,15 @@ class RestaurantLocationTest extends TestCase {
         return $restaurantLocation;
     }
 
-    public function testEmployeesToHTML() {
+    
 
+    public function testEmployeesToHTML() {
+        $location = RandomGenerator::restaurantLocation();
+        $answer = "";
+        foreach($location->getEmployees() as $employee) {
+            $answer .= $employee->toHTML() . "\n";
+        }
+        $this->assertEquals($answer, $location->employeesToHTML());
     }
 
     public function testToMarkdown() {
@@ -48,7 +55,6 @@ class RestaurantLocationTest extends TestCase {
         );
 
         $this->assertEquals($answer, $location->toMarkdown());
-
     }
 
     public function testEmployeesToMarkdown() {
