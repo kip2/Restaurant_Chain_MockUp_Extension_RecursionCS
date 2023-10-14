@@ -109,7 +109,32 @@ class Company implements FileConvertible{
     }
 
     public function toHTML():string{
-        return "";
+        return sprintf("<div class='company-card'>
+                    <div class='company'></div>
+                    <h2>Company Name: %s</h2>
+                    <p>Founding Year: %s</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>Industory: %s</p>
+                    <p>CEO: %s</p>
+                    <p></p>
+                    <p>Country: %s</p>
+                    <p>Founder: %s</p>
+                    <p>Total Employees: %d</p>
+                </div>",
+                $this->getName(),
+                $this->getFoundingYear(),
+                $this->getDescription(),
+                $this->getWebsite(),
+                $this->getPhone(),
+                $this->getIndustory(),
+                $this->getCeo(),
+                $this->getIsPubliclyTraded() ? "Publicly traded" : "Not Publicly traded",
+                $this->getCountry(),
+                $this->getFounder(),
+                $this->getTotalEmployees()
+            );
     }
 
     /**
