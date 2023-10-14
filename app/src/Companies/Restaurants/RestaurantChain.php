@@ -47,8 +47,31 @@ class RestaurantChain extends Company implements FileConvertible{
     public function toMarkdown():string{
         return "";
     }
+
+    /**
+     * ダウンロード用JSONのための配列を生成
+     *
+     * @return array
+     */
     public function toArray():array{
-        return array();
+        return [
+            "restaurantChainName" => $this->getName(),
+            "foundingYear" => $this->getFoundingYear(),
+            "description" => $this->getDescription(),
+            "website" => $this->getWebsite(),
+            "phoneNumber" => $this->getPhone(),
+            "industory" => $this->getIndustory(),
+            "CEO" => $this->getCeo(),
+            "pubciclyTraded" => $this->getIsPubliclyTraded() ? "Yes" : "No",
+            "country" => $this->getCountry(),
+            "founder" => $this->getFounder(),
+            "totalEmployee" => $this->getTotalEmployees(),
+            "chainId" => $this->getChainId(),
+            "restaurantLocations" => $this->getRestaurantLocations(),
+            "cuisineType" => $this->getCuisineType(),
+            "numberOfLocations" => $this->getNumberOfLocations(),
+            "parentCompany" => $this->getParentCompany()
+        ];
     }
 
 

@@ -48,6 +48,31 @@ class RestaurantChainTest extends TestCase {
         return $restaurantChain;
     }
 
+    public function testToArray() {
+        $chain = RandomGenerator::restaurantChain();
+
+        $answer = [
+            "restaurantChainName" => $chain->getName(),
+            "foundingYear" => $chain->getFoundingYear(),
+            "description" => $chain->getDescription(),
+            "website" => $chain->getWebsite(),
+            "phoneNumber" => $chain->getPhone(),
+            "industory" => $chain->getIndustory(),
+            "CEO" => $chain->getCeo(),
+            "pubciclyTraded" => $chain->getIsPubliclyTraded() ? "Yes" : "No",
+            "country" => $chain->getCountry(),
+            "founder" => $chain->getFounder(),
+            "totalEmployee" => $chain->getTotalEmployees(),
+            "chainId" => $chain->getChainId(),
+            "restaurantLocations" => $chain->getRestaurantLocations(),
+            "cuisineType" => $chain->getCuisineType(),
+            "numberOfLocations" => $chain->getNumberOfLocations(),
+            "parentCompany" => $chain->getParentCompany()
+        ];
+
+        $this->assertEquals($answer , $chain->toArray());
+    }
+
     public function testPrintRestaurantLocations() {
         $chain = RandomGenerator::restaurantChain();
 
