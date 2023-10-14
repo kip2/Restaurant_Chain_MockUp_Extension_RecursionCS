@@ -60,10 +60,52 @@ class RestaurantLocation implements FileConvertible{
     public function toString():string{
         return "";
     }
+    
+    /**
+     * HTML形式に変換
+     *
+     * @return string
+     */
     public function toHTML():string{
-        return "";
+        return sprintf("<div class='location-card'>
+                    <h2>Location: %s</h2>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>%s</p>
+                    <p>Zip Code: %s</p>
+                    <div>%s</div>
+                    <p>Open?: %s</p>
+                    <p>Drive Thru?: %s</p>
+                </div>",
+                $this->getName(),
+                $this->getAddress(),
+                $this->getCity(),
+                $this->getState(),
+                $this->getZipCode(),
+                $this->employeesToHTML(),
+                $this->getIsOpen() ? "Yes" : "No",
+                $this->getHasDriveThru() ? "Yes" : "No"
+            );
     }
 
+    /**
+     * employeesをHTMLの文字列に変換
+     *
+     * @return string
+     */
+    public function employeesToHTML(): string {
+        $result = "";
+        foreach($this->getEmployees() as $employee) {
+            $result .= $employee->toHTML() . "\n";
+        }
+        return $result;
+    }
+
+    /**
+     * ダウンロード用のmarkdown形式に変換
+     *
+     * @return string
+     */
     public function toMarkdown():string{
         return sprintf("## Name: %s
                     - Address: %s
@@ -78,14 +120,17 @@ class RestaurantLocation implements FileConvertible{
             $this->getCity(),
             $this->getState(),
             $this->getZipCode(),
-            // todo: employeesのMarkDownを全てに適用する
-            // $this->getEmployees(),
             $this->employeesToMarkdown(),
             $this->getIsOpen() ? "Yes" : "No",
             $this->getHasDriveThru() ? "Yes" : "No"
         );
     }
 
+    /**
+     * employeesをmarkdownの文字列に変換
+     *
+     * @return string
+     */
     public function employeesToMarkdown():string {
         $result = "";
         foreach($this->getEmployees() as $employee) {
