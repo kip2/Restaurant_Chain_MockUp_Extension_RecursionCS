@@ -81,6 +81,11 @@ class Company implements FileConvertible{
         return $introduction;
     }
 
+    /**
+     * ダウンロード用の文字列を生成する
+     *
+     * @return string
+     */
     public function toString():string{
         return sprintf("Company: %s\n,
                     Founding Year: %d\n,
