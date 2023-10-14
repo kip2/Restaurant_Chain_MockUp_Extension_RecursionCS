@@ -167,3 +167,56 @@
 .accordion.open .accordion-content {
     max-height: 300px; 
 }
+
+/* button */
+
+
+.button-basic {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-basic:hover {
+    background-color: #2980b9;
+}
+
+.button-flat {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background-color 0.3s;
+}
+
+.button-flat:hover {
+    background-color: #c0392b;
+}
+
+.button-shadow {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.button-shadow:hover {
+    transform: translateY(-2px);
+}
