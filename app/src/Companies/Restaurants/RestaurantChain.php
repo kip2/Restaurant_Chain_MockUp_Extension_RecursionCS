@@ -38,6 +38,11 @@ class RestaurantChain extends Company implements FileConvertible{
         $this->parentCompany = $parentCompany;
     }
 
+    /**
+     * ダウンロードtxt用文字列を生成
+     *
+     * @return string
+     */
     public function toString():string{
         return sprintf("Restaurant Chain Name: %s\n
         Founding Year: %d\n
@@ -52,8 +57,9 @@ class RestaurantChain extends Company implements FileConvertible{
         Total Employees: %d\n
         Chain ID: %d\n
         Restaurant Locations: %s\n
-        Start Date: %s\n
-        awards: %s\n
+        Cuisine Type: %s\n
+        Number Of Locations: %d\n
+        Parent Company: %s\n
         ",
             $this->getName(),
             $this->getFoundingYear(),
@@ -67,11 +73,24 @@ class RestaurantChain extends Company implements FileConvertible{
             $this->getFounder(),
             $this->getTotalEmployees(),
             $this->getChainId(),
-            $this->locationsToMarkdown(),
+            $this->locationsToString(),
             $this->getCuisineType(),
             $this->getNumberOfLocations(),
             $this->getParentCompany()
         );
+    }
+
+    /**
+     * restaurantLocationsをstringに変換する
+     *
+     * @return string
+     */
+    public function locationsToString() :string{
+        $result = "";
+        foreach($this->getRestaurantLocations() as $location) {
+            $result .= $location->toString() . "\n";
+        }
+        return $result;
     }
 
     /**

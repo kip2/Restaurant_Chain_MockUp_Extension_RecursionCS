@@ -48,6 +48,56 @@ class RestaurantChainTest extends TestCase {
         return $restaurantChain;
     }
 
+    public function testToString() {
+        $chain = RandomGenerator::restaurantChain();
+
+        $answer = sprintf("Restaurant Chain Name: %s\n
+        Founding Year: %d\n
+        Description: %s\n
+        WebSite: %s\n
+        Phone Number: %s\n
+        Industory: %s\n
+        CEO: %s\n
+        Publicly Traded: %s\n
+        Country: %s\n
+        Founder: %s\n
+        Total Employees: %d\n
+        Chain ID: %d\n
+        Restaurant Locations: %s\n
+        Cuisine Type: %s\n
+        Number Of Locations: %d\n
+        Parent Company: %s\n
+        ",
+            $chain->getName(),
+            $chain->getFoundingYear(),
+            $chain->getDescription(),
+            $chain->getWebsite(),
+            $chain->getPhone(),
+            $chain->getIndustory(),
+            $chain->getCeo(),
+            $chain->getIsPubliclyTraded() ? "Yes" : "No",
+            $chain->getCountry(),
+            $chain->getFounder(),
+            $chain->getTotalEmployees(),
+            $chain->getChainId(),
+            $chain->locationsToString(),
+            $chain->getCuisineType(),
+            $chain->getNumberOfLocations(),
+            $chain->getParentCompany()
+        );
+
+        $this->assertEquals($answer , $chain->toString());
+    }
+
+    public function testLocationsToString() {
+        $chain = RandomGenerator::restaurantChain();
+
+        $answer = "";
+        foreach($chain->getRestaurantLocations() as $location) {
+            $answer .= $location->toString() . "\n";
+        }
+        $this->assertEquals($answer , $chain->locationsToString());
+    }
 
     public function testLocationsToHTML() {
         $chain = RandomGenerator::restaurantChain();
