@@ -48,6 +48,16 @@ class RestaurantChainTest extends TestCase {
         return $restaurantChain;
     }
 
+    public function testLocationsToMarkdown() {
+        $chain = RandomGenerator::restaurantChain();
+
+        $answer = "";
+        foreach($chain->getRestaurantLocations() as $location) {
+            $answer .= $location->toMarkdown() . "\n";
+        }
+        $this->assertEquals($answer , $chain->locationsToMarkdown());
+    }
+
     public function testToArray() {
         $chain = RandomGenerator::restaurantChain();
 

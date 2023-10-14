@@ -45,9 +45,55 @@ class RestaurantChain extends Company implements FileConvertible{
         return "";
     }
     public function toMarkdown():string{
-        return "";
+        return sprintf("## Restaurant Chain : %s
+                    - Founding Year: %d
+                    - Description: %s
+                    - Website: %s
+                    - Phone Number: %s
+                    - Industory: %s
+                    - CEO: %s
+                    - Pubcicly Traded: %s
+                    - Country: %s
+                    - Founder: %s 
+                    - Total Employee: %d 
+                    - Chain Id: %d 
+                    - Restaurant Locations: %s 
+                    - Cuisine Type: %s 
+                    - Number Of Locatsons: %d 
+                    - Parent Company: %s ",
+            $this->getName(),
+            $this->getFoundingYear(),
+            $this->getDescription(),
+            $this->getWebsite(),
+            $this->getPhone(),
+            $this->getIndustory(),
+            $this->getCeo(),
+            $this->getIsPubliclyTraded() ? "Yes" : "No",
+            $this->getCountry(),
+            $this->getFounder(),
+            $this->getTotalEmployees(),
+            $this->getChainId(),
+            // todo: 全てを取得する
+            $this->getRestaurantLocations(),
+            $this->getCuisineType(),
+            $this->getNumberOfLocations(),
+            $this->getParentCompany()
+        );
     }
 
+    /**
+     * restaurantLocationsをmarkdownに変換する
+     *
+     * @return string
+     */
+    public function locationsToMarkdown() :string{
+        $result = "";
+        foreach($this->getRestaurantLocations() as $location) {
+            $result .= $location->toMarkdown() . "\n";
+        }
+        return $result;
+    }
+    
     /**
      * ダウンロード用JSONのための配列を生成
      *
