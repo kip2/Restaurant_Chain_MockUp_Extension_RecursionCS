@@ -48,6 +48,38 @@ class CompanyTest extends TestCase {
         );
         return $company;
     }
+
+    public function testToString() {
+        $company = RandomGenerator::company();
+
+        $answer = sprintf("Company: %s\n,
+                    Founding Year: %d\n,
+                    Description: %s\n,
+                    Website: %s\n,
+                    Phone Number: %s\n,
+                    Industory: %s\n,
+                    CEO: %s\n,
+                    Is pubcicly traded?: %s\n,
+                    Country: %s\n,
+                    Founder: %s\n,
+                    Total Employees: %d\n
+                    ",
+            $company->getName(),
+            $company->getFoundingYear(),
+            $company->getDescription(),
+            $company->getWebsite(),
+            $company->getPhone(),
+            $company->getIndustory(),
+            $company->getCeo(),
+            $company->getIsPubliclyTraded() ? "Yes" : "No",
+            $company->getCountry(),
+            $company->getFounder(),
+            $company->getTotalEmployees()
+        );
+
+        $this->assertEquals($answer, $company->toString());
+    }
+
     public function testToMarkdown() {
         $company = RandomGenerator::company();
 

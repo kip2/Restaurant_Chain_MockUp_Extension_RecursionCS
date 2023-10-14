@@ -82,11 +82,41 @@ class Company implements FileConvertible{
     }
 
     public function toString():string{
-        return "";
+        return sprintf("Company: %s\n,
+                    Founding Year: %d\n,
+                    Description: %s\n,
+                    Website: %s\n,
+                    Phone Number: %s\n,
+                    Industory: %s\n,
+                    CEO: %s\n,
+                    Is pubcicly traded?: %s\n,
+                    Country: %s\n,
+                    Founder: %s\n,
+                    Total Employees: %d\n
+                    ",
+            $this->getName(),
+            $this->getFoundingYear(),
+            $this->getDescription(),
+            $this->getWebsite(),
+            $this->getPhone(),
+            $this->getIndustory(),
+            $this->getCeo(),
+            $this->getIsPubliclyTraded() ? "Yes" : "No",
+            $this->getCountry(),
+            $this->getFounder(),
+            $this->getTotalEmployees()
+        );
     }
+
     public function toHTML():string{
         return "";
     }
+
+    /**
+     * ダウンロード用のmarkdownを生成する
+     *
+     * @return string
+     */
     public function toMarkdown():string{
         return sprintf("## Company: %s,
                     - Founding Year: %d,
