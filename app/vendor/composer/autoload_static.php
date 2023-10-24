@@ -13,22 +13,39 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
     );
 
     public static $prefixLengthsPsr4 = array (
+        'U' => 
+        array (
+            'Users\\' => 6,
+        ),
         'P' => 
         array (
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
         ),
+        'H' => 
+        array (
+            'Helpers\\' => 8,
+        ),
         'F' => 
         array (
+            'FileConverter\\' => 14,
             'Faker\\' => 6,
         ),
         'D' => 
         array (
             'DeepCopy\\' => 9,
         ),
+        'C' => 
+        array (
+            'Companies\\' => 10,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Users\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Users',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
@@ -37,6 +54,14 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Helpers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Helpers',
+        ),
+        'FileConverter\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/FileConverter',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
@@ -44,6 +69,10 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Companies\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Companies',
         ),
     );
 

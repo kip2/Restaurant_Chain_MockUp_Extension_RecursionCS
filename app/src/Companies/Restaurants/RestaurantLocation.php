@@ -1,7 +1,8 @@
 <?php
+namespace Companies\Restaurants;
 
-require_once __DIR__ . '/../../FileConverter/FileConvertible.php';
-require_once __DIR__ . '/../../Users/Employees/Employee.php';
+use FileConverter\FileConvertible;
+use Users\Employees\Employee;
 
 class RestaurantLocation implements FileConvertible{
 

@@ -1,7 +1,11 @@
 <?php
 
 // require_once __DIR__ . "/../src/Helpers/DonwloadRandomGenerator.php";
-require_once __DIR__ . "/../src/Helpers/DownloadRandomGenerator.php";
+// require_once __DIR__ . "/../src/Helpers/DownloadRandomGenerator.php";
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Helpers\DownloadRandomGenerator;
 
 // ----- @@main.start ------
 // $users = RandomGenerator::users($count, $count);
@@ -79,7 +83,7 @@ if (!in_array($format, $allowedFormats)) {
 
 // random generate
 // $users = RandomGenerator::users($count, $count);
-$restaurantChains = RandomGenerator::downloadRestaurantChains($numberOfChains, $numberOfEmployees, $numberOfLocations, $minSalary, $maxSalary);
+$restaurantChains = DownloadRandomGenerator::downloadRestaurantChains($numberOfChains, $numberOfEmployees, $numberOfLocations, $minSalary, $maxSalary);
 
 // echo "test ok!";
 

@@ -1,6 +1,9 @@
 <?php
 
-require_once __DIR__ . '/../FileConverter/FileConvertible.php';
+namespace Users;
+
+use FileConverter\FileConvertible;
+use DateTime;
 
 class User implements FileConvertible{
     private int $id;

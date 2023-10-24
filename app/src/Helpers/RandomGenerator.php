@@ -1,19 +1,16 @@
 <?php
 
-// namespace Helpers;
+namespace Helpers;
 
-require_once __DIR__ . '/../../src/Users/User.php';
-require_once __DIR__ . '/../../src/Users/Employees/Employee.php';
-require_once __DIR__ . '/../../src/Companies/Company.php';
-require_once __DIR__ . '/../../src/Companies/Restaurants/RestaurantLocation.php';
-require_once __DIR__ . '/../../src/Companies/Restaurants/RestaurantChain.php';
-
-require 'vendor/autoload.php';
+use Users\User;
+use Users\Employees\Employee;
+use Companies\Company;
+use Companies\Restaurants\RestaurantLocation;
+use Companies\Restaurants\RestaurantChain;
 
 use Faker\Factory;
 
 $employee = RandomGenerator::employee();
-// echo $employee->introduction();
 
 class RandomGenerator {
 

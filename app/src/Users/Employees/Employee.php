@@ -1,7 +1,10 @@
 <?php
 
-require_once __DIR__ . '/../User.php';
-require_once __DIR__ . '/../../FileConverter/FileConvertible.php';
+namespace Users\Employees;
+
+use Users\User;
+use FileConverter\FileConvertible;
+use DateTime;
 
 class Employee extends User implements FileConvertible{
 

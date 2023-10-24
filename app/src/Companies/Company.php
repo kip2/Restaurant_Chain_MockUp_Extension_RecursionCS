@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../FileConverter/FileConvertible.php';
+namespace Companies;
+
+use FileConverter\FileConvertible;
 
 class Company implements FileConvertible{
     // 会社の名前
