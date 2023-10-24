@@ -52,9 +52,16 @@
 
 
 /* border line */
+
 .border-line {
-    border: 1px solid rgb(97, 97, 97);
+    border: 1px solid rgba(97, 97, 97, 0.3);  
+    border-radius: 8px;  
+    padding: 25px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    background: linear-gradient(145deg, #f5f5f5, #ffffff);  
+    transition: transform 0.3s, box-shadow 0.3s;  
 }
+
 
 /* padding */
 
@@ -98,6 +105,7 @@
     padding-left:10px;
 }
 
+
 /* border */
 .border-none {
     border-top: none;
@@ -139,9 +147,10 @@
 
 /* p */
 
-.p {
+p {
     border-top: none;
     border-bottom: none;
+    color: rgb(2, 76, 100);
 }
 
 /* acordion */
@@ -173,54 +182,102 @@
 }
 
 /* button */
-
-
-.button-basic {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button-basic:hover {
-    background-color: #2980b9;
-}
-
-.button-flat {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e74c3c;
-    color: #ffffff;
-    border: none;
-    border-radius: 0;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: none;
-    transition: background-color 0.3s;
-}
-
-.button-flat:hover {
-    background-color: #c0392b;
-}
-
 .button-shadow {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #2ecc71;
-    color: #ffffff;
-    border: none;
+    background-color: rgba(4, 99, 131, 0.7);  
+    color: #ffffff;  
+    border: 1px solid rgba(4, 99, 131, 0.5);  
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 0.9em;  
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    outline: none;
 }
 
 .button-shadow:hover {
-    transform: translateY(-2px);
+    background-color: rgba(4, 99, 131, 0.9);  
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); 
 }
+
+.button-shadow:focus, .button-shadow:active {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.button-shadow:active {
+    transform: translateY(2px);  
+}
+
+/* 見出し */
+h1 {
+    font-size: 2em;
+    color: rgb(4, 99, 131);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* input */
+input[type="number"], select {
+    font-size: 0.8em;
+    color: rgba(4, 99, 131, 0.7);
+    border: 1px solid rgba(4, 99, 131, 0.3); 
+    background-color: #f8f8f8; 
+    padding: 8px 12px; 
+    border-radius: 4px; 
+    width: 100%;
+    max-width: 200px;
+    min-width: 100px;
+    max-height: 30px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s, box-shadow 0.3s; 
+    outline: none;
+}
+
+input[type="number"]:hover, select:hover {
+    border-color: rgba(4, 99, 131, 0.5); 
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: rgba(4, 99, 131, 0.7); 
+    box-shadow: 0 0 8px rgba(4, 99, 131, 0.2); 
+}
+
+select {
+    min-height: 40px;
+    font-size: 0.8em;
+}
+
+
+/* button */
+.button-shadow {
+    margin-top: 20px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .d-flex.justify-content-between {
+        flex-direction: column;
+    }
+    
+    label, input[type="number"], select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* label */
+label {
+    font-size: 0.9em;  
+    font-weight: 500;  
+    color: rgba(4, 99, 131, 0.9);  
+    margin-top: 8px;
+    margin-bottom: 8px;  
+    display: block;  
+}
+
+label + input[type="number"], 
+label + select {
+    margin-top: 5px;
+}
+
