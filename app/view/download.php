@@ -44,28 +44,34 @@ if (is_null($numberOfChains)
 // is in range?
 // count
 if (!is_numeric($numberOfChains) || $numberOfChains < 1 || $numberOfChains > 100) {
+    http_response_code(412);
     exit("Invalid number of restaurant chains. Must be a number between 1 and 100.");
 }
 // employees
 if (!is_numeric($numberOfEmployees) || $numberOfEmployees < 1 || $numberOfEmployees > 100) {
+    http_response_code(412);
     exit("Invalid number of employees. Must be a number between 1 and 100.");
 }
 // locations
 if (!is_numeric($numberOfLocations) || $numberOfLocations < 1 || $numberOfLocations > 10) {
+    http_response_code(412);
     exit("Invalid number of locations. Must be a number between 1 and 10.");
 }
 // min salary
 if (!is_numeric($minSalary) || $minSalary < 1 || $minSalary > 9999) {
+    http_response_code(412);
     exit("Invalid number of min Salary. Must be a number between 1 and 9999.");
 }
 // max salary
 if (!is_numeric($maxSalary) || $maxSalary < 1 || $maxSalary <= $minSalary || $maxSalary > 9999) {
+    http_response_code(412);
     exit("Invalid number of max Salary. Must be a number between min salary and 9999.");
 }
 
 // is in allowed formats?
 $allowedFormats = ['json', 'txt', 'html', 'md'];
 if (!in_array($format, $allowedFormats)) {
+    http_response_code(412);
     exit('Invalied type. Must be one of: ' . implode(', ' , $allowedFormats));
 }
 // ----- @@validations.end -----
