@@ -66,6 +66,10 @@
     padding: 10px;
 }
 
+.p-20{
+    padding: 20px;
+}
+
 .p-horizontal-20 {
     padding: 0px, 20px;
 }

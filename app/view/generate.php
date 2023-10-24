@@ -12,7 +12,7 @@
         <section class="flex-column">
             <h1>Randome Restaurant Chain Generator</h1>
 
-            <section class="border-line">
+            <section class="border-line p-20">
                 <form action="download.php" method="post">
                     <!-- total users -->
                     <div class="d-flex justify-content-between">
