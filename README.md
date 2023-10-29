@@ -17,7 +17,11 @@ cd app
 php -S localhost:3000
 ```
 
-その後、http://localhost:3000にアクセスする
+その後、
+
+http://localhost:3000
+
+にアクセスする
 
 ## 使用方法
 
@@ -29,3 +33,14 @@ php -S localhost:3000
 
 ![使用方法イメージ](./doc/image.png)
 
+## 生成ファイルフォーマットについて
+
+HTMLは、画面を生成してそこに遷移します
+
+![HTML生成イメージ](./doc/image2.png)
+
+
+他のフォーマットは、生成後、ダウンロードが開始されます
+- Markdown
+- JSON
+- TEXT
