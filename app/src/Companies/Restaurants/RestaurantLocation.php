@@ -104,23 +104,23 @@ class RestaurantLocation implements FileConvertible{
      */
     public function toHTML():string{
         return sprintf("<div class='location-card'>
-                    <h2>Location: %s</h2>
-                    <p>%s</p>
-                    <p>%s</p>
-                    <p>%s</p>
+                    <h2>Location is %s</h2>
+                    <p>Address: %s</p>
+                    <p>City: %s</p>
+                    <p>State: %s</p>
                     <p>Zip Code: %s</p>
-                    <div>%s</div>
                     <p>Open?: %s</p>
                     <p>Drive Thru?: %s</p>
+                    <div>%s</div>
                 </div>",
                 $this->getName(),
                 $this->getAddress(),
                 $this->getCity(),
                 $this->getState(),
                 $this->getZipCode(),
-                $this->employeesToHTML(),
                 $this->getIsOpen() ? "Yes" : "No",
-                $this->getHasDriveThru() ? "Yes" : "No"
+                $this->getHasDriveThru() ? "Yes" : "No",
+                $this->employeesToHTML()
             );
     }
 

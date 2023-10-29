@@ -86,12 +86,12 @@ class RestaurantChain extends Company implements FileConvertible{
      */
     public function toHTML():string{
         return sprintf("<div class='reataurant-chain-card'>
-                    <h2>%s</h2>
-                    <p>%d</p>
-                    <p>%s</p>
-                    <p>%s</p>
-                    <p>%s</p>
-                    <p>%s</p>
+                    <h1>Company: %s</h1>
+                    <p>FoundingYear: %d</p>
+                    <p>Description: %s</p>
+                    <p>Website: %s</p>
+                    <p>Phone-Number: %s</p>
+                    <p>Industory: %s</p>
                     <p>CEO: %s</p>
                     <p>Publicly Traded: %s</p>
                     <p>Country: %s</p>
@@ -102,7 +102,8 @@ class RestaurantChain extends Company implements FileConvertible{
                     <p>Cuisine Type: %s</p>
                     <p>Number Of Locations: %d</p>
                     <p>Parent Company: %s</p>
-                </div>",
+                </div>
+                <br/>",
             $this->getName(),
             $this->getFoundingYear(),
             $this->getDescription(),

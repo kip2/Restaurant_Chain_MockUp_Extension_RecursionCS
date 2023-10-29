@@ -1,14 +1,10 @@
 <?php
 
-// require_once __DIR__ . "/../src/Helpers/DonwloadRandomGenerator.php";
-// require_once __DIR__ . "/../src/Helpers/DownloadRandomGenerator.php";
-
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Helpers\DownloadRandomGenerator;
 
 // ----- @@main.start ------
-// $users = RandomGenerator::users($count, $count);
 
 // format
 $format = $_POST['format'] ?? 'html';
@@ -28,10 +24,6 @@ $minSalary = $_POST['minSalary'] ?? 5;
 $minSalary = (int)$minSalary;
 $maxSalary = $_POST['maxSalary'] ?? 10;
 $maxSalary = (int)$maxSalary;
-
-// zipcode
-// $minZipCode = $_POST['minZipCode'] ?? 5;
-// $maxZipCode = $_POST['maxZipCode'] ?? 10;
 
 // ----- @@validations.start -----
 // is null?
@@ -81,8 +73,6 @@ if (!in_array($format, $allowedFormats)) {
 // ----- @@validations.end -----
 
 
-// random generate
-// $users = RandomGenerator::users($count, $count);
 $restaurantChains = DownloadRandomGenerator::downloadRestaurantChains($numberOfChains, $numberOfEmployees, $numberOfLocations, $minSalary, $maxSalary);
 
 // echo "test ok!";
@@ -127,10 +117,24 @@ function toText($restaurantChains) {
 
 // HTML形式で表示
 function toHTML($restaurantChains) {
-        header('Content-Type: text/html');
-        foreach ($restaurantChains as $user) {
-            echo $user->toHTML();
-        }
+    $HTMLheader = "
+    <!DOCTYPE>
+    <html>
+        <head>
+            <meta charset='utf-8' />
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Random Restaurant Chain</title>
+            <link rel='stylesheet' href='../css/styles.css' type='text/css'>
+        </head>
+    ";
+
+    header('Content-Type: text/html');
+
+    echo $HTMLheader;
+    foreach ($restaurantChains as $user) {
+        echo $user->toHTML();
+    }
+    echo "</html>";
 }
 // ------ @@function.end ------
 ?>
