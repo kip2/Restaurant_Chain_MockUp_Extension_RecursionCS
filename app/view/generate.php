@@ -14,41 +14,50 @@
             <div class="d-flex justify-content-center">
                 <p>️🍴 🍽️ 🍴  Restaurant Chainのmockを作成します 🍴 🍽️ 🍴 </i></p> </div>
             <div class="d-flex justify-content-center">
-                <p>👇👇👇使い方は下に書いてあります👇👇👇</p>
+                <p>📜  📜  📜  使い方 📜  📜  📜</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p>1. 作成したいmockのパラーメータを設定します</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p>2. 生成したいformatを選択</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p>3. 「Generate」ボタンをクリック！</p>
             </div>
 
             <section class="border-line p-20">
                 <form action="download.php" method="post">
                     <!-- total users -->
                     <div class="d-flex justify-content-between">
-                        <label for="users">1. Input Number of Restaurant Chains: </label>
+                        <label for="users">1. 会社が持っている、レストランブランドの数を入力: </label>
                         <input type="number" id="numberOfChains" name="numberOfChains" min="1" max="100" value="2" required>
                     </div>
                     <br/>
 
                     <!-- employees of chain  -->
                     <div class="d-flex justify-content-between">
-                    <label for="employees">2. Input Number of Employees: </label>
+                    <label for="employees">2. 従業員数を入力: </label>
                     <input type="number" id="numberOfEmployees" name="numberOfEmployees" min="1" max="100" value="2" required>
                     </div>
                     <br/>
 
                     <!-- range of employee's salary -->
                     <div class="d-flex">
-                        <label for="salary">3. Select Range of Employee's Salary</label>
+                        <label for="salary">3. 従業員の給料の幅を入力</label>
                     </div>
                     <br/>
                     <div class="d-flex justify-content-between align-items-center">
-                        <label class="pl-20" for="minSalary">Minimum Salary: </label>
+                        <label class="pl-20" for="minSalary">最低賃金: </label>
                         <input class="" type="number" id="minSalary" name="minSalary" min="1" max="9999" value="1" required> 
-                        <label class="pl-20" for="maxSalary">Maximum Salary: </label>
+                        <label class="pl-20" for="maxSalary">最大賃金: </label>
                         <input type="number" id="maxSalary" name="maxSalary" min="1" max="9999"  value="10" required> 
                     </div>
 
                     <br/>
                     <!-- total locations -->
                     <div class="d-flex justify-content-between">
-                        <label for="locations">4. Input Number of locations: </label>
+                        <label for="locations">4. レストランチェーンが何店舗あるかを入力: </label>
                         <input type="number" id="numberOfLocations" name="numberOfLocations" min="1" max="10" value="2" required>
                     </div>
                     <br/>
@@ -64,8 +73,9 @@
                     <br/> -->
 
                     <!-- file format select -->
+                    <br/>
                     <div class="d-flex justify-content-between">
-                        <label for="format">5. Select Download Format: </label>
+                        <label for="format">最後に、出力フォーマットを選択してください: </label>
                         <select name="format">
                             <option value="html">HTML</option>
                             <option value="md">Markdown</option>
@@ -84,10 +94,6 @@
                 <script src="../js/generate.js"></script>
             </section>
 
-            <section>
-                <h1>使い方</h1>
-                <p>
-            </section>
         </section>
     </div>
 
