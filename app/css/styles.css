@@ -4,6 +4,11 @@
     height: 100%;
 }
 
+/* body */
+body{
+    color: rgb(4, 99, 131);
+}
+
 /* flex */
 .d-flex {
     display: flex;
@@ -281,3 +286,13 @@ label + select {
     margin-top: 5px;
 }
 
+.restaurant-chain-card {
+    border: solid 1px black;
+    padding: 30px;
+}
+
+.restaurant-location-card {
+    border: solid 1px black;
+    padding: 30px;
+
+}

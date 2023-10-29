@@ -103,7 +103,7 @@ class RestaurantLocation implements FileConvertible{
      * @return string
      */
     public function toHTML():string{
-        return sprintf("<div class='location-card'>
+        return sprintf("<div class='restaurant-location-card'>
                     <h2>Location is %s</h2>
                     <p>Address: %s</p>
                     <p>City: %s</p>
