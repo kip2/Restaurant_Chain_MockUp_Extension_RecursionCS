@@ -181,10 +181,18 @@ class RestaurantLocation implements FileConvertible{
             "city" => $this->getCity(),
             "state" => $this->getState(),
             "zipCode" => $this->getZipCode(),
-            "employees" => $this->getEmployees(),
+            "employees" => $this->employeesToArray(),
             "isOpen" => $this->getIsOpen(),
             "hasDriveThru" => $this->getHasDriveThru()
         ];
+    }
+
+    private function employeesToArray():array {
+        $employees = array();
+        foreach ($this->getEmployees() as $employee) {
+            $employees[] = $employee->toArray();
+        }
+        return $employees;
     }
 
 

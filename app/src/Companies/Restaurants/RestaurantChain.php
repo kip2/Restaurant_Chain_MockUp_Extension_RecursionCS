@@ -209,13 +209,25 @@ class RestaurantChain extends Company implements FileConvertible{
             "founder" => $this->getFounder(),
             "totalEmployee" => $this->getTotalEmployees(),
             "chainId" => $this->getChainId(),
-            "restaurantLocations" => $this->getRestaurantLocations(),
+            "restaurantLocations" => $this->locationsToArray(),
             "cuisineType" => $this->getCuisineType(),
             "numberOfLocations" => $this->getNumberOfLocations(),
             "parentCompany" => $this->getParentCompany()
         ];
     }
 
+    /**
+     * locationの配列を、JSON用の配列に変換
+     *
+     * @return array
+     */
+    private function locationsToArray(): array{
+        $locations = array();
+        foreach ($this->getRestaurantLocations() as $location) {
+            $locations[] = $location->toArray();
+        }
+        return $locations;
+    }
 
     /**
      * 紹介用文章を生成
