@@ -1,0 +1,113 @@
+\doxysection{Helpers\textbackslash{}Random\+Generator Class Reference}
+\hypertarget{class_helpers_1_1_random_generator}{}\label{class_helpers_1_1_random_generator}\index{Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_helpers_1_1_random_generator_a99e8b253256e4f65e06854d44cb99c4f}\label{class_helpers_1_1_random_generator_a99e8b253256e4f65e06854d44cb99c4f} 
+static {\bfseries restaurant\+Chain} ()
+\item 
+\Hypertarget{class_helpers_1_1_random_generator_a0c0cc696a0f3c65be5464a55b204a591}\label{class_helpers_1_1_random_generator_a0c0cc696a0f3c65be5464a55b204a591} 
+static {\bfseries restaurant\+Chains} (int \$min, int \$max)
+\item 
+\Hypertarget{class_helpers_1_1_random_generator_ace192e9dad24d5fc549027022d420afb}\label{class_helpers_1_1_random_generator_ace192e9dad24d5fc549027022d420afb} 
+static {\bfseries restaurant\+Location} ()
+\item 
+\Hypertarget{class_helpers_1_1_random_generator_a15d0e03dfcfd5e9702b6b045a737d449}\label{class_helpers_1_1_random_generator_a15d0e03dfcfd5e9702b6b045a737d449} 
+static {\bfseries restaurant\+Locations} (int \$min, int \$max)
+\item 
+\Hypertarget{class_helpers_1_1_random_generator_a275f07299dc5db8302add8b9f6e1f7fc}\label{class_helpers_1_1_random_generator_a275f07299dc5db8302add8b9f6e1f7fc} 
+static {\bfseries company} ()
+\item 
+\Hypertarget{class_helpers_1_1_random_generator_af9c48c08ca74e4689cb8a78e5ac0932b}\label{class_helpers_1_1_random_generator_af9c48c08ca74e4689cb8a78e5ac0932b} 
+static {\bfseries companies} (int \$min, int \$max)
+\item 
+static \mbox{\hyperlink{class_helpers_1_1_random_generator_a431789aaf41e7d47ecd82e64876b73e6}{employee}} ()
+\item 
+static \mbox{\hyperlink{class_helpers_1_1_random_generator_a45c025b74619eef031cfcc884205293d}{employees}} (int \$min, int \$max)
+\item 
+static \mbox{\hyperlink{class_helpers_1_1_random_generator_abbd12bc34105ac57bc9ae1f78d2199f9}{user}} ()
+\item 
+static \mbox{\hyperlink{class_helpers_1_1_random_generator_a60dcbd75d33b217f8c263ab70bc87aab}{users}} (int \$min, int \$max)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_helpers_1_1_random_generator_aa155684dc0126d2bf346169e663e3699}{awards}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_helpers_1_1_random_generator_aa155684dc0126d2bf346169e663e3699}\label{class_helpers_1_1_random_generator_aa155684dc0126d2bf346169e663e3699} 
+\index{Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}!awards@{awards}}
+\index{awards@{awards}!Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}}
+\doxysubsubsection{\texorpdfstring{awards()}{awards()}}
+{\footnotesize\ttfamily static Helpers\textbackslash{}\+Random\+Generator\+::awards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+employeeのawards生成用メソッド 文字列の配列を返す 受賞歴なしなら"{}\+No awarads received"{}の文字列が入っただけの配列を返す
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{class_helpers_1_1_random_generator_a431789aaf41e7d47ecd82e64876b73e6}\label{class_helpers_1_1_random_generator_a431789aaf41e7d47ecd82e64876b73e6} 
+\index{Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}!employee@{employee}}
+\index{employee@{employee}!Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}}
+\doxysubsubsection{\texorpdfstring{employee()}{employee()}}
+{\footnotesize\ttfamily static Helpers\textbackslash{}\+Random\+Generator\+::employee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+ランダムな\+Employeeを生成する
+
+\begin{DoxyReturn}{Returns}
+Employee 
+\end{DoxyReturn}
+\Hypertarget{class_helpers_1_1_random_generator_a45c025b74619eef031cfcc884205293d}\label{class_helpers_1_1_random_generator_a45c025b74619eef031cfcc884205293d} 
+\index{Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}!employees@{employees}}
+\index{employees@{employees}!Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}}
+\doxysubsubsection{\texorpdfstring{employees()}{employees()}}
+{\footnotesize\ttfamily static Helpers\textbackslash{}\+Random\+Generator\+::employees (\begin{DoxyParamCaption}\item[{int}]{\$min,  }\item[{int}]{\$max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+ランダムな\+Employeeの配列を生成する
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$min} & \\
+\hline
+integer & {\em \$max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\Hypertarget{class_helpers_1_1_random_generator_abbd12bc34105ac57bc9ae1f78d2199f9}\label{class_helpers_1_1_random_generator_abbd12bc34105ac57bc9ae1f78d2199f9} 
+\index{Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}!user@{user}}
+\index{user@{user}!Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}}
+\doxysubsubsection{\texorpdfstring{user()}{user()}}
+{\footnotesize\ttfamily static Helpers\textbackslash{}\+Random\+Generator\+::user (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+ランダムなユーザを生成する
+
+\begin{DoxyReturn}{Returns}
+User 
+\end{DoxyReturn}
+\Hypertarget{class_helpers_1_1_random_generator_a60dcbd75d33b217f8c263ab70bc87aab}\label{class_helpers_1_1_random_generator_a60dcbd75d33b217f8c263ab70bc87aab} 
+\index{Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}!users@{users}}
+\index{users@{users}!Helpers\textbackslash{}RandomGenerator@{Helpers\textbackslash{}RandomGenerator}}
+\doxysubsubsection{\texorpdfstring{users()}{users()}}
+{\footnotesize\ttfamily static Helpers\textbackslash{}\+Random\+Generator\+::users (\begin{DoxyParamCaption}\item[{int}]{\$min,  }\item[{int}]{\$max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+ランダムなユーザーの配列を生成する
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$min} & \\
+\hline
+integer & {\em \$max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Helpers/Random\+Generator.\+php\end{DoxyCompactItemize}

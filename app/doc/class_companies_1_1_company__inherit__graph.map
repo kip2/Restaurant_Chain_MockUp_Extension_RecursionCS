@@ -1,0 +1,7 @@
+<map id="Companies\Company" name="Companies\Company">
+<area shape="rect" id="Node000001" title=" " alt="" coords="27,79,174,105"/>
+<area shape="rect" id="Node000003" href="$class_companies_1_1_restaurants_1_1_restaurant_chain.html" title=" " alt="" coords="19,153,182,193"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,120,103,152,98,152,98,120"/>
+<area shape="rect" id="Node000002" href="$interface_file_converter_1_1_file_convertible.html" title=" " alt="" coords="5,5,196,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,46,103,79,98,79,98,46"/>
+</map>
