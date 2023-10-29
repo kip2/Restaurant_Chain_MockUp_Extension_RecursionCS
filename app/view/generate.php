@@ -62,16 +62,6 @@
                     </div>
                     <br/>
 
-                    <!-- range of zip code -->
-                    <!-- todo: 独自メソッド定義の必要あり？ -->
-                    <!-- <label for="zipCode">Select Range of Zip Code: </label>
-                    <label for="minZipCode">Minimum Zip Code: </label>
-                    <input type="number" id="minZipCode" name="minZipCode" min="0" required> 
-                    <label for="maxZipCode">Maximum Zip Code: </label>
-                    <input type="number" id="maxZipCode" name="maxZipCode" min="0" required> 
-
-                    <br/> -->
-
                     <!-- file format select -->
                     <br/>
                     <div class="d-flex justify-content-between">

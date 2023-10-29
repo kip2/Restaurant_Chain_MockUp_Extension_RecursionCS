@@ -12,10 +12,19 @@ use Faker\Factory;
 
 class DownloadRandomGenerator {
 
-    // todo: 必ず最後にメソッドのコメントを直すこと
 
     // ---------- restaurant chain -----------------
-    public static function downloadRestaurantChain($numberOfEmployees, $numberOfLocations, $minSalary, $maxSalary): RestaurantChain {
+
+    /**
+     * download用のインスタンスを生成する
+     *
+     * @param integer $numberOfEmployees
+     * @param integer $numberOfLocations
+     * @param integer $minSalary
+     * @param integer $maxSalary
+     * @return RestaurantChain
+     */
+    public static function downloadRestaurantChain(int $numberOfEmployees, int $numberOfLocations, int $minSalary, int $maxSalary): RestaurantChain {
         $faker = Factory::create();
         $DISHES = [
             "Sushi",
@@ -63,7 +72,17 @@ class DownloadRandomGenerator {
         );
     }
 
-    public static function downloadRestaurantChains($numberOfChains, $numberOfEmployees, $numberOfLocations, $minSalary, $maxSalary): array{
+    /**
+     * ダウンロード用のレストランチェーンのインスタンスを生成する
+     *
+     * @param integer $numberOfChains
+     * @param integer $numberOfEmployees
+     * @param integer $numberOfLocations
+     * @param integer $minSalary
+     * @param integer $maxSalary
+     * @return array
+     */
+    public static function downloadRestaurantChains(int $numberOfChains, int $numberOfEmployees, int $numberOfLocations, int $minSalary, int $maxSalary): array{
         $faker = Factory::create();
         $chains = [];
 
@@ -77,7 +96,15 @@ class DownloadRandomGenerator {
 
 
     // ---------- restaurant location -----------------
-    public static function downloadRestaurantLocation($numberOfEmployees, $minSalary, $maxSalary): RestaurantLocation {
+    /**
+     * ダウンロード用のレストランチェーンのロケーションのインスタンスを生成する
+     *
+     * @param integer $numberOfEmployees
+     * @param integer $minSalary
+     * @param integer $maxSalary
+     * @return RestaurantLocation
+     */
+    public static function downloadRestaurantLocation(int $numberOfEmployees,int  $minSalary,int $maxSalary): RestaurantLocation {
         $faker = Factory::create();
 
         return new RestaurantLocation(
@@ -92,6 +119,15 @@ class DownloadRandomGenerator {
         );
     }
 
+    /**
+     * ダウン用レストランロケーションのインスタンスの配列を生成
+     *
+     * @param [type] $numberOfLocations
+     * @param [type] $numberOfEmployees
+     * @param [type] $minSalary
+     * @param [type] $maxSalary
+     * @return array
+     */
     public static function downloadRestaurantLocations($numberOfLocations,$numberOfEmployees, $minSalary, $maxSalary): array{
         $faker = Factory::create();
         $locations = [];
@@ -104,7 +140,13 @@ class DownloadRandomGenerator {
     }
 
     // ---------- company -----------------
-    public static function downloadCompany($numberOfEmployees): Company {
+    /**
+     * ダウンロード用カンパニーのインスタンスを生成
+     *
+     * @param integer $numberOfEmployees
+     * @return Company
+     */
+    public static function downloadCompany(int $numberOfEmployees): Company {
         $faker = Factory::create();
 
         $INDUSTORY = [
@@ -142,7 +184,15 @@ class DownloadRandomGenerator {
         );
     }
     
-    public static function downloadCompanies(int $min, int $max, $numberOfEmployees): array {
+    /**
+     * ダウンロード用のカンパニーの配列を作成
+     *
+     * @param integer $min
+     * @param integer $max
+     * @param integer $numberOfEmployees
+     * @return array
+     */
+    public static function downloadCompanies(int $min, int $max, int $numberOfEmployees): array {
         $faker = Factory::create();
         $companies = [];
         $numOfCompanies = $faker->numberBetween($min, $max);
