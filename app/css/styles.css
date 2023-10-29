@@ -294,5 +294,6 @@ label + select {
 .restaurant-location-card {
     border: solid 1px black;
     padding: 30px;
+    margin-top:20px;
 
 }
