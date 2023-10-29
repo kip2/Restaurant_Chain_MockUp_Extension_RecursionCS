@@ -77,7 +77,8 @@ class Employee extends User implements FileConvertible{
      * @return string
      */
     public function toHTML():string{
-        return sprintf("<div class='employee-card'>
+        return sprintf("
+                <div class='employee-card'>
                     <h2>Employee ID:%d</h2>
                     <h2>%s %s</h2>
                     <p>%s</p>

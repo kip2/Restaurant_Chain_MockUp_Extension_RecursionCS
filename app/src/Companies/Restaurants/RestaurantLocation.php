@@ -104,14 +104,16 @@ class RestaurantLocation implements FileConvertible{
      */
     public function toHTML():string{
         return sprintf("<div class='restaurant-location-card'>
-                    <h2>Location is %s</h2>
+                    <div class='d-flex justify-content-center'>
+                        <h2>Location is %s</h2>
+                    </div>
                     <p>Address: %s</p>
                     <p>City: %s</p>
                     <p>State: %s</p>
                     <p>Zip Code: %s</p>
                     <p>Open?: %s</p>
                     <p>Drive Thru?: %s</p>
-                    <div>%s</div>
+                    <div class='d-flex flex-wrap'>%s</div>
                 </div>",
                 $this->getName(),
                 $this->getAddress(),
