@@ -102,16 +102,7 @@ class Employee extends User implements FileConvertible{
      * @return string
      */
     public function toMarkdown():string{
-        return sprintf("## Employee: %s %s
-                    - Email: %s
-                    - Phone Number: %s
-                    - Address: %s
-                    - Birth Date: %s
-                    - Role: %s
-                    - Job Titile: %s
-                    - Salary: %.2f
-                    - Start Date: %s
-                    - Awards: %s ",
+        return sprintf("### Employee: %s %s\n - Email: %s\n - Phone Number: %s\n - Address: %s\n - Birth Date: %s\n - Role: %s\n - Job Titile: %s\n - Salary: %.2f\n - Start Date: %s\n - Awards: %s",
                 $this->getFirstName(),
                 $this->getLastName(),
                 $this->getEmail(),

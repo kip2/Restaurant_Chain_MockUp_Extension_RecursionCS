@@ -137,22 +137,15 @@ class RestaurantLocation implements FileConvertible{
      * @return string
      */
     public function toMarkdown():string{
-        return sprintf("## Name: %s
-                    - Address: %s
-                    - City: %s
-                    - State: %s
-                    - Zip Code: %s
-                    - Employees: %s
-                    - Open?: %s
-                    - Drive Thru?: %s",
+        return sprintf("### Name: %s\n - Address: %s\n - City: %s\n - State: %s\n - Zip Code: %s\n - Open?: %s\n - Drive Thru?: %s\n## Employees: \n%s ",
             $this->getName(),
             $this->getAddress(),
             $this->getCity(),
             $this->getState(),
             $this->getZipCode(),
-            $this->employeesToMarkdown(),
             $this->getIsOpen() ? "Yes" : "No",
-            $this->getHasDriveThru() ? "Yes" : "No"
+            $this->getHasDriveThru() ? "Yes" : "No",
+            $this->employeesToMarkdown()
         );
     }
 
@@ -164,7 +157,7 @@ class RestaurantLocation implements FileConvertible{
     public function employeesToMarkdown():string {
         $result = "";
         foreach($this->getEmployees() as $employee) {
-            $result .= $employee->toMarkdown() . "\n";
+            $result .= $employee->toMarkdown();
         }
         return $result;
     }
@@ -187,6 +180,11 @@ class RestaurantLocation implements FileConvertible{
         ];
     }
 
+    /**
+     * employeesの配列を、JSON用の配列に変換
+     *
+     * @return array
+     */
     private function employeesToArray():array {
         $employees = array();
         foreach ($this->getEmployees() as $employee) {

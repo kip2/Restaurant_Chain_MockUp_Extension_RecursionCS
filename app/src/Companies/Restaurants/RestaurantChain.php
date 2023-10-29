@@ -142,22 +142,7 @@ class RestaurantChain extends Company implements FileConvertible{
      * @return string
      */
     public function toMarkdown():string{
-        return sprintf("## Restaurant Chain : %s
-                    - Founding Year: %d
-                    - Description: %s
-                    - Website: %s
-                    - Phone Number: %s
-                    - Industory: %s
-                    - CEO: %s
-                    - Pubcicly Traded: %s
-                    - Country: %s
-                    - Founder: %s 
-                    - Total Employee: %d 
-                    - Chain Id: %d 
-                    - Restaurant Locations: %s 
-                    - Cuisine Type: %s 
-                    - Number Of Locatsons: %d 
-                    - Parent Company: %s ",
+        return sprintf("## Restaurant Chain : %s\n - Founding Year: %d\n - Description: %s\n - Website: %s\n - Phone Number: %s\n - Industory: %s\n - CEO: %s\n - Pubcicly Traded: %s\n - Country: %s\n - Founder: %s\n - Total Employee: %d\n - Chain Id: %d\n - Cuisine Type: %s\n - Number Of Locatsons: %d\n - Parent Company: %s\n## Restaurant Locations:\n%s",
             $this->getName(),
             $this->getFoundingYear(),
             $this->getDescription(),
@@ -170,10 +155,10 @@ class RestaurantChain extends Company implements FileConvertible{
             $this->getFounder(),
             $this->getTotalEmployees(),
             $this->getChainId(),
-            $this->locationsToMarkdown(),
             $this->getCuisineType(),
             $this->getNumberOfLocations(),
-            $this->getParentCompany()
+            $this->getParentCompany(),
+            $this->locationsToMarkdown()
         );
     }
 
