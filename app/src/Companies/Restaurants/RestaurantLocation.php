@@ -64,23 +64,15 @@ class RestaurantLocation implements FileConvertible{
      * @return string
      */
     public function toString():string{
-        return sprintf("Location: %s\n
-            Address: %s\n
-            City: %s\n
-            State: %s\n
-            ZipCode: %s\n
-            Employees: %s\n
-            Open?: %s\n
-            DriveThru?: %s\n
-            ",
+        return sprintf("Location: %s\nAddress: %s\nCity: %s\nState: %s\nZipCode: %s\nOpen?: %s\nDriveThru?: %s\nEmployees: %s",
                 $this->getName(),
                 $this->getAddress(),
                 $this->getCity(),
                 $this->getState(),
                 $this->getZipCode(),
-                $this->employeesToString(),
                 $this->getIsOpen() ? "Yes" : "No",
-                $this->getHasDriveThru() ? "Yes" : "No"
+                $this->getHasDriveThru() ? "Yes" : "No",
+                $this->employeesToString()
         );
     }
     

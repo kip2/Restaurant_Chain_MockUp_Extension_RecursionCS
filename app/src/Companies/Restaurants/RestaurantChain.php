@@ -45,8 +45,7 @@ class RestaurantChain extends Company implements FileConvertible{
      * @return string
      */
     public function toString():string{
-        return sprintf("Restaurant Chain Name: %s\nFounding Year: %d\nDescription: %s\nWebSite: %s\nPhone Number: %s\nIndustory: %s\nCEO: %s\nPublicly Traded: %s\nCountry: %s\nFounder: %s\nTotal Employees: %d\nChain ID: %d\nRestaurant Locations: \n%s\nCuisine Type: %s\nNumber Of Locations: %d\nParent Company: %s\n
-        ",
+        return sprintf("Restaurant Chain Name: %s\nFounding Year: %d\nDescription: %s\nWebSite: %s\nPhone Number: %s\nIndustory: %s\nCEO: %s\nPublicly Traded: %s\nCountry: %s\nFounder: %s\nTotal Employees: %d\nChain ID: %d\nCuisine Type: %s\nNumber Of Locations: %d\nParent Company: %s\nRestaurant Locations: %s\n",
             $this->getName(),
             $this->getFoundingYear(),
             $this->getDescription(),
@@ -59,10 +58,10 @@ class RestaurantChain extends Company implements FileConvertible{
             $this->getFounder(),
             $this->getTotalEmployees(),
             $this->getChainId(),
-            $this->locationsToString(),
             $this->getCuisineType(),
             $this->getNumberOfLocations(),
-            $this->getParentCompany()
+            $this->getParentCompany(),
+            $this->locationsToString()
         );
     }
 

@@ -43,18 +43,7 @@ class Employee extends User implements FileConvertible{
      * @return string
      */
     public function toString():string{
-        return sprintf("Employee ID: %d\n
-        Name: %s %s\n
-        Email: %s\n
-        Phone Number: %s\n
-        Address: %s\n
-        Birth Date: %s\n
-        Role: %s\n
-        Job Titile: %s\n
-        Salary: %.2f\n
-        Start Date: %s\n
-        awards: %s\n
-        ",
+        return sprintf("Employee ID: %d\nName: %s %s\nEmail: %s\nPhone Number: %s\nAddress: %s\nBirth Date: %s\nRole: %s\nJob Titile: %s\nSalary: %.2f\nStart Date: %s\nawards: %s",
             $this->getId(),
             $this->getFirstName(),
             $this->getLastName(),
@@ -176,7 +165,7 @@ class Employee extends User implements FileConvertible{
             if ($index < $lenAwards - 1) {
                 $result .= ", ";
             } else {
-                $result .= ".\n";
+                $result .= ".";
             }
         }
         return $result;
